@@ -1,0 +1,44 @@
+name: test-book
+
+on: pull_request
+
+# This job installs dependencies and builds the book
+jobs:
+  test-book:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      # Install dependencies
+      - name: Set up Python 3.10
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
+
+      - name: Install dependencies
+        run: |
+          pip install -U pip setuptools
+          pip install -r requirements.txt
+
+      # Build the book
+      - name: Build the book
+        run: |
+          make check all
+
+  # pylint:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v3
+  #     - name: Set up Python 3.10
+  #       uses: actions/setup-python@v1
+  #       with:
+  #         python-version: "3.10"
+
+  #     - name: Install dependencies
+  #       run: |
+  #         pip install -U pip setuptools
+  #         pip install pylint pycodestyle pydocstyle
+
+  #     - name: Run linters
+  #       run: |
+  #         make code-checks

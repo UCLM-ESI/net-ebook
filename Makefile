@@ -8,15 +8,15 @@ all: check _build
 _build: ${BOOK_SOURCES}
 	jb build -W .
 
-${BOOK_PDF}: ${BOOK_SOURCES}
-	jb build -W -n --builder pdflatex .
+# ${BOOK_PDF}: ${BOOK_SOURCES}
+# 	jb build -W -n --builder pdflatex .
 
-publish: _build ${BOOK_PDF} assets/exercise.tar.gz assets/fileexplorer.ice
+# publish: _build ${BOOK_PDF}
+publish: _build
 	mv _build/html $@
-	mv ${BOOK_PDF} $@/ssdd-lab.pdf
-	cp -r assets $@
-	cp -r src $@
-	cp -r icestorm/src $@/src/icestorm
+	# mv ${BOOK_PDF} $@/ssdd-lab.pdf
+	# cp -r assets $@
+	# cp -r src $@
 
 clean:
 	jb clean .
@@ -26,14 +26,7 @@ clean:
 check:
 	pre-commit run --all
 
-code-checks:
-	pylint exercise/*.py
-	pycodestyle exercise/*.py
-	pydocstyle exercise/*.py
-
-assets/exercise.tar.gz: exercise/Calculator.ice exercise/tester.py
-	mkdir -p $(dir $@)
-	tar cfz $@ $^
-
-assets/fileexplorer.ice: finalizacion/fileexplorer.ice
-	cp $^ $@
+# code-checks:
+# 	pylint exercise/*.py
+# 	pycodestyle exercise/*.py
+# 	pydocstyle exercise/*.pydocstyle

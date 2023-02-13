@@ -9,13 +9,13 @@ sock.bind(("", 12345))
 while True:
     message_in, peer = sock.recvfrom(1024)
     print(message_in.decode())
-    
+
     if message_in == QUIT:
         break
 
     message_out = input().encode()
     sock.sendto(message_out, peer)
-    
+
     if message_out == QUIT:
         break
 

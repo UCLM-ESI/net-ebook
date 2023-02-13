@@ -11,11 +11,11 @@ server = ('', 12345)
 
 def send_message(sock, peer):
     """Send a message read from stdin using sock."""
-    
+
     while True:
         message_out = input().encode()
         sock.sendto(message_out, peer)
-        
+
         if message_out == QUIT:
             break
 

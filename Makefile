@@ -1,6 +1,6 @@
 .PHONY: all buildpdf check clean code-checks
 
-BOOK_SOURCES := $(shell find . -type f -name '*.md' ! -path '*/publish/*')
+BOOK_SOURCES := *.md *.ipynb
 BOOK_PDF = _build/latex/book.pdf
 
 all: check _build
@@ -14,9 +14,9 @@ _build: ${BOOK_SOURCES}
 # publish: _build ${BOOK_PDF}
 publish: _build
 	mv _build/html $@
+	cp -r src $@
 	# mv ${BOOK_PDF} $@/ssdd-lab.pdf
 	# cp -r assets $@
-	# cp -r src $@
 
 clean:
 	jb clean .
@@ -26,7 +26,7 @@ clean:
 check:
 	pre-commit run --all
 
-# code-checks:
-# 	pylint exercise/*.py
-# 	pycodestyle exercise/*.py
-# 	pydocstyle exercise/*.pydocstyle
+code-checks:
+	pylint src/*/*.py
+	pycodestyle src/*/**.py
+	pydocstyle src/*/*.pydocstyle

@@ -6,3 +6,4 @@ root: intro
 chapters:
 - file: intro_python
 - file: udp_chat
+- file: serializacion

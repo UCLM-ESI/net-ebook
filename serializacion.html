@@ -1,0 +1,1112 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Serialización y deserialización &#8212; Redes 2</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Chat UDP" href="udp_chat.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Redes 2</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_python.html">
+   Introducción a Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="udp_chat.html">
+   Chat UDP
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Serialización y deserialización
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/joselsegura/redes2-lab/main?urlpath=tree/serializacion.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/joselsegura/redes2-lab"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/joselsegura/redes2-lab/issues/new?title=Issue%20on%20page%20%2Fserializacion.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/serializacion.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#representacion-solo-eso">
+   Representación, sólo eso
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#los-enteros-en-python">
+   Los enteros en Python
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#caracteres">
+   Caracteres
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tipos-multibyte-y-ordenamiento">
+   Tipos multibyte y ordenamiento
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cadenas-de-caracteres-y-secuencias-de-bytes">
+   Cadenas de caracteres y secuencias de bytes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#empaquetado">
+   Empaquetado
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cadena-de-formato">
+     Cadena de formato
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ejemplo-de-empaquetado-cabecera-de-una-trama-ethernet">
+     Ejemplo de empaquetado: cabecera de una trama Ethernet
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#desempaquetado">
+   Desempaquetado
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Serialización y deserialización</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#representacion-solo-eso">
+   Representación, sólo eso
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#los-enteros-en-python">
+   Los enteros en Python
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#caracteres">
+   Caracteres
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tipos-multibyte-y-ordenamiento">
+   Tipos multibyte y ordenamiento
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cadenas-de-caracteres-y-secuencias-de-bytes">
+   Cadenas de caracteres y secuencias de bytes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#empaquetado">
+   Empaquetado
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cadena-de-formato">
+     Cadena de formato
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ejemplo-de-empaquetado-cabecera-de-una-trama-ethernet">
+     Ejemplo de empaquetado: cabecera de una trama Ethernet
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#desempaquetado">
+   Desempaquetado
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="serializacion-y-deserializacion">
+<h1>Serialización y deserialización<a class="headerlink" href="#serializacion-y-deserializacion" title="Permalink to this headline">#</a></h1>
+<p>El único modo posible de procesar y almacenar datos en un computador actual es el código binario.
+Pero, salvo unas pocas excepciones, rara vez resulta suficientemente expresivo para representar información útil
+para las personas.
+Por ese motivo se utilizan distintas formas de interpretar el código binario en función del tipo de dato que se desea:
+entero, decimal, cadena de caracteres, fecha, etc.
+Lo importante es recordar que, sea cual sea su representación en un lenguaje de programación de alto nivel determinado,
+en la memoria o registros de las computadoras, todo dato es a fin de cuentas una secuencia de bits.</p>
+<p>La serialización es el proceso de codificar los datos que manejan los programas
+(enteros, cadenas, imágenes, etc.) en secuencias de bytes susceptibles de ser almacenadas en un fichero o
+enviadas a través de la red.
+Por el contrario, la des-serialización es el proceso inverso.
+Más concretamente, estamos tratando lo «serialización binaria».
+También existen muchos formatos de serialización textual como
+XML, JavaScript Object Notation (JSON), YAML Ain’t Markup Language (YAML), etc.,
+que no vamos a tratar en este capítulo.</p>
+<p>Es importante aclarar que no se debe confundir «codificación» con «cifrado» (o «encriptación»).
+Codificar es simplemente aplicar una transformación que modifica el modo en que se representan los datos,
+pero no implica el uso de ninguna clave ni ocultación u ofuscación del mensaje.
+Por ejemplo, un mensaje codificado en Morse es perfectamente legible por cualquiera que conozca el código</p>
+<section id="representacion-solo-eso">
+<h2>Representación, sólo eso<a class="headerlink" href="#representacion-solo-eso" title="Permalink to this headline">#</a></h2>
+<p>Una de las excepciones a las que alude la sección anterior es la <em>programación de sistemas</em>,
+es decir, aquellos programas que consumen directamente servicios del SO.
+El binario resulta útil para manejar campos de bits, banderas binarias o máscaras,
+muy comunes cuando se manipulan registros de control, operaciones de E/S, etc.
+Por eso es necesario manejar adecuadamente datos con estas representaciones.</p>
+<p>Sin embargo, como las personas, la mayoría de los lenguajes de programación utilizan la base decimal
+para expresar todo tipo de cantidades.
+Pero también ofrecen mecanismos para realizar cambios de base.</p>
+<p>Python permite expresar literales numéricos en varios formatos.
+A continuación, en todos los ejemplos se representa el número 42;
+y en todos los casos, si se asigna a una variable,
+se está creando un entero (tipo int) con el mismo valor.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">decimal</span> <span class="o">=</span> <span class="mi">42</span>
+<span class="n">binary</span> <span class="o">=</span> <span class="mb">0b101010</span>
+<span class="n">octal</span> <span class="o">=</span> <span class="mo">0o52</span>
+<span class="n">hexadecimal</span> <span class="o">=</span> <span class="mh">0x2a</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;decimal: </span><span class="si">{</span><span class="n">decimal</span><span class="si">}</span><span class="se">\n</span><span class="s2">binary: </span><span class="si">{</span><span class="n">binary</span><span class="si">}</span><span class="se">\n</span><span class="s2">octal: </span><span class="si">{</span><span class="n">octal</span><span class="si">}</span><span class="se">\n</span><span class="s2">hexadecimal: </span><span class="si">{</span><span class="n">hexadecimal</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>decimal: 42
+binary: 42
+octal: 42
+hexadecimal: 42
+</pre></div>
+</div>
+</div>
+</div>
+<p>Asimismo ofrece funciones para convertir entre bases: <code class="docutils literal notranslate"><span class="pre">bin()</span></code>, <code class="docutils literal notranslate"><span class="pre">oct()</span></code>, y <code class="docutils literal notranslate"><span class="pre">hex()</span></code>,
+aunque se debe tener en cuenta que estas funciones únicamente devuelven cadenas (<code class="docutils literal notranslate"><span class="pre">str</span></code>)
+y se utilizan precisamente para ofrecer <em>representaciones</em> diferentes del mismo dato.
+Observa que la salida de cada ejecución incluye unas comillas,
+lo que denota que lo impreso es una cadena y no un número.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">bin</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;0b101010&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">oct</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;0o52&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">hex</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;0x2a&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Además, el constructor de la clase <code class="docutils literal notranslate"><span class="pre">int</span></code> acepta una cadena de caracteres que represente un número,
+pudiendo indicarse la base:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="s2">&quot;42&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="s2">&quot;101010&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="s2">&quot;52&quot;</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="s2">&quot;2a&quot;</span><span class="p">,</span> <span class="mi">16</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="s2">&quot;1J&quot;</span><span class="p">,</span> <span class="mi">23</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>42
+42
+42
+42
+42
+</pre></div>
+</div>
+</div>
+</div>
+<p>Todo programador debe tener claro que <code class="docutils literal notranslate"><span class="pre">42</span></code>, <code class="docutils literal notranslate"><span class="pre">101010</span></code>, <code class="docutils literal notranslate"><span class="pre">052</span></code> o <code class="docutils literal notranslate"><span class="pre">0x2A</span></code> no son más que diferentes maneras
+de representar el mismo dato, y que internamente para el computador son indistinguibles.</p>
+</section>
+<section id="los-enteros-en-python">
+<h2>Los enteros en Python<a class="headerlink" href="#los-enteros-en-python" title="Permalink to this headline">#</a></h2>
+<p>El tipo más simple de cualquier lenguaje de programación suele ser <code class="docutils literal notranslate"><span class="pre">byte</span></code>,
+que se corresponde con una secuencia de 8 bits.
+Suele ser un entero sin signo, es decir, puede representar números enteros en el rango [0, 255].
+El lenguaje Python, por su naturaleza dinámica, solo tiene un tipo de datos para enteros (<code class="docutils literal notranslate"><span class="pre">int</span></code>).
+En Python un entero puede ser arbitrariamente largo puesto que el intérprete se encarga
+de gestionar la memoria necesaria:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">googol</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">**</span> <span class="mi">100</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">googol</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>int
+</pre></div>
+</div>
+</div>
+</div>
+<p>En ocasiones, como cuando serializamos datos en un fichero o una conexión de red, necesitamos manejar explícitamente el tamaño de los datos.
+En las próximas secciones veremos cómo realizar esa tarea en Python.</p>
+</section>
+<section id="caracteres">
+<h2>Caracteres<a class="headerlink" href="#caracteres" title="Permalink to this headline">#</a></h2>
+<p>La condificación de caracteres más simple (y una de las más antiguas) consiste en asignar un número a cada carácter del alfabeto.
+<strong>ASCII</strong> fue creado por ANSI en 1963 como una evolución de la condificación utilizada anteriormente en telegrafía.
+Es un código de 7 bits (128 símbolos) que incluye los caracteres alfanuméricos de la lengua inglesa,
+incluyendo mayúsculas y minúsculas, y la mayoría de signos de puntuación y tipográficos habituales.
+Además incluye caracteres de control para indicar salto de línea, de página, tabulador, retorno de carro, etc.
+Más tarde IBM creó el código EBCDIC, similar a ASCII pero con 8 bits (256 símbolos).</p>
+<p>Prácticamente todos los lenguajes de programación incluyen funciones elementales para manejar la conversión entre
+bytes (números de 8 bits) y su carácter equivalente. En Python estas funciones son <code class="docutils literal notranslate"><span class="pre">ord()</span></code> y <code class="docutils literal notranslate"><span class="pre">chr()</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">ord</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>97
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">chr</span><span class="p">(</span><span class="mi">97</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;a&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">ord</span><span class="p">(</span><span class="s2">&quot;0&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>48
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">ord</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\0</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">chr</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;\x00&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">ord</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">chr</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;\n&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">ord</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>32
+</pre></div>
+</div>
+</div>
+</div>
+<p>Se puede ver en los ejemplos anteriores que, por ejemplo, el valor equivalente al carácter “0” es 48,
+mientras que el caracter equivalente al valor numérico 0 es el carácter “\x00”.</p>
+<p>Es especialemten importante tener claro que los caracteres numéricos <strong>no son equivalentes</strong> a los valores que representan.
+También resulta digno de mención que la secuencia <code class="docutils literal notranslate"><span class="pre">\n</span></code> es un sólo caracter,
+ya que la barra es lo que se conoce como <strong>«carácter de escape»</strong>.
+Es decir, cambia el significado del siguiente carácter. En este caso, significa «nueva línea»,
+como ya sabéis.</p>
+<p>De la misma manera, cuando un caracter toma un valor que no corresponde con ningún carácter imprimible,
+como en el caso anterior del caracter equivalente al número 0,
+Python lo representa con <code class="docutils literal notranslate"><span class="pre">&quot;\x00&quot;</span></code>, siendo los dos caracteres que siguen al <code class="docutils literal notranslate"><span class="pre">\x</span></code> el valor hexadecimal del número.</p>
+<p>Como se explicó en la sesión de introducción a Python, las cadenas son un tipo inmutable,
+lo que implica que no puede modificarse su contenido.
+Para añadir o modificar algún element en una cadena, debemos crear una nueva modificada a partir de la primera.</p>
+<p>Sin embargo, Python proporciona el tipo <strong><code class="docutils literal notranslate"><span class="pre">bytearray</span></code></strong> que permite almacenar una secuencia de bytes,
+modificar su contenido, y obtener fácilmente la lista de caracteres o secuencia de enteros equivalente.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">buf</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">(</span><span class="s2">&quot;abcd&quot;</span><span class="p">,</span> <span class="s2">&quot;ascii&quot;</span><span class="p">)</span>
+<span class="n">buf</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;buf: </span><span class="si">{</span><span class="n">buf</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Decoded buf: </span><span class="si">{</span><span class="n">buf</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>buf: bytearray(b&#39;\x14bcd&#39;)
+Decoded buf: bcd
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="tipos-multibyte-y-ordenamiento">
+<h2>Tipos multibyte y ordenamiento<a class="headerlink" href="#tipos-multibyte-y-ordenamiento" title="Permalink to this headline">#</a></h2>
+<p>En muchísimas ocasiones necesitamos utilizar nímeros enteros o reales que internamente van a ocupar más de un byte de memoria.
+Ésto hace que aparezca un nuevo problema muy interesante: ¿cómo deben ordenarse los múltiples bytes que representan el dato?</p>
+<p>Dependiendo de cómo se ordenen los bytes de un mismo dato entre ellos, se distingue entre <em>little endian</em> y <em>big endian</em>.
+<em>Little endian</em> significa que el byte <strong>menos significativo</strong> se coloca primero en memoria (en la dirección más baja),
+mientras que <em>big endian</em> es justo al revés: el byte de <strong>mayor peso</strong> se coloca en la dirección más baja de memoria.</p>
+<p>Esta ordenación o <em>byte order</em> es característico de cada arquitectura hardware,
+y es imprescindible que los programas manipulen los datos de manera adecuada para poder realizar operaciones con ellos.</p>
+<p>Para comprobar qué tipo de arquitectura estás usando, pueden utilizar el módulo <code class="docutils literal notranslate"><span class="pre">sys</span></code> de Python:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="n">sys</span><span class="o">.</span><span class="n">byteorder</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;little&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>En la red ocurre algo parecido: cuando colocamos un dato multibyte en “el cable” también se tiene que respetar,
+al recibirlo en el otro extremo, el ordenamiento.
+En particular los protocolos de la pila TCP/IP imponen que se utilice siempre el ordenamiento <em>big endian</em>.</p>
+<p>Esto significa que, con bastante probabilidad, el equipo que estás manejando ahora mismo tiene un ordenamiento opuesto
+al que utiliza la red a la que está conectado, por lo que deben convertirse los datos antes de ser enviados.
+Para evitar que los programas tengan que comprobar directamente el orden de la arquitectura,
+las librerías de conectividad (<code class="docutils literal notranslate"><span class="pre">socket</span></code>) proporcionan funciones que hacen la conversión por nosotros.</p>
+<p>Evidentemente, cuando el mismo programa se ejecute en una arquitectura <em>big endian</em>, dicha función no hará nada.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">socket.ntohs()</span></code>: convierte un entero <em>short</em> (16 bits) del ordenamiento de la red al de la computadora.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">socket.htons()</span></code>: convierte un entero <em>short</em> (16 bits) del ordenamiento de la computadora al de la red.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">socket.ntohl()</span></code>: convierte un entero <em>long</em> (32 bits) del ordenamiento de la red al de la computadora.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">socket.htonl()</span></code>: convierte un entero <em>long</em> (32 bits) del ordenamiento de la computadora al de la red.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">socket</span>
+
+<span class="n">socket</span><span class="o">.</span><span class="n">htons</span><span class="p">(</span><span class="mi">32</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8192
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">hex</span><span class="p">(</span><span class="mi">32</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;0x20&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">hex</span><span class="p">(</span><span class="n">socket</span><span class="o">.</span><span class="n">htons</span><span class="p">(</span><span class="mi">32</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;0x2000&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Al ver la representación hexadecimal de 32 en esta máquina (<em>little endian</em>) y de su versión para red (<em>big endian</em>)
+podemos observar lo siguiente:</p>
+<ul class="simple">
+<li><p>Cada byte se representa con 2 caracteres hexadecimales, cada caracter hexadecimal puede represnetar 16 valores.</p></li>
+<li><p>En la primera versión (<em>little endian</em>), el valor menos significativo aparece más a la derecha
+(los dos ceros que deberían estar a la izquierda se omiten, igual que haríamos en base 10).</p></li>
+<li><p>En la segunda representación (<em>big endian</em>) el valor menos significativo aparece más a la izquierda, y los más significativos más a la derecha.</p></li>
+</ul>
+</section>
+<section id="cadenas-de-caracteres-y-secuencias-de-bytes">
+<h2>Cadenas de caracteres y secuencias de bytes<a class="headerlink" href="#cadenas-de-caracteres-y-secuencias-de-bytes" title="Permalink to this headline">#</a></h2>
+<p>En Python 3 las cadenas de caracteres (tipo <code class="docutils literal notranslate"><span class="pre">str</span></code>) utilizan Unicode como codificación.
+Ésto hace que, por defecto, no podamos utilizar <code class="docutils literal notranslate"><span class="pre">str</span></code> para escribir en un fichero o para enviar a través de un socket.
+Estas operaciones requieren del uso de la secuencia de bytes (tipo <code class="docutils literal notranslate"><span class="pre">bytes</span></code>).
+Convertir una cadena a una secuencia de bytes requiere que se indique una codificación o <em>encoding</em>.</p>
+<p>Un <em>encoding</em> es una tabla de correspondencia entre un caracter imprimible y su representación en uno o varios bytes.
+Habitualmente los caracteres que ya estaban establecidos en el código ASCII tienen la misma representación en todos los <em>encodings</em>,
+pero los caracteres no presentes en ASCII, como las vocales con las diferentes tildes, el símbolo del € o nuestra querida <em>ñ</em>
+suelen tener diferentes representaciones dependiendo del <em>encoding</em>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">bytes</span><span class="p">(</span><span class="s2">&quot;ñ&quot;</span><span class="p">,</span> <span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>b&#39;\xc3\xb1&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">bytes</span><span class="p">(</span><span class="s2">&quot;ñ&quot;</span><span class="p">,</span> <span class="s2">&quot;latin-1&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>b&#39;\xf1&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">animal</span> <span class="o">=</span> <span class="s2">&quot;ñandú&quot;</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="nb">bytes</span><span class="p">(</span><span class="n">animal</span><span class="p">,</span> <span class="s2">&quot;ascii&quot;</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">UnicodeEncodeError</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;No se ha podido codificar </span><span class="si">{</span><span class="n">animal</span><span class="si">}</span><span class="s2"> usando ASCII:&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">ex</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">animal</span><span class="si">}</span><span class="s2"> tiene una longitud de </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">animal</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">animal_raw</span> <span class="o">=</span> <span class="nb">bytes</span><span class="p">(</span><span class="n">animal</span><span class="p">,</span> <span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">animal_raw</span><span class="si">}</span><span class="s2"> tiene una longitud de </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">animal_raw</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>No se ha podido codificar ñandú usando ASCII:
+&#39;ascii&#39; codec can&#39;t encode character &#39;\xf1&#39; in position 0: ordinal not in range(128)
+ñandú tiene una longitud de 5
+b&#39;\xc3\xb1and\xc3\xba&#39; tiene una longitud de 7
+</pre></div>
+</div>
+</div>
+</div>
+<p>En el primer intento de convertir la palabra “ñandú” usando ASCII obtenemos un error,
+ya que ni la “ñ” ni la “ú” son caracteres contemplados en esta codificación.</p>
+<p>Otro modo de poder convertir entre <code class="docutils literal notranslate"><span class="pre">bytes</span></code> y su representación en <code class="docutils literal notranslate"><span class="pre">str</span></code> y viceversa es a través de los métodos
+<code class="docutils literal notranslate"><span class="pre">decode()</span></code> y <code class="docutils literal notranslate"><span class="pre">encode()</span></code> respectivamente:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;ñandú&quot;</span><span class="o">.</span><span class="n">encode</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>b&#39;\xc3\xb1and\xc3\xba&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sa">b</span><span class="s1">&#39;</span><span class="se">\xc3\xb1</span><span class="s1">and</span><span class="se">\xc3\xba</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;ñandú&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="empaquetado">
+<h2>Empaquetado<a class="headerlink" href="#empaquetado" title="Permalink to this headline">#</a></h2>
+<p>Hemos visto anteriormente cómo poder convertir números enteros de 16 y 32 bits o cadenas a su representación en secuencia de bytes.
+Aunque el tipo <code class="docutils literal notranslate"><span class="pre">bytes</span></code> permite realizar múltiples operaciones, como la concatenación, partición o búsquedas,
+cuando queremos realizar varias conversiones a la vez puede volverse muy engorroso.</p>
+<p>Para ello Python proporciona el módulo <code class="docutils literal notranslate"><span class="pre">struct</span></code> que nos permite realizar transformaciones entre datos y su representación y viceversa.</p>
+<p>En primer lugar, veremos como convertir un conjunto de datos a una secuencia de bytes equivalente utilizando <code class="docutils literal notranslate"><span class="pre">struct.pack()</span></code>.</p>
+<section id="cadena-de-formato">
+<h3>Cadena de formato<a class="headerlink" href="#cadena-de-formato" title="Permalink to this headline">#</a></h3>
+<p>En primer lugar, la función <code class="docutils literal notranslate"><span class="pre">struct.pack()</span></code> debe conocer el tipo de datos, tamaño y ordenamiento
+que queremos aplicar a cada uno de los valores que queramos convertir.
+Para ello, el primer argumento que debe recibir <code class="docutils literal notranslate"><span class="pre">struct.pack()</span></code> es una cadena de formato.
+Dicha cadena debe indicar, en su primera posición, el <em>byte order</em> de acuerdo a los siguientes valores:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&#64;</span></code>: ordenamiento nativo de la máquina realizando alineamiento.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">=</span></code>: ordenamiento nativo.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;</span></code>: <em>little endian</em>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&gt;</span></code>: <em>big endian</em>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">!</span></code>: ordenamiento de la red (igual que el anterior).</p></li>
+</ul>
+<p>A continuación, por cada valor que queramos “empaquetar” añadiremos un caracter más a la cadena de formato.
+Just debajo se puede ver la documentación de <code class="docutils literal notranslate"><span class="pre">struct</span></code> y la explicación de cada valor de la cadena de formato:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">struct</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">struct</span><span class="o">.</span><span class="vm">__doc__</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Functions to convert between Python values and C structs.
+Python bytes objects are used to hold the data representing the C struct
+and also as format strings (explained below) to describe the layout of data
+in the C struct.
+
+The optional first format char indicates byte order, size and alignment:
+  @: native order, size &amp; alignment (default)
+  =: native order, std. size &amp; alignment
+  &lt;: little-endian, std. size &amp; alignment
+  &gt;: big-endian, std. size &amp; alignment
+  !: same as &gt;
+
+The remaining chars indicate types of args and must match exactly;
+these can be preceded by a decimal repeat count:
+  x: pad byte (no data); c:char; b:signed byte; B:unsigned byte;
+  ?: _Bool (requires C99; if not available, char is used instead)
+  h:short; H:unsigned short; i:int; I:unsigned int;
+  l:long; L:unsigned long; f:float; d:double; e:half-float.
+Special cases (preceding decimal count indicates length):
+  s:string (array of char); p: pascal string (with count byte).
+Special cases (only available in native format):
+  n:ssize_t; N:size_t;
+  P:an integer type that is wide enough to hold a pointer.
+Special case (not in native mode unless &#39;long long&#39; in platform C):
+  q:long long; Q:unsigned long long
+Whitespace between formats is ignored.
+
+The variable struct.error is an exception raised on errors.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="ejemplo-de-empaquetado-cabecera-de-una-trama-ethernet">
+<h3>Ejemplo de empaquetado: cabecera de una trama Ethernet<a class="headerlink" href="#ejemplo-de-empaquetado-cabecera-de-una-trama-ethernet" title="Permalink to this headline">#</a></h3>
+<p>Vamos a realizar un ejemplo en el que queremos empaquetar la cabecera de una trama Ethernet.
+La cabecera Ethernet es muy sencilla: únicamente consta de la dirección destino de la trama,
+la dirección origen y un entero corto (<em>short</em>).</p>
+<p>Por ello, nuestra cadena de formato deberá ser <code class="docutils literal notranslate"><span class="pre">&quot;!6s6sh&quot;</span></code>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">!</span></code> para indicar que se utilice el ordenamiento de la red.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">6s</span></code> para indicar que queremos pasarle 6 caracteres (cada una de las direcciones MAC).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">h</span></code> para indicar que le pasamos un número entero que debe ser formateado como un <em>short</em> con signo.</p></li>
+</ul>
+<p>En concreto, queremos crear la cabecera de una trama Ethernet que contenga una petición ARP,
+por lo qué la MAC destino deberá ser “FF:FF:FF:FF:FF:FF” y el tipo 0x0806:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">header</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span>
+    <span class="s2">&quot;!6s6sh&quot;</span><span class="p">,</span>
+    <span class="sa">b</span><span class="s2">&quot;</span><span class="se">\xff</span><span class="s2">&quot;</span> <span class="o">*</span> <span class="mi">6</span><span class="p">,</span>  <span class="c1"># Se concatena consigo misma 6 veces, produciendo la MAC de destino</span>
+    <span class="sa">b</span><span class="s2">&quot;</span><span class="se">\xC4\x85\x08\xED\xD3\x07</span><span class="s2">&quot;</span><span class="p">,</span>  <span class="c1"># una dirección MAC de origen, en este caso C4:85:08:ED:D3:07</span>
+    <span class="mh">0x0806</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">header</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>b&#39;\xff\xff\xff\xff\xff\xff\xc4\x85\x08\xed\xd3\x07\x08\x06&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">header</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[255, 255, 255, 255, 255, 255, 196, 133, 8, 237, 211, 7, 8, 6]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="desempaquetado">
+<h2>Desempaquetado<a class="headerlink" href="#desempaquetado" title="Permalink to this headline">#</a></h2>
+<p>Es el proceso opuesto al realizado en la sección anterior y se hace a través de la función <code class="docutils literal notranslate"><span class="pre">struct.unpack</span></code>.
+En este caso, la funcón acepta 2 argumentos: la cadena de formato y la secuencia de bytes
+de la que queremos desempaquetar los datos.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dst_address</span><span class="p">,</span> <span class="n">orig_address</span><span class="p">,</span> <span class="n">frame_type</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">unpack</span><span class="p">(</span><span class="s2">&quot;!6s6sh&quot;</span><span class="p">,</span> <span class="n">header</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Destination address: </span><span class="si">{</span><span class="n">dst_address</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Origin address: </span><span class="si">{</span><span class="n">orig_address</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Frame type: </span><span class="si">{</span><span class="n">frame_type</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Frame type (hex): </span><span class="si">{</span><span class="nb">hex</span><span class="p">(</span><span class="n">frame_type</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Destination address: b&#39;\xff\xff\xff\xff\xff\xff&#39;
+Origin address: b&#39;\xc4\x85\x08\xed\xd3\x07&#39;
+Frame type: 2054
+Frame type (hex): 0x806
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="udp_chat.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Chat UDP</p>
+        </div>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Departamento ATC<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

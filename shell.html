@@ -1,0 +1,1386 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Shell &#8212; Redes 2</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Introducción a Python" href="intro_python.html" />
+    <link rel="prev" title="Welcome to your Jupyter Book" href="intro.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Redes 2</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Shell
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro_python.html">
+   Introducción a Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="udp_chat.html">
+   Chat UDP
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="serializacion.html">
+   Serialización y deserialización
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/joselsegura/redes2-lab"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/joselsegura/redes2-lab/issues/new?title=Issue%20on%20page%20%2Fshell.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/shell.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Shell
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#gnu-bash">
+     GNU Bash
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#valor-de-retorno">
+     Valor de retorno
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#procesos">
+     Procesos
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#trabajos">
+     Trabajos
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#otras-formas-de-identificar-procesos">
+     Otras formas de identificar procesos
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#entrada-salida-y-salida-de-error">
+     Entrada, salida y salida de error
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#redireccion">
+     Redirección
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#paquetes">
+     Paquetes
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#repositorios-de-paquetes">
+     Repositorios de paquetes
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#catalogo-de-comandos">
+   Catálogo de comandos
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ficheros-y-directorios">
+     Ficheros y directorios
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#subsection-sistema">
+     \subsection{Sistema}
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id10">
+     Procesos
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#usuarios-y-permisos">
+     Usuarios y permisos
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#servicios">
+     Servicios
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Shell</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Shell
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#gnu-bash">
+     GNU Bash
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#valor-de-retorno">
+     Valor de retorno
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#procesos">
+     Procesos
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#trabajos">
+     Trabajos
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#otras-formas-de-identificar-procesos">
+     Otras formas de identificar procesos
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#entrada-salida-y-salida-de-error">
+     Entrada, salida y salida de error
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#redireccion">
+     Redirección
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#paquetes">
+     Paquetes
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#repositorios-de-paquetes">
+     Repositorios de paquetes
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#catalogo-de-comandos">
+   Catálogo de comandos
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ficheros-y-directorios">
+     Ficheros y directorios
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#subsection-sistema">
+     \subsection{Sistema}
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id10">
+     Procesos
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#usuarios-y-permisos">
+     Usuarios y permisos
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#servicios">
+     Servicios
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="shell">
+<h1>Shell<a class="headerlink" href="#shell" title="Permalink to this headline">#</a></h1>
+<p>El interprete de comandos (<em>shell</em>) es probablemente una de las herramientas más
+interesantes del sistema operativo GNU/Linux o POSIX en general. Una shell es
+esencialmente un programa interactivo que permite al usuario ejecutar otros programas.
+Como con cualquier tecnología o herramienta que merezca la pena, es fácil encontrar
+grandes partidarios y detractores. Lo cierto es que la shell es una herramienta extraña,
+oscura y de aspecto absolutamente espartano en un mundo en el que las pantallas
+multi-táctiles o el reconocimiento de voz son algo habitual.</p>
+<p>En general, una interfaz de comandos —a menudo denominada CLI— es mucho menos intuitiva<a class="footnote-reference brackets" href="#id11" id="id1">1</a>
+que una GUI. Sin embargo, cuando la capacidad y el nivel de detalle (y por tanto la
+complejidad) de la herramienta aumenta, la interfaz gráfica resulta mucho más difícil de
+desarrollar, requiere tanto o más entrenamiento y su uso suele ser menos productivo que
+una interfaz de comandos. Ejemplos muy evidentes de esto se pueden encontrar en programas
+de diseño CAD con literalmente miles de opciones repartidas en innumerables menús.
+Aplicaciones con un alto grado de especialización, que a pesar de contar también con
+interfaz gráfica, suelen utilizarse mediante comandos, sobre todo por parte de los
+usuarios expertos. Un ejemplo de esto podría ser el sistema IOS de CISCO.</p>
+<p>Otra buena razón por la que la interfaz de comandos puede resultar más productiva es la
+facilidad para combinar conjuntos de sentencias en forma de macros, lo que además permite
+automatizar tareas repetitivas. Especificar o documentar un procedimiento, incluso de
+complejidad media, usando comandos es mucho más sencillo que dar instrucciones para
+utilizar menús, botones y listas desplegables, algo que a menudo requiere grabar en vídeo
+la secuencia de acciones —los llamados \emph{screencast}.</p>
+<p>[//]: sidebar: FIXME: portada
+«In the Beginning… Was the Command Line»[^2] de Neal STEPHESON, es un ensayo crítico (y a
+ratos humorístico) sobre la influencia que los computadoras, los sistemas operativos y sus
+distintas filosofías tienen sobre la sociedad actual, y especialmente sobre las personas
+con inquietudes técnicas. Uno de los temas trata precisamente sobre las diferencias entre
+interfaz gráfica e interfaz de comandos.</p>
+<p>[^2] http://en.wikipedia.org/wiki/In_the_Beginning…_Was_the_Command_Line</p>
+<p>En todo caso, es importante entender que es un error subestimar o considerar anticuada una
+aplicación simplemente por el hecho de usar una interfaz de comandos. A menudo, las
+aplicaciones bien diseñadas definen un conjunto de acciones en una librería, que pueden
+ser utilizadas indistintamente desde <em>front-ends</em> <a class="footnote-reference brackets" href="#id12" id="id2">3</a>, línea de comandos, o
+incluso desarrollando otras aplicaciones a medida. Un ejemplo de este tipo de aplicaciones
+puede ser VLC. Incluso servicios de Internet tan conocidos como HTTP, SMTP o FTP
+pueden ser utilizados mediante comandos de texto, tal como veremos en capítulos
+posteriores.</p>
+<section id="gnu-bash">
+<h2>GNU Bash<a class="headerlink" href="#gnu-bash" title="Permalink to this headline">#</a></h2>
+<p>Bash es probablemente una de las shells más famosas y potentes disponibles en los sistemas
+GNU. Los sistemas POSIX han conocido una larga variedad de shell’s desde principios de los
+años 70. Aunque bash tiene características muy interesantes (como la «complección»
+automática contextual) primero debemos abordar las cuestiones básicas que todo usuario
+avanzado debería conocer.</p>
+<p>Por otra parte, hay una colección de programas (agrupados con el nombre de
+<code class="docutils literal notranslate"><span class="pre">gnu</span> <span class="pre">coreutils</span></code>) que realizan acciones relativamente sencillas, pero que están
+diseñados de modo que se puedan combinar para realizar operaciones de complejidad nada
+trivial de forma bastante simple, una vez que se entiende un concepto clave: la
+redirección de la entrada/salida.</p>
+<p>Estas y otras aplicaciones junto con el lenguaje de programación «C-Shell» proporcionan
+una herramienta con infinitas posibilidades para todo tipo de tareas, que pueden ir desde
+la administración de sistemas hasta las más sofisticadas técnicas de pen-testing, pasando
+por el desarrollo de aplicaciones de todo tipo.</p>
+</section>
+<section id="valor-de-retorno">
+<h2>Valor de retorno<a class="headerlink" href="#valor-de-retorno" title="Permalink to this headline">#</a></h2>
+<p>En los sistemas POSIX se asume que cuando un programa acaba devuelve un valor entero.
+Este valor es recogido por su proceso padre (que puede ser una shell) y ofrece información
+muy útil para saber cómo ha ido su ejecución.</p>
+<p>Un programa que realiza su función satisfactoriamente debería devolver siempre un valor 0.
+Puede devolver un valor distinto (1, 2, etc) para indicar que hubo un problema concreto.</p>
+<p>Éste es el motivo por el que el estándar del lenguaje C dice que toda función
+<code class="docutils literal notranslate"><span class="pre">main</span></code> ha de devolver un entero y que por defecto su valor de retorno debería ser
+cero. Según eso, el «hola mundo» correcto en C es el siguiente:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">argv</span><span class="p">[])</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">puts</span><span class="p">(</span><span class="s">&quot;hello world</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Por ejemplo, el siguiente listado muestra la ejecución del comando <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">/</span></code>, que lista
+el contenido del directorio raíz:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>david@amy:~$<span class="w"> </span>ls<span class="w"> </span>/
+bin<span class="w">   </span>etc<span class="w">         </span>lib<span class="w">         </span>mnt<span class="w">   </span>root<span class="w">  </span>selinux<span class="w">  </span>tmp<span class="w">  </span>vmlinuz
+boot<span class="w">  </span>home<span class="w">        </span>lost+found<span class="w">  </span>opt<span class="w">   </span>run<span class="w">   </span>srv<span class="w">      </span>usr
+dev<span class="w">   </span>initrd.img<span class="w">  </span>media<span class="w">       </span>proc<span class="w">  </span>sbin<span class="w">  </span>sys<span class="w">      </span>var
+</pre></div>
+</div>
+<p>Lo que ha ocurrido aquí es que la shell bash ha creado un proceso en el cuál ha ejecutado
+el programa <code class="docutils literal notranslate"><span class="pre">ls</span></code> con el argumento <code class="docutils literal notranslate"><span class="pre">/</span></code>, después esperó a que el programa terminase y
+recogió su valor de retorno. Ese valor lo almacenó en una «variable de entorno» llamada
+<code class="docutils literal notranslate"><span class="pre">?</span></code> <a class="footnote-reference brackets" href="#id13" id="id3">4</a>. Se puede obtener el valor de una variable de entorno utilizando el comando
+<code class="docutils literal notranslate"><span class="pre">echo</span></code> colocando el símbolo «$» delante del nombre de la variable, tal que:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>david@amy:~$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$?</span>
+<span class="m">0</span>
+</pre></div>
+</div>
+<div class="admonition-comando admonition">
+<p class="admonition-title">Comando</p>
+<p><strong>echo</strong> escribe la cadena de texto que le se indique como argumento,
+expandiendo las variables que incluya (identificadores precedidos del
+símbolo <code class="docutils literal notranslate"><span class="pre">$</span></code>.</p>
+</div>
+<p>Pero esto solo es aplicable al comando inmediatamente anterior. Una ejecución incorrecta
+retornaría un código de error, como se puede comprobar en el siguiente ejemplo:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>david@amy:~$<span class="w"> </span>ls<span class="w"> </span>noexiste
+ls:<span class="w"> </span>cannot<span class="w"> </span>access<span class="w"> </span>noexiste:<span class="w"> </span>No<span class="w"> </span>such<span class="w"> </span>file<span class="w"> </span>or<span class="w"> </span>directory
+david@amy:~$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$?</span>
+<span class="m">2</span>
+</pre></div>
+</div>
+<p>La documentación de cada programa debe indicar lo que significa cada uno de los posibles
+valores de retorno. Si consultamos la página de manual de <code class="docutils literal notranslate"><span class="pre">ls</span></code> (<code class="docutils literal notranslate"><span class="pre">man</span> <span class="pre">ls</span></code>)
+veremos que:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>  Exit status:
+      0      if OK,
+      1      if minor problems (e.g., cannot access subdirectory),
+      2      if serious trouble (e.g., cannot access command-line argument).
+</pre></div>
+</div>
+<p>Las <em>señales</em> también se utilizan para indicar que un programa terminó como consecuencia
+de una situación anómala y el SO (u otro programa) lo terminó («lo mató»). Por ejemplo, si
+el usuario pulsa Control-C mientras un programa se ejecuta en una shell, esta le enviará
+la señal SIGINT (-2) y ese será el valor de retorno del programa.</p>
+</section>
+<section id="procesos">
+<h2>Procesos<a class="headerlink" href="#procesos" title="Permalink to this headline">#</a></h2>
+<p>[//]: FIXME \label{sec:procesos}</p>
+<p>El «proceso» es una abstracción del SO para ejecutar un programa conforme a
+determinados parámetros de seguridad, prioridad y privilegios de acceso a recursos.
+Cualquier proceso puede crear procesos hijos, que heredan algunas de sus propiedades tales
+como privilegios y ficheros abiertos. Para listar procesos se utiliza
+<code class="docutils literal notranslate"><span class="pre">ps</span></code>, que es un abreviatura de <code class="docutils literal notranslate"><span class="pre">process</span> <span class="pre">status</span></code>. Por ejemplo, un usuario
+puede ver los procesos asociados al terminal al que está conectado con el comando
+<code class="docutils literal notranslate"><span class="pre">ps</span> <span class="pre">T</span></code>.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>david@amy:~$<span class="w"> </span>ps<span class="w"> </span>T
+<span class="w">  </span>PID<span class="w"> </span>TTY<span class="w">          </span>TIME<span class="w"> </span>CMD
+<span class="w"> </span><span class="m">4970</span><span class="w"> </span>pts/2<span class="w">    </span><span class="m">00</span>:00:00<span class="w"> </span>bash
+<span class="w"> </span><span class="m">5107</span><span class="w"> </span>pts/2<span class="w">    </span><span class="m">00</span>:00:01<span class="w"> </span>emacs
+<span class="w"> </span><span class="m">5164</span><span class="w"> </span>pts/2<span class="w">    </span><span class="m">00</span>:00:00<span class="w"> </span>bash
+<span class="w"> </span><span class="m">6021</span><span class="w"> </span>pts/2<span class="w">    </span><span class="m">00</span>:00:01<span class="w"> </span>firefox-bin
+<span class="w"> </span><span class="m">6204</span><span class="w"> </span>pts/2<span class="w">    </span><span class="m">00</span>:00:00<span class="w"> </span>ps
+</pre></div>
+</div>
+<p>La primera columna indica el PID de cada proceso. La segunda el TTY (el terminal
+al que están asociados). La tercera (TIME) es el tiempo de procesador otorgado al
+proceso hasta el momento. Y por último (CMD), el programa que se está ejecutando.</p>
+<p>El programa <code class="docutils literal notranslate"><span class="pre">ps</span></code> dispone de una amplia variedad de opciones[⁵] para filtrar qué procesos
+se desean listar, qué atributos o en qué formato. Por ejemplo, el siguiente comando
+muestra las relaciones de «genealogía»:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>david@amy:~$<span class="w"> </span>ps<span class="w"> </span>f
+<span class="w">  </span>PID<span class="w"> </span>TTY<span class="w">      </span>STAT<span class="w">   </span>TIME<span class="w"> </span>COMMAND
+<span class="w"> </span><span class="m">4970</span><span class="w"> </span>pts/2<span class="w">    </span>Ss<span class="w">     </span><span class="m">0</span>:00<span class="w"> </span>bash
+<span class="w"> </span><span class="m">5107</span><span class="w"> </span>pts/2<span class="w">    </span>T<span class="w">      </span><span class="m">0</span>:01<span class="w">  </span><span class="se">\_</span><span class="w"> </span>emacs
+<span class="w"> </span><span class="m">5164</span><span class="w"> </span>pts/2<span class="w">    </span>S<span class="w">      </span><span class="m">0</span>:00<span class="w">  </span><span class="se">\_</span><span class="w"> </span>bash
+<span class="w"> </span><span class="m">5300</span><span class="w"> </span>pts/2<span class="w">    </span>Sl<span class="w">     </span><span class="m">0</span>:01<span class="w">      </span><span class="se">\_</span><span class="w"> </span>/usr/lib/iceweasel/firefox-bin
+<span class="w"> </span><span class="m">6283</span><span class="w"> </span>pts/2<span class="w">    </span>R+<span class="w">     </span><span class="m">0</span>:00<span class="w">      </span><span class="se">\_</span><span class="w"> </span>ps<span class="w"> </span>f
+<span class="w"> </span><span class="m">4592</span><span class="w"> </span>pts/0<span class="w">    </span>Ss<span class="w">     </span><span class="m">0</span>:00<span class="w"> </span>bash
+<span class="w"> </span><span class="m">4755</span><span class="w"> </span>pts/0<span class="w">    </span>S+<span class="w">     </span><span class="m">0</span>:28<span class="w">  </span><span class="se">\_</span><span class="w"> </span>emacs<span class="w"> </span>shell.tex
+</pre></div>
+</div>
+<p>En esta ocasión aparece una columna adicional (STAT) que indica el estado del
+proceso. La primera letra: R (<em>running</em>), T (<em>stopped</em>) y S (<em>sleep</em>). La
+segunda: s (<em>session leader</em>), l (<em>multi-hilo</em>), + (<em>en primer plano</em>).</p>
+<p>Por ejemplo, si un proceso no responde a su interfaz gráfica (si la tiene) y el usuario no
+tiene control de otro modo, la operación más habitual es «matarlo» (con el comando
+<code class="docutils literal notranslate"><span class="pre">kill</span></code>). A pesar de su nombre, el comando <code class="docutils literal notranslate"><span class="pre">kill</span></code> sirve para enviar una señal a un
+proceso. La señal por defecto es SIGTERM, pero se puede enviar otra si se especifica como
+argumento. Puede ver la lista de todas las señales con <code class="docutils literal notranslate"><span class="pre">kill</span> <span class="pre">-l</span></code>. Por ejemplo, el
+siguiente comando envía la señal SIGKILL (9) al proceso con PID 5200:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>david@amy:~$<span class="w"> </span><span class="nb">kill</span><span class="w"> </span>-9<span class="w"> </span><span class="m">5200</span>
+<span class="o">[</span><span class="m">1</span><span class="o">]</span>+<span class="w">  </span>Terminado<span class="w"> </span><span class="o">(</span>killed<span class="o">)</span><span class="w">      </span>gedit
+</pre></div>
+</div>
+<p>Algunas señales pueden ser ignoradas o bien capturadas por el programa para realizar
+acciones especificadas por el programador<a class="footnote-reference brackets" href="#id14" id="id4">6</a>  como es el caso de SIGTERM, que podríamos
+considerarla una solicitud amistosa de terminación. Otras señales (como SIGKILL) no pueden
+ser ignoradas para garantizar que el SO tiene el control sobre cualquier proceso.</p>
+</section>
+<section id="trabajos">
+<h2>Trabajos<a class="headerlink" href="#trabajos" title="Permalink to this headline">#</a></h2>
+<p>La shell crea un nuevo proceso hijo<a class="footnote-reference brackets" href="#id15" id="id5">7</a> para ejecutar cada comando que se le pide. El
+comportamiento normal de la shell es esperar a que ese proceso termine antes de permitir
+la introducción de un nuevo comando. Esto es fácil de comprobar con el programa <code class="docutils literal notranslate"><span class="pre">sleep</span></code>.
+Es decir, por defecto, la ejecución de un comando es bloqueante, y a esto se llama
+ejecución en «primer plano» o «foreground».</p>
+<p>Sin embargo, se puede alterar este comportamiento, es decir, la shell puede poner en
+ejecución el programa que le pedimos en otro proceso e inmediatamente quedar disponible
+para introducir una nueva orden. A eso se le llama ejecución en «segundo plano» o
+«background». Para conseguir que la shell ejecute un comando en segundo plano basta con
+añadir el símbolo «ampersand» (’<code class="docutils literal notranslate"><span class="pre">&amp;</span></code>’) al final de la línea de comandos:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>david@amy:~$<span class="w"> </span>gedit<span class="w"> </span><span class="p">&amp;</span>
+<span class="o">[</span><span class="m">1</span><span class="o">]</span><span class="w"> </span><span class="m">19777</span>
+david@amy:~$
+</pre></div>
+</div>
+<p>Como se aprecia en el listado anterior, la shell está a la espera de un nuevo comando si
+que el anterior haya terminado. El primer número [entre corchetes] identifica al «trabajo»
+en segundo plano (proceso hijo de la shell). El segundo número es el PID de dicho
+proceso, que lo identifica dentro del SO. Una shell puede ejecutar múltiples
+trabajos en segundo plano. La forma más sencilla de ver cuáles son es el comando
+<code class="docutils literal notranslate"><span class="pre">jobs</span></code>:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>david@amy:~$<span class="w"> </span>firefox<span class="w"> </span><span class="p">&amp;</span>
+<span class="o">[</span><span class="m">2</span><span class="o">]</span><span class="w"> </span><span class="m">20847</span>
+david@amy:~$<span class="w"> </span><span class="nb">jobs</span>
+<span class="o">[</span><span class="m">1</span><span class="o">]</span>-<span class="w">  </span>Running<span class="w">                 </span>gedit<span class="w"> </span><span class="p">&amp;</span>
+<span class="o">[</span><span class="m">2</span><span class="o">]</span>+<span class="w">  </span>Running<span class="w">                 </span>firefox<span class="w"> </span><span class="p">&amp;</span>
+</pre></div>
+</div>
+<p>Si el usuario ejecuta el comando <code class="docutils literal notranslate"><span class="pre">fg</span></code> (<em>foreground</em>), el último comando
+ejecutado (marcado con el símbolo ‘<code class="docutils literal notranslate"><span class="pre">+</span></code>’) pasará a primer plano, bloqueando
+la shell. Opcionalmente admite como argumento el identificador del trabajo que se desea
+traer a primer plano.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>david@amy:~$<span class="w"> </span><span class="nb">fg</span><span class="w"> </span>%1
+gedit
+</pre></div>
+</div>
+<p>Si la shell se encuentra bloqueada en espera de la finalización de un comando en primer
+plano, el usuario puede pararlo pulsando Control-Z (la shell lo representa con
+<code class="docutils literal notranslate"><span class="pre">^Z</span></code>).</p>
+<p>Partiendo de la situación anterior:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>david@amy:~$<span class="w"> </span><span class="nb">fg</span><span class="w"> </span>%1
+^Z
+<span class="o">[</span><span class="m">1</span><span class="o">]</span>+<span class="w">  </span>Stopped<span class="w">                 </span>gedit
+david@amy:~$<span class="w"> </span><span class="nb">jobs</span>
+<span class="o">[</span><span class="m">1</span><span class="o">]</span>+<span class="w">  </span>Stopped<span class="w">                 </span>gedit
+<span class="o">[</span><span class="m">2</span><span class="o">]</span>-<span class="w">  </span>Running<span class="w">                 </span>firefox<span class="w"> </span><span class="p">&amp;</span>
+david@amy:~$
+</pre></div>
+</div>
+<p>Un trabajo <strong>parado</strong> puede volver a estado de ejecución en primer plano si se introduce
+el comando <code class="docutils literal notranslate"><span class="pre">fg</span></code> o pasar a segundo plano si se introduce <code class="docutils literal notranslate"><span class="pre">bg</span></code> (por <em>background</em>).</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>david@amy:~$<span class="w"> </span><span class="nb">jobs</span>
+<span class="o">[</span><span class="m">1</span><span class="o">]</span>+<span class="w">  </span>Stopped<span class="w">                 </span>gedit
+<span class="o">[</span><span class="m">2</span><span class="o">]</span>-<span class="w">  </span>Running<span class="w">                 </span>firefox<span class="w"> </span><span class="p">&amp;</span>
+david@amy:~$<span class="w"> </span><span class="nb">bg</span>
+<span class="o">[</span><span class="m">1</span><span class="o">]</span>+<span class="w"> </span>gedit<span class="w"> </span><span class="p">&amp;</span>
+david@amy:~$
+</pre></div>
+</div>
+<p>Los identificadores de trabajo también se puede usar con el comando <code class="docutils literal notranslate"><span class="pre">kill</span></code> en lugar
+de su PID.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>david@amy:~$<span class="w"> </span><span class="nb">kill</span><span class="w"> </span>-SIGKILL<span class="w"> </span>%2
+<span class="o">[</span><span class="m">4</span><span class="o">]</span>+<span class="w">  </span>Killed<span class="w">                  </span>firefox
+</pre></div>
+</div>
+</section>
+<section id="otras-formas-de-identificar-procesos">
+<h2>Otras formas de identificar procesos<a class="headerlink" href="#otras-formas-de-identificar-procesos" title="Permalink to this headline">#</a></h2>
+<p>A veces buscar en la lista de procesos (<code class="docutils literal notranslate"><span class="pre">ps</span></code>) no es la forma más cómoda de localizar
+un proceso. Puede ser más sencillo localizarlo por su nombre (con <code class="docutils literal notranslate"><span class="pre">pidof</span></code> o
+<code class="docutils literal notranslate"><span class="pre">pgrep</span></code>):</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>david@amy:~$<span class="w"> </span>pidof<span class="w"> </span>firefox
+<span class="m">105894</span>
+</pre></div>
+</div>
+<p>O bien lo podemos identificarlo por un fichero o dispositivo que el proceso tenga abierto, o
+un puerto al que esté vinculado (con <code class="docutils literal notranslate"><span class="pre">fuser</span></code>):</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>david@amy:~$<span class="w"> </span>fuser<span class="w"> </span><span class="m">17500</span>/tcp
+<span class="m">17500</span>/tcp:<span class="w">           </span><span class="m">10589</span>
+</pre></div>
+</div>
+<p>También se puede enviar una señal (por defecto con la intención de matarlo) con ambos
+criterios (nombre y puerto):</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>david@amy:~$<span class="w"> </span>pkill<span class="w"> </span>firefox
+david@amy:~$<span class="w"> </span>fuser<span class="w"> </span>--kill<span class="w"> </span><span class="m">17500</span>/tcp
+<span class="m">17500</span>/tcp:<span class="w">           </span><span class="m">10589</span>
+</pre></div>
+</div>
+<p>Por supuesto, estos comandos tienen opciones que les permiten buscar procesos por otros
+criterios (como el propietario o el órden de creación). Siempre hay una cantidad increible
+de alternativas para hacer cualquier cosa, que además se pueden combinar. Es lo mejor que
+tiene la shell, aunque de entrada no suene como algo bueno.</p>
+</section>
+<section id="entrada-salida-y-salida-de-error">
+<h2>Entrada, salida y salida de error<a class="headerlink" href="#entrada-salida-y-salida-de-error" title="Permalink to this headline">#</a></h2>
+<p>En los sistemas POSIX los programas interaccionan con el SO únicamente por medio de
+ficheros —o de abstracciones que ofrecen el mismo interfaz de uso. Es decir, la lectura
+o escritura desde y hacia cualquier disco, pantalla, teclado, tarjeta de sonido o
+cualquier otro periférico se realiza en términos de primitivas <code class="docutils literal notranslate"><span class="pre">read</span></code>/<code class="docutils literal notranslate"><span class="pre">write</span></code> de forma
+similar a un fichero.</p>
+<p>Todo proceso —programa en ejecución— dispone desde su inicio de tres descriptores de
+fichero abiertos:</p>
+<ul class="simple">
+<li><p>la entrada estándar (o «stdin») con el descriptor 0,</p></li>
+<li><p>la salida estándar (o «stdout») con el descriptor 1 y</p></li>
+<li><p>la salida de error estándar (o «stderr») con el descriptor 2.</p></li>
+</ul>
+<p>Eso significa que cuando el programa trata de escribir algo (con la función
+<code class="docutils literal notranslate"><span class="pre">puts()</span></code> (en C) o <code class="docutils literal notranslate"><span class="pre">System.out.println()</span></code> (en Java) lo hace sobre su
+salida estándar. Del mismo modo, cuando el programa intenta leer o genera un mensaje de
+error, esas operaciones se realizan respectivamente sobre su entrada y salida de error
+estándar.</p>
+<p>Normalmente, la entrada estándar está ligada al teclado, mientras que la salida y salida
+de error estándar están ligadas a la pantalla. Para ser más precisos, están ligados al
+«terminal que efectivamente, corresponde al teclado y la pantalla. Esta
+asociación entre el terminal y los descriptores de fichero estándar la decide precisamente
+la shell y, mediante las órdenes correspondientes, el usuario puede alterar esa asociación
+para que la entrada y la salida de un proceso queden ligadas con otra cosa, tal
+como un fichero en disco o incluso otro proceso…</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>shell, consola y terminal</strong>: A menudo se confunden los términos «shell», «terminal» y «consola». Como hemos visto, la shell es un programa que interpreta y ejecuta comandos. El terminal es un
+dispositivo físico que permite introducir y representar texto, o un programa que lo emula. Una consola es precisamente un terminal físico.</p>
+</div>
+<p>La anterior ejecución del comando <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">/</span></code> (el listado de ficheros del directorio raíz)
+apareció en pantalla debido a que su salida estándar corresponde por defecto al terminal.</p>
+</section>
+<section id="redireccion">
+<h2>Redirección<a class="headerlink" href="#redireccion" title="Permalink to this headline">#</a></h2>
+<p>Es posible alterar la salida estándar de cualquier programa para que utilice un fichero  simplemente con el símbolo ‘<code class="docutils literal notranslate"><span class="pre">&gt;</span></code>’ (mayor-que) seguido del nombre del fichero:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>david@amy:~$<span class="w"> </span>ls<span class="w"> </span>-l<span class="w"> </span>/<span class="w"> </span>&gt;<span class="w"> </span>/tmp/root-dir
+david@amy:~$
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">/tmp</span></code></strong> El directorio <code class="docutils literal notranslate"><span class="pre">/tmp</span></code> se utiliza por las aplicaciones
+para ficheros <em>temporales</em> en los que almacenar logs o datos de sesión. El
+contenido de este directorio se elimina al apagar/reiniciar el computador.</p>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>La «redirección de salida» consigue que <strong>cualquier</strong> programa pueda
+almacenar su resultado en un fichero sin que el creador de ese programa tenga que
+hacer absolutamente nada para soportarlo. Todo gracias a la shell.</p>
+</div>
+<p>Dos cosas han cambiado respecto a la ejecución anterior del comando <code class="docutils literal notranslate"><span class="pre">ls</span></code>: la
+primera es que se ha especificado la opción <code class="docutils literal notranslate"><span class="pre">-l</span></code> que hace que se muestren permisos,
+propietario y fecha de modificación de cada fichero o directorio. La segunda es que esta
+vez <em>nada</em> ha aparecido en el terminal. La lista de los nombres de fichero ha sido
+almacenada en el fichero <code class="docutils literal notranslate"><span class="pre">/tmp/root-dir</span></code>.</p>
+<p>Puede ver el contenido de dicho fichero utilizando el programa <code class="docutils literal notranslate"><span class="pre">cat</span></code>:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>david@amy:~$<span class="w"> </span>cat<span class="w"> </span>/tmp/root-files
+total<span class="w"> </span><span class="m">98</span>
+drwxr-xr-x<span class="w">   </span><span class="m">2</span><span class="w"> </span>root<span class="w"> </span>root<span class="w">  </span><span class="m">4096</span><span class="w"> </span>Aug<span class="w"> </span><span class="m">15</span><span class="w"> </span><span class="m">00</span>:34<span class="w"> </span>bin
+drwxr-xr-x<span class="w">   </span><span class="m">4</span><span class="w"> </span>root<span class="w"> </span>root<span class="w">  </span><span class="m">2048</span><span class="w"> </span>Aug<span class="w"> </span><span class="m">17</span><span class="w"> </span><span class="m">22</span>:22<span class="w"> </span>boot
+drwxr-xr-x<span class="w">  </span><span class="m">17</span><span class="w"> </span>root<span class="w"> </span>root<span class="w">  </span><span class="m">3560</span><span class="w"> </span>Aug<span class="w"> </span><span class="m">26</span><span class="w"> </span><span class="m">10</span>:20<span class="w"> </span>dev
+drwxr-xr-x<span class="w"> </span><span class="m">193</span><span class="w"> </span>root<span class="w"> </span>root<span class="w"> </span><span class="m">12288</span><span class="w"> </span>Aug<span class="w"> </span><span class="m">25</span><span class="w"> </span><span class="m">18</span>:29<span class="w"> </span>etc
+<span class="o">[</span>...<span class="o">]</span>
+</pre></div>
+</div>
+<div class="admonition-comando admonition">
+<p class="admonition-title">Comando</p>
+<p><code class="docutils literal notranslate"><span class="pre">cat</span></code> lee el contenido de los ficheros que se le indiquen como
+argumentos y lo escribe en su salida estándar. Si no se le dan argumentos, leerá de su
+entrada estándar.</p>
+</div>
+<p>La redirección simple ‘<code class="docutils literal notranslate"><span class="pre">&gt;</span></code>’ crea siempre un fichero nuevo. Si existe un fichero con
+el mismo nombre, su contenido se pierde y es substituido por los nuevos datos. Pero existe
+otro tipo de redirección de salida que añade el contenido <em>al final</em> del fichero
+especificado. Se indica con doble mayor-que ‘<code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code>’:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>david@amy:~$<span class="w"> </span>date<span class="w"> </span>&gt;<span class="w"> </span>/tmp/now
+david@amy:~$<span class="w"> </span>date<span class="w"> </span>&gt;&gt;<span class="w"> </span>/tmp/now
+david@amy:~$<span class="w"> </span>cat<span class="w"> </span>/tmp/now
+Mon<span class="w"> </span>Feb<span class="w">  </span><span class="m">8</span><span class="w"> </span><span class="m">15</span>:40:59<span class="w"> </span>CET<span class="w"> </span><span class="m">2021</span>
+Mon<span class="w"> </span>Feb<span class="w">  </span><span class="m">8</span><span class="w"> </span><span class="m">15</span>:41:02<span class="w"> </span>CET<span class="w"> </span><span class="m">2021</span>
+</pre></div>
+</div>
+<div class="admonition-comando admonition">
+<p class="admonition-title">Comando</p>
+<p><code class="docutils literal notranslate"><span class="pre">date</span></code> escribe en su salida estándar la fecha y hora actual con la zona
+horaria configurada.</p>
+</div>
+<p>Volviendo al fichero <code class="docutils literal notranslate"><span class="pre">root-files</span></code> veamos cómo podríamos filtrar sus líneas de
+modo que aparezcan únicamente las que contengan la cadena «Jun» (en principio los ficheros
+modificados en junio). Para ello se puede utilizar el comando <code class="docutils literal notranslate"><span class="pre">grep</span></code> del siguiente
+modo:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>david@amy:~$<span class="w"> </span>grep<span class="w"> </span>Jun<span class="w"> </span>/tmp/root-files
+drwxr-xr-x<span class="w">   </span><span class="m">6</span><span class="w"> </span>root<span class="w"> </span>root<span class="w">  </span><span class="m">4096</span><span class="w"> </span>Jun<span class="w">  </span><span class="m">6</span><span class="w"> </span><span class="m">17</span>:58<span class="w"> </span>home
+lrwxrwxrwx<span class="w">   </span><span class="m">1</span><span class="w"> </span>root<span class="w"> </span>root<span class="w">    </span><span class="m">32</span><span class="w"> </span>Jun<span class="w"> </span><span class="m">27</span><span class="w"> </span><span class="m">13</span>:09<span class="w"> </span>initrd.img
+lrwxrwxrwx<span class="w">   </span><span class="m">1</span><span class="w"> </span>root<span class="w"> </span>root<span class="w">    </span><span class="m">28</span><span class="w"> </span>Jun<span class="w"> </span><span class="m">27</span><span class="w"> </span><span class="m">13</span>:09<span class="w"> </span>vmlinuz
+</pre></div>
+</div>
+<div class="admonition-comando admonition">
+<p class="admonition-title">Comando</p>
+<p><code class="docutils literal notranslate"><span class="pre">grep</span></code> escribe en su salida estándar aquellas líneas que coincidan con
+un criterio especificado. Lee de los ficheros indicados como argumentos (o de su entrada
+estándar en su defecto).</p>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">grep</span></code>, como muchos otros programas, utiliza su entrada estándar como fuente de
+datos si no se le dan argumentos. Por tanto, utilizando la «redirección de entrada» (con
+el carácter ‘<code class="docutils literal notranslate"><span class="pre">&lt;</span></code>’) se puede lograr lo mismo ejecutando:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>david@amy:~$<span class="w"> </span>grep<span class="w"> </span>Jun<span class="w"> </span>&lt;<span class="w"> </span>/tmp/root-files
+drwxr-xr-x<span class="w">   </span><span class="m">6</span><span class="w"> </span>root<span class="w"> </span>root<span class="w">  </span><span class="m">4096</span><span class="w"> </span>Jun<span class="w">  </span><span class="m">6</span><span class="w"> </span><span class="m">17</span>:58<span class="w"> </span>home
+lrwxrwxrwx<span class="w">   </span><span class="m">1</span><span class="w"> </span>root<span class="w"> </span>root<span class="w">    </span><span class="m">32</span><span class="w"> </span>Jun<span class="w"> </span><span class="m">27</span><span class="w"> </span><span class="m">13</span>:09<span class="w"> </span>initrd.img
+lrwxrwxrwx<span class="w">   </span><span class="m">1</span><span class="w"> </span>root<span class="w"> </span>root<span class="w">    </span><span class="m">28</span><span class="w"> </span>Jun<span class="w"> </span><span class="m">27</span><span class="w"> </span><span class="m">13</span>:09<span class="w"> </span>vmlinuz
+</pre></div>
+</div>
+<p>La diferencia es que en este caso el comando <code class="docutils literal notranslate"><span class="pre">grep</span></code> no tiene constancia de estar
+leyendo realmente de un fichero en disco. Resulta irrelevante.</p>
+<p>Si se desea almacenar el resultado obtenido en otro fichero basta con utilizar de nuevo la
+redirección de salida. Es posible combinar redirecciones de entrada y salida en el mismo
+comando:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>david@amy:~$<span class="w"> </span>grep<span class="w"> </span>Jun<span class="w"> </span>&lt;<span class="w"> </span>/tmp/root-files<span class="w"> </span>&gt;<span class="w"> </span>/tmp/Jun-files
+</pre></div>
+</div>
+<p>El contenido de ese fichero está ordenado por los nombres de los ficheros (la última
+columna). Veamos cómo reordenar esa lista en función del tamaño (quinta columna)
+utilizando el comando <code class="docutils literal notranslate"><span class="pre">sort</span></code>:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>david@amy:~$<span class="w"> </span>sort<span class="w"> </span>--numeric-sort<span class="w"> </span>--key<span class="o">=</span><span class="m">5</span><span class="w"> </span>/tmp/Jun-files
+lrwxrwxrwx<span class="w">   </span><span class="m">1</span><span class="w"> </span>root<span class="w"> </span>root<span class="w">    </span><span class="m">28</span><span class="w"> </span>Jun<span class="w"> </span><span class="m">27</span><span class="w"> </span><span class="m">13</span>:09<span class="w"> </span>vmlinuz
+lrwxrwxrwx<span class="w">   </span><span class="m">1</span><span class="w"> </span>root<span class="w"> </span>root<span class="w">    </span><span class="m">32</span><span class="w"> </span>Jun<span class="w"> </span><span class="m">27</span><span class="w"> </span><span class="m">13</span>:09<span class="w"> </span>initrd.img
+drwxr-xr-x<span class="w">   </span><span class="m">6</span><span class="w"> </span>root<span class="w"> </span>root<span class="w">  </span><span class="m">4096</span><span class="w"> </span>Jun<span class="w">  </span><span class="m">6</span><span class="w"> </span><span class="m">17</span>:58<span class="w"> </span>home
+</pre></div>
+</div>
+<div class="admonition-comando admonition">
+<p class="admonition-title">Comando</p>
+<p><code class="docutils literal notranslate"><span class="pre">sort</span></code> ordena las líneas de los ficheros que se le indiquen como
+argumento (o de su entrada estándar) y las escribe en su salida estándar. Se pueden
+especificar diferentes criterios de ordenación mediante opciones.</p>
+</div>
+<p>Para lograr este resultado se han creado dos ficheros temporales <code class="docutils literal notranslate"><span class="pre">root-files</span></code> y
+<code class="docutils literal notranslate"><span class="pre">Jun-files</span></code>. Si lo único que interesa es el resultado final, hay una forma más
+sencilla y rápida de conseguir lo mismo sin necesidad de crear ficheros intermedios: las
+tuberías.</p>
+<p>La tubería (<em>pipe</em>) conecta la salida estándar de un proceso directamente con la
+entrada de otro, de modo que todo lo que el primer programa escriba podrá ser leído
+inmediatamente por el segundo. Para indicar a la shell que cree una tubería se utiliza el
+carácter ‘<code class="docutils literal notranslate"><span class="pre">|</span></code>’ (AltGr-1 en el teclado español). El comando para obtener
+directamente los ficheros del directorio raíz modificados en junio ordenados por tamaño
+sería:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>david@amy:~$<span class="w"> </span>ls<span class="w"> </span>-l<span class="w"> </span>/<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>Jun<span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span>-n<span class="w"> </span>-k5
+lrwxrwxrwx<span class="w">   </span><span class="m">1</span><span class="w"> </span>root<span class="w"> </span>root<span class="w">    </span><span class="m">28</span><span class="w"> </span>Jun<span class="w"> </span><span class="m">27</span><span class="w"> </span><span class="m">13</span>:09<span class="w"> </span>vmlinuz
+lrwxrwxrwx<span class="w">   </span><span class="m">1</span><span class="w"> </span>root<span class="w"> </span>root<span class="w">    </span><span class="m">32</span><span class="w"> </span>Jun<span class="w"> </span><span class="m">27</span><span class="w"> </span><span class="m">13</span>:09<span class="w"> </span>initrd.img
+drwxr-xr-x<span class="w">   </span><span class="m">6</span><span class="w"> </span>root<span class="w"> </span>root<span class="w">  </span><span class="m">4096</span><span class="w"> </span>Jun<span class="w">  </span><span class="m">6</span><span class="w"> </span><span class="m">17</span>:58<span class="w"> </span>home
+</pre></div>
+</div>
+<p>Nótese que <code class="docutils literal notranslate"><span class="pre">grep</span></code> y <code class="docutils literal notranslate"><span class="pre">sort</span></code> no tienen nombres de fichero en sus argumentos,
+y por tanto leen de sus respectivas entradas estándar.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>La mayoría de los programas CLI disponen de opciones que modifican su
+comportamiento aportando gran versatilidad. Una misma opción normalmente presenta dos
+formas equivalentes: un guión y una letra (<code class="docutils literal notranslate"><span class="pre">-h</span></code>) o dos guiones y una palabra
+(<code class="docutils literal notranslate"><span class="pre">--help</span></code>).</p>
+<p>El formato largo es el adecuado cuando se pretende que el comando sea lo más auto-explicativo posible (como en este documento) o cuando se escribe un <em>script</em> (un programa en un fichero de texto que será interpretado por la shell). El formato corto es más conveniente cuando el
+usuario escribe comandos directamente en el terminal, por el ahorro de tiempo
+obviamente.</p>
+</div>
+<p>Por supuesto es posible combinar la tubería y la redirección en el mismo comando. En este
+caso el resultado del comando anterior se almacena en un fichero, del mismo modo que se
+hacía con los comandos simples:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>david@amy:~$<span class="w"> </span>ls<span class="w"> </span>-l<span class="w"> </span>/<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>Jun<span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span>-n<span class="w"> </span>-k5<span class="w"> </span>&gt;<span class="w"> </span>/tmp/root-jun-files-sorted-by-size
+</pre></div>
+</div>
+<p>Es fácil apreciar el gran potencial de este sencillo mecanismo. Cualquier sistema
+POSIX (en especial GNU) dispone de una gran cantidad de pequeños programas
+especializados —como los que se han introducido aquí— que pueden combinarse mediante
+redirección para cubrir una gran variedad de necesidades puntuales de una forma rápida y
+eficiente <a class="footnote-reference brackets" href="#id16" id="id6">8</a>.</p>
+</section>
+<section id="paquetes">
+<h2>Paquetes<a class="headerlink" href="#paquetes" title="Permalink to this headline">#</a></h2>
+<p>Muchas distribuciones de GNU/Linux utilizan paquetes para distribuir sus programas. Un
+paquete no es más que una colección de ficheros (normalmente comprimidos) estructurados
+para ser colocados en rutas concretas dentro del sistema de ficheros cuando se instalan.</p>
+<p>En Debian GNU/Linux o Ubuntu, estos paquetes son ficheros con extensión <code class="docutils literal notranslate"><span class="pre">.deb</span></code>.
+Si descargas uno de estos ficheros directamente, puedes instalarlo con el comando <code class="docutils literal notranslate"><span class="pre">dpkg</span></code>:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>david@amy:~$<span class="w"> </span>ls
+gedit_3.38.1-1_amd64.deb
+david@amy:~$<span class="w"> </span>sudo<span class="w"> </span>dpkg<span class="w"> </span>-i<span class="w"> </span>gedit_3.38.1-1_amd64.deb
+<span class="o">(</span>Leyendo<span class="w"> </span>la<span class="w"> </span>base<span class="w"> </span>de<span class="w"> </span>datos<span class="w"> </span>...<span class="w"> </span><span class="m">497325</span><span class="w"> </span>ficheros<span class="w"> </span>o<span class="w"> </span>directorios<span class="w"> </span>instalados<span class="w"> </span>actualmente.<span class="o">)</span>
+Preparando<span class="w"> </span>para<span class="w"> </span>desempaquetar<span class="w"> </span>gedit_3.38.1-1_amd64.deb<span class="w"> </span>...
+Desempaquetando<span class="w"> </span>gedit<span class="w"> </span><span class="o">(</span><span class="m">3</span>.38.1-1<span class="o">)</span><span class="w"> </span>sobre<span class="w"> </span><span class="o">(</span><span class="m">3</span>.38.1-1<span class="o">)</span><span class="w"> </span>...
+Configurando<span class="w"> </span>gedit<span class="w"> </span><span class="o">(</span><span class="m">3</span>.38.1-1<span class="o">)</span><span class="w"> </span>...
+</pre></div>
+</div>
+<p>Una carácteristica muy importante de estos paquetes es que tienen <em>dependencias</em>, es
+decir, para que el programa que instalas pueda funcionar necesita que otros paquetes
+concretos estén instalados previamente. Puedes ver las dependencias (y otra mucha información)
+sobre un paquete con:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>david@amy:~$<span class="w"> </span>apt-cache<span class="w"> </span>show<span class="w"> </span>gedit
+Package:<span class="w"> </span>gedit
+Version:<span class="w"> </span><span class="m">3</span>.38.1-1
+Installed-Size:<span class="w"> </span><span class="m">1738</span>
+Maintainer:<span class="w"> </span>Debian<span class="w"> </span>GNOME<span class="w"> </span>Maintainers<span class="w"> </span>&lt;pkg-gnome-maintainers@lists.alioth.debian.org&gt;
+Architecture:<span class="w"> </span>amd64
+Depends:<span class="w"> </span>gedit-common<span class="w"> </span><span class="o">(</span><span class="s">&lt;&lt; 3.3</span><span class="m">9</span><span class="o">)</span>,<span class="w"> </span>gedit-common<span class="w"> </span><span class="o">(</span>&gt;<span class="o">=</span><span class="w"> </span><span class="m">3</span>.38<span class="o">)</span>,<span class="w"> </span>gir1.2-glib-2.0,<span class="w"> </span>gir1.2-gtk-3.0
+<span class="o">(</span>&gt;<span class="o">=</span><span class="w"> </span><span class="m">3</span>.22<span class="o">)</span>,<span class="w"> </span>gir1.2-gtksource-4,<span class="w"> </span>gir1.2-pango-1.0,<span class="w"> </span>gir1.2-peas-1.0,
+gsettings-desktop-schemas,<span class="w"> </span>iso-codes,<span class="w"> </span>python3-gi<span class="w"> </span><span class="o">(</span>&gt;<span class="o">=</span><span class="w"> </span><span class="m">3</span>.0<span class="o">)</span>,<span class="w"> </span>python3-gi-cairo<span class="w"> </span><span class="o">(</span>&gt;<span class="o">=</span><span class="w"> </span><span class="m">3</span>.0<span class="o">)</span>,
+<span class="o">[</span>...<span class="o">]</span>
+</pre></div>
+</div>
+<p>Como se puede ver, para muchos de ellos se indica que deben corresponder a cierta versión.
+En ese ejemplo, puedes ver que se requiere una versión del paquete <code class="docutils literal notranslate"><span class="pre">python3-gi</span></code>
+que sea mayor o igual a la 3.0.</p>
+<p>Obviamente encontrar, descargar e instalar manualmente (con <code class="docutils literal notranslate"><span class="pre">dpkg</span></code>) todos esos paquetes (y
+sus respectivas dependencias) es una tarea terriblemente pesada. Afortunadamente hay otro
+modo de hacerlo.</p>
+<p>El programa <code class="docutils literal notranslate"><span class="pre">apt</span></code> (o <code class="docutils literal notranslate"><span class="pre">apt-get</span></code>) puede determinar automática y recursivamente las
+dependencias de un paquete, descargarlos e instalarlos en el orden correcto.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>david@amy:~$<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>gedit
+Leyendo<span class="w"> </span>lista<span class="w"> </span>de<span class="w"> </span>paquetes...<span class="w"> </span>Hecho
+Creando<span class="w"> </span>árbol<span class="w"> </span>de<span class="w"> </span>dependencias...<span class="w"> </span>Hecho
+Leyendo<span class="w"> </span>la<span class="w"> </span>información<span class="w"> </span>de<span class="w"> </span>estado...<span class="w"> </span>Hecho
+Se<span class="w"> </span>instalarán<span class="w"> </span>los<span class="w"> </span>siguientes<span class="w"> </span>paquetes<span class="w"> </span>adicionales:
+<span class="w">  </span>gedit-common<span class="w"> </span>gir1.2-gtksource-4<span class="w"> </span>libamtk-5-0<span class="w"> </span>libamtk-5-common<span class="w"> </span>libtepl-5-0
+Paquetes<span class="w"> </span>sugeridos:
+<span class="w">  </span>gedit-plugins
+Se<span class="w"> </span>instalarán<span class="w"> </span>los<span class="w"> </span>siguientes<span class="w"> </span>paquetes<span class="w"> </span>NUEVOS:
+<span class="w">  </span>gedit<span class="w"> </span>gedit-common<span class="w"> </span>gir1.2-gtksource-4<span class="w"> </span>libamtk-5-0<span class="w"> </span>libamtk-5-common<span class="w"> </span>libtepl-5-0
+<span class="m">0</span><span class="w"> </span>actualizados,<span class="w"> </span><span class="m">6</span><span class="w"> </span>nuevos<span class="w"> </span>se<span class="w"> </span>instalarán,<span class="w"> </span><span class="m">0</span><span class="w"> </span>para<span class="w"> </span>eliminar<span class="w"> </span>y<span class="w"> </span><span class="m">172</span><span class="w"> </span>no<span class="w"> </span>actualizados.
+Se<span class="w"> </span>necesita<span class="w"> </span>descargar<span class="w"> </span><span class="m">59</span>,0<span class="w"> </span>kB/2.146<span class="w"> </span>kB<span class="w"> </span>de<span class="w"> </span>archivos.
+Se<span class="w"> </span>utilizarán<span class="w"> </span><span class="m">15</span>,5<span class="w"> </span>MB<span class="w"> </span>de<span class="w"> </span>espacio<span class="w"> </span>de<span class="w"> </span>disco<span class="w"> </span>adicional<span class="w"> </span>después<span class="w"> </span>de<span class="w"> </span>esta<span class="w"> </span>operación.
+¿Desea<span class="w"> </span>continuar?<span class="w"> </span><span class="o">[</span>S/n<span class="o">]</span>
+</pre></div>
+</div>
+</section>
+<section id="repositorios-de-paquetes">
+<h2>Repositorios de paquetes<a class="headerlink" href="#repositorios-de-paquetes" title="Permalink to this headline">#</a></h2>
+<p>La pregunta obvia es «¿Cómo sabe <code class="docutils literal notranslate"><span class="pre">apt</span></code> de dónde descargar todos esos paquetes?». Las
+distribuciones proporcionan servidores (normalmente web o FTP) dónde dejan publicamente accesibles
+los ficheros <code class="docutils literal notranslate"><span class="pre">.deb</span></code>. Por ejemplo, en el caso de Debian en
+https://ftp.debian.org/debian/, del cual existen cientos de «copias espejo»
+(<em>mirrors</em>), normalmente una por país, como https://ftp.es.debian.org/debian/.</p>
+<p>En estos repositorios, los paquetes se organizan en «releases» (o versiones) <a class="footnote-reference brackets" href="#id17" id="id7">9</a> . En el
+caso de Debian, estas «releases» tienen un número de versión y un nombre asociado. Por
+ejemplo, Debian 10 lleva el nombre «buster».</p>
+<p>De este modo, si queremos instalar (o actualizar) a una <em>release</em>, debemos indicárselo a
+<code class="docutils literal notranslate"><span class="pre">apt</span></code> mediante el fichero <code class="docutils literal notranslate"><span class="pre">/etc/apt/sources.list</span></code>:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>deb http://deb.debian.org/debian/ buster main contrib non-free
+</pre></div>
+</div>
+<p>Esta línea en concreto dice que queremos poder instalar paquetes oficiales mantenidos por
+Debian (<em>main</em>), contribuciones de terceros (<em>contrib</em>) y software con licencias no
+libres (<em>non-free</em>).</p>
+<p>Este fichero puede contener muchos repositorios, y también se pueden crear otros ficheros
+con extensión <code class="docutils literal notranslate"><span class="pre">.list</span></code> dentro del directorio <code class="docutils literal notranslate"><span class="pre">/etc/apt/sources.list.d</span></code> que tienen el
+mismo tipo de contenido.</p>
+<p>Para saber qué paquetes (y versiones) están disponibles en los repositorios configurados,
+<code class="docutils literal notranslate"><span class="pre">apt</span></code> debe descargar una especie de índices que se encuentran allí mismo. Para eso
+debemos ejecutar:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>david@amy:~$<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>update
+</pre></div>
+</div>
+<p>Esto debemos hacerlo regularmente <a class="footnote-reference brackets" href="#id18" id="id8">10</a> porque el contenido de los repositorios cambia
+y regulamente se añaden nuevos paquetes o versiones.</p>
+<p>En concreto en Debian hay siempre tres versiones activas:</p>
+<dl class="simple myst">
+<dt>stable</dt><dd><p>Es la última versión publicada y su contenido no debería cambiar. Esta
+corresponde con «buster» en el momento de escribir este documento.</p>
+</dd>
+<dt>testing</dt><dd><p>Contiene los paquetes que se están preparando para una futura versión
+estable y por tanto, cambia continuamente. En este momento se denomina «bullseye» y ese
+será el nombre que tendrá la siguiente versión estable.</p>
+</dd>
+<dt>unstable</dt><dd><p>Que tiene paquetes recién incorporados, experimentales o que tienen algunos
+problemas importantes para ser incluidos en una futura versión. Esta versión siempre se
+llama «sid».</p>
+</dd>
+</dl>
+<p>Por cuestiones de seguridad es importante que se puedan actualizar paquetes en los que se
+han descubierto vulnerabilidades o problemas graves, incluso aunque correspondan a una
+versión estable. Por eso, es conveniente tener los siguientes repositorios en el fichero
+<code class="docutils literal notranslate"><span class="pre">/etc/apt/sources.list</span></code>:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>deb http://security.debian.org/debian-security buster/updates main
+deb http://deb.debian.org/debian/ buster-updates main
+</pre></div>
+</div>
+<p>Todo esto significa que los repositorios configurados determinan qué paquetes (y qué
+versiones) podemos instalar. Si queremos tener un sistema completamente actualizado, es
+decir, con las ultimas versiones de todos los paquetes disponibles en esos repositorios
+podemos ejecutar:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>david@amy:~$<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>upgrade
+</pre></div>
+</div>
+<p>Si incorporamos repositorios de versiones nuevas y queremos actualizarnos a ellos,
+tendremos que ejecutar:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>david@amy:~$<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>dist-upgrade
+</pre></div>
+</div>
+<p>Esto hará que la versión de nuestro sistema operativo corresponda con la versión del
+repositorio más actual. Eso lo podemos ver con:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>david@amy:~$<span class="w"> </span>lsb_release<span class="w"> </span>-a
+No<span class="w"> </span>LSB<span class="w"> </span>modules<span class="w"> </span>are<span class="w"> </span>available.
+Distributor<span class="w"> </span>ID:<span class="w">	</span>Debian
+Description:<span class="w">	</span>Debian<span class="w"> </span>GNU/Linux<span class="w"> </span>bullseye/sid
+Release:<span class="w">	</span><span class="m">10</span>.8
+Codename:<span class="w">	</span>buster
+</pre></div>
+</div>
+<p>También podemos saber qué versiones de un determinado paquete tenemos disponibles en los
+repositorios configurados y en cuál de ellos están:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>david@amy:~$<span class="w"> </span>apt-cache<span class="w"> </span>policy<span class="w"> </span>openconnect
+openconnect:
+<span class="w">  </span>Instalados:<span class="w"> </span><span class="o">(</span>ninguno<span class="o">)</span>
+<span class="w">  </span>Candidato:<span class="w">  </span><span class="m">8</span>.02-1+deb10u1
+<span class="w">  </span>Tabla<span class="w"> </span>de<span class="w"> </span>versión:
+<span class="w">     </span><span class="m">8</span>.10-2+b1<span class="w"> </span><span class="m">650</span>
+<span class="w">        </span><span class="m">650</span><span class="w"> </span>http://deb.debian.org/debian<span class="w"> </span>testing/main<span class="w"> </span>amd64<span class="w"> </span>Packages
+<span class="w">        </span><span class="m">600</span><span class="w"> </span>http://deb.debian.org/debian<span class="w"> </span>sid/main<span class="w"> </span>amd64<span class="w"> </span>Packages
+<span class="w">     </span><span class="m">8</span>.02-1+deb10u1<span class="w"> </span><span class="m">700</span>
+<span class="w">        </span><span class="m">700</span><span class="w"> </span>http://deb.debian.org/debian<span class="w"> </span>buster/main<span class="w"> </span>amd64<span class="w"> </span>Packages
+<span class="w">        </span><span class="m">700</span><span class="w"> </span>http://security.debian.org/debian-security<span class="w"> </span>buster/updates/main<span class="w"> </span>amd64<span class="w"> </span>Packages
+</pre></div>
+</div>
+<p>Esto significa, que no podremos instalar versiones de los paquetes que no estén en los
+repositorios configurados. La solución puede ser añadir un repositorio más reciente que sí
+lo contenga, pero teniendo cuidado porque las nuevas versiones de las dependencias podrían
+afectar a otros paquetes.</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="catalogo-de-comandos">
+<h1>Catálogo de comandos<a class="headerlink" href="#catalogo-de-comandos" title="Permalink to this headline">#</a></h1>
+<p>A continuación se introducen brevemente algunos de los programas más comunes y útiles
+cuando se trabaja con la shell.</p>
+<section id="ficheros-y-directorios">
+<h2>Ficheros y directorios<a class="headerlink" href="#ficheros-y-directorios" title="Permalink to this headline">#</a></h2>
+<dl class="simple myst">
+<dt><code class="docutils literal notranslate"><span class="pre">cp</span></code> — <em>copy</em></dt><dd><p>Dados un nombre de fichero existente y un directorio o nombre de fichero, copia el
+primero en el segundo. Si el fichero destino existe, lo sobrescribe.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">cut</span></code></dt><dd><p>Escribe en su salida partes de las líneas de entrada según sus opciones:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>david@amy:~$<span class="w"> </span>date
+Sun<span class="w"> </span>Aug<span class="w"> </span><span class="m">26</span><span class="w"> </span><span class="m">12</span>:47:35<span class="w"> </span>CEST<span class="w"> </span><span class="m">2012</span>
+david@amy:~$<span class="w"> </span>date<span class="w"> </span><span class="p">|</span><span class="w"> </span>cut<span class="w"> </span>--delimiter<span class="o">=</span><span class="s2">&quot; &quot;</span><span class="w"> </span>--fields<span class="o">=</span><span class="m">2</span>
+Aug
+</pre></div>
+</div>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">diff</span></code></dt><dd><p>Muestra las diferencias entre dos ficheros.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">find</span></code></dt><dd><p>Encuentra ficheros a partir de su nombre.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">head</span></code></dt><dd><p>Escribe a su salida los primeros bytes o líneas de su entrada o del fichero indicado
+como argumento.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>david@amy:~$<span class="w"> </span>head<span class="w"> </span>--lines<span class="o">=</span><span class="m">3</span><span class="w"> </span>/etc/passwd
+root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/bin/sh
+bin:x:2:2:bin:/bin:/bin/sh
+</pre></div>
+</div>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">ln</span></code> — <em>link</em></dt><dd><p>Crea enlaces a otros ficheros o directorios.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">md5sum</span></code></dt><dd><p>Calcula (o comprueba) la suma MD5 del fichero indicado (o de su entrada estándar).</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">mkdir</span></code> — <em>make dir</em></dt><dd><p>Crea un directorio.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">mkfifo</span></code></dt><dd><p>Crea una tubería con nombre ligado al sistema de ficheros.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">mv</span></code> — <em>move</em></dt><dd><p>Es equivalente a <code class="docutils literal notranslate"><span class="pre">cp</span></code> pero borra el fichero original.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">nl</span></code> — <em>number lines</em></dt><dd><p>Lee líneas de un fichero y las escribe a su salida precedidas del número de línea.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">pwd</span></code> — <em>print working directory</em></dt><dd><p>Indica el nombre del directorio actual.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">rm</span></code> — <em>remove</em></dt><dd><p>Elimina ficheros.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">rmdir</span></code> — <em>remove dir</em></dt><dd><p>Borra directorios vacíos.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">split</span></code></dt><dd><p>Divide un fichero en trozos del tamaño indicado.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">stat</span></code></dt><dd><p>Muestra información detallada de ficheros.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">tac</span></code> — <em>reverse cat</em></dt><dd><p>Escribe a su salida líneas de su entrada en orden inverso.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">tail</span></code></dt><dd><p>Escribe a su salida los últimos bytes o líneas de su entrada o del
+fichero indicado como argumento. Con la opción <code class="docutils literal notranslate"><span class="pre">-f/--follow</span></code> monitoriza el
+fichero mostrando el nuevo contenido tan pronto como se añada. Muy útil para hacer el
+seguimiento de un fichero de log.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">tee</span></code></dt><dd><p>Crea una «te». Lee de su entrada estándar y lo escribe al mismo tiempo a su salida
+estándar y al fichero indicado.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">test</span></code></dt><dd><p>Realiza comprobaciones lógicas sobre ficheros, cadenas de texto y datos numéricos. Se
+utiliza habitualmente como condición en estructuras de control <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">while</span></code>, etc.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">touch</span></code></dt><dd><p>Cambia la fecha de un fichero (por defecto ahora). Si el fichero indicado no existe,
+crea uno vacío.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">tr</span></code> — <em>translate</em></dt><dd><p>Lee líneas de su entrada y las escribe a su salida reemplazando <em>tokens</em> <a class="footnote-reference brackets" href="#id19" id="id9">11</a> tal como
+lo indiquen sus opciones.</p>
+</dd>
+</dl>
+<dl class="simple myst">
+<dt><code class="docutils literal notranslate"><span class="pre">uniq</span></code></dt><dd><p>Lee líneas de su entrada y las escribe a su salida, pero omitiendo líneas consecutivas
+idénticas.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">wc</span></code> — <em>word count</em></dt><dd><p>Cuenta letras, palabras y líneas del fichero indicado (o de su entrada estándar) y
+escribe los totales en su salida.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">yes</span></code></dt><dd><p>Escribe «y» y un salto de línea continuamente a su salida. Se utiliza para contestar
+afirmativamente a cualquier pregunta que haga un programa por línea de comando:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>david@amy:~$<span class="w"> </span>touch<span class="w"> </span>kk
+david@amy:~$<span class="w"> </span>yes<span class="w"> </span><span class="p">|</span><span class="w"> </span>rm<span class="w"> </span>--interactive<span class="w"> </span>--verbose<span class="w"> </span>kk
+rm:<span class="w"> </span>remove<span class="w"> </span>regular<span class="w"> </span>empty<span class="w"> </span>file<span class="w"> </span><span class="sb">`</span>kk<span class="s1">&#39;? removed `kk&#39;</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</section>
+<section id="subsection-sistema">
+<h2>\subsection{Sistema}<a class="headerlink" href="#subsection-sistema" title="Permalink to this headline">#</a></h2>
+<dl class="simple myst">
+<dt><code class="docutils literal notranslate"><span class="pre">dd</span></code></dt><dd><p>Copia bloques de bytes en dispositivos (ficheros o discos).</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">df</span></code> — <em>disk free</em></dt><dd><p>Muestra información sobre el uso de los sistemas de ficheros montados en el computador.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">du</span></code> — <em>disk usage</em></dt><dd><p>Calcula el espacio de disco utilizado por ficheros y directorios.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">fdisk</span></code></dt><dd><p>Muestra y manipula tablas de particiones.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">mount</span></code></dt><dd><p>Monta dispositivos de almacenamiento de cualquier tipo sobre el sistema de ficheros.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">uname</span></code> — <em>unix name</em></dt><dd><p>Muestra información del sistema:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>david@amy:~$<span class="w"> </span>uname<span class="w"> </span>-a
+Linux<span class="w"> </span>amy<span class="w"> </span><span class="m">5</span>.8.0-3-amd64<span class="w"> </span><span class="c1">#1 SMP Debian 5.8.14-1 (2020-10-10) x86_64 GNU/Linux</span>
+</pre></div>
+</div>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">sync</span></code></dt><dd><p>Escribe a disco inmediatamente las operaciones pendientes sobre ficheros.</p>
+</dd>
+</dl>
+</section>
+<section id="id10">
+<h2>Procesos<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h2>
+<dl class="simple myst">
+<dt><code class="docutils literal notranslate"><span class="pre">nice</span></code></dt><dd><p>Ejecuta un programa fijando un nivel de prioridad.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">nohup</span></code></dt><dd><p>Ejecuta un comando ignorando las señales para su finalización (SIGHUP). Permite que un
+proceso creado por una shell sobreviva a la propia shell.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">sleep</span></code></dt><dd><p>Realiza una pausa del número de segundos indicados.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">true</span></code> y <code class="docutils literal notranslate"><span class="pre">false</span></code></dt><dd><p>Simplemente retornan 0 y 1, los valores que corresponden a una ejecución correcta e
+incorrecta respectivamente.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">top</span></code></dt><dd><p>Muestra una lista actualizada de los procesos ordenada por el consumo de CPU.</p>
+</dd>
+</dl>
+</section>
+<section id="usuarios-y-permisos">
+<h2>Usuarios y permisos<a class="headerlink" href="#usuarios-y-permisos" title="Permalink to this headline">#</a></h2>
+<dl class="simple myst">
+<dt><code class="docutils literal notranslate"><span class="pre">chmod</span></code> — <em>change mode</em></dt><dd><p>Cambia los permisos de lectura, escritura y ejecución de un fichero o directorio.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">chown</span></code> — <em>change owner</em></dt><dd><p>Cambia el propietario (usuario y grupo) de un fichero.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">chgrp</span></code> — *change group</dt><dd><p>Cambia el grupo propietario de un fichero.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">groups</span></code></dt><dd><p>Muestra los nombres de los grupos a los que pertenece el usuario.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">id</span></code></dt><dd><p>Muestra los identificadores del usuario y los grupos a los que pertenece.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">sudo</span></code> — <em>superuser do</em></dt><dd><p>Permite ejecutar un comando con los privilegios de otro usuario, por defecto el
+administrador.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">who</span></code></dt><dd><p>Muestra los usuarios conectados junto con los terminales que utilizan y la hora de la
+conexión (<em>login</em>).</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">whoami</span></code></dt><dd><p>Muestra el nombre del usuario conectado.</p>
+</dd>
+</dl>
+</section>
+<section id="servicios">
+<h2>Servicios<a class="headerlink" href="#servicios" title="Permalink to this headline">#</a></h2>
+<p>Los servicios son programas en segundo plano (que arrancan normalmente el iniciar el
+sistema) que se encuentran bajo el control del SO que no se ejecutan directamente por
+los usuarios y se encargan de tareas específicas: firewall, sonido, bluetooth, etc.,
+servidores: web, ssh, etc. u otras tareas de gestión: registro de eventos del sistema,
+montaje de dispositivos de almacenamiento, etc.</p>
+<p>Actualmente muchas distribuciones GNU/Linux usan <code class="docutils literal notranslate"><span class="pre">systemd</span></code>, pero aquí vamos a ver
+los comandos <code class="docutils literal notranslate"><span class="pre">legacy</span></code> que son compatibles.</p>
+<dl class="simple myst">
+<dt><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">service</span> <span class="pre">---status-all</span></code></dt><dd><p>Muestra el estado de todos los servicios instalados.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">service</span> <span class="pre">&lt;service&gt;\</span> <span class="pre">status</span></code></dt><dd><p>Muestra el estado del servicio indicado.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">service</span> <span class="pre">&lt;service&gt;\</span> <span class="pre">stop/start/restart</span></code></dt><dd><p>Para, arranca o reinicia el servicio indicado.</p>
+</dd>
+</dl>
+<p>*[SO]:    Sistema Operativo
+*[POSIX]: Portable Operating System Interface for uniX</p>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="id11"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>El manejo <em>intuitivo</em> se refiere a la posibilidad de realizar un uso productivo de
+una herramienta sin conocimiento ni instrucción previa. El adjetivo se puede aplicar tanto
+a la herramienta como al usuario.</p>
+</dd>
+<dt class="label" id="id12"><span class="brackets"><a class="fn-backref" href="#id2">3</a></span></dt>
+<dd><p>Se denomina <em>front-end</em> a la capa de software que proporciona una interfaz —del tipo
+que sea— a un programa o librería que ofrece su funcionalidad por medio de una serie de
+funciones o clases (API).</p>
+</dd>
+<dt class="label" id="id13"><span class="brackets"><a class="fn-backref" href="#id3">4</a></span></dt>
+<dd><p>Sí, el signo de interrogación</p>
+</dd>
+<dt class="label" id="id14"><span class="brackets"><a class="fn-backref" href="#id4">6</a></span></dt>
+<dd><p>Vea <code class="docutils literal notranslate"><span class="pre">man</span> <span class="pre">signal</span></code>.</p>
+</dd>
+<dt class="label" id="id15"><span class="brackets"><a class="fn-backref" href="#id5">7</a></span></dt>
+<dd><p>La propia shell también se ejecuta en un proceso, que puede haber sido creado a su
+vez por otra shell.</p>
+</dd>
+<dt class="label" id="id16"><span class="brackets"><a class="fn-backref" href="#id6">8</a></span></dt>
+<dd><p>La web \url{https://www.commandlinefu.com/} es una buena prueba de la
+gran versatilidad de la redirección y las capacidades de la shell.</p>
+</dd>
+<dt class="label" id="id17"><span class="brackets"><a class="fn-backref" href="#id7">9</a></span></dt>
+<dd><p>https://www.debian.org/releases/</p>
+</dd>
+<dt class="label" id="id18"><span class="brackets"><a class="fn-backref" href="#id8">10</a></span></dt>
+<dd><p>De hecho las distribuciones actuales tienen sistemas que lo hacen de forma
+autómática.</p>
+</dd>
+<dt class="label" id="id19"><span class="brackets"><a class="fn-backref" href="#id9">11</a></span></dt>
+<dd><p>Un <em>token</em> es cualquier combinación de caracteres que cumpla una expresión regular
+concreta.</p>
+</dd>
+</dl>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="intro.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Welcome to your Jupyter Book</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="intro_python.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Introducción a Python</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Departamento ATC<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

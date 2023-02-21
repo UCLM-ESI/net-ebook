@@ -30,3 +30,6 @@ code-checks:
 	pylint src/*/*.py
 	pycodestyle src/*/**.py
 	pydocstyle src/*/*.pydocstyle
+
+view: _build
+	xdg-open _build/html/index.html

@@ -4,6 +4,7 @@
 format: jb-book
 root: intro
 chapters:
+- file: shell
 - file: intro_python
 - file: udp_chat
 - file: serializacion

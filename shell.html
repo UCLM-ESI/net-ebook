@@ -52,8 +52,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Introducción a Python" href="intro_python.html" />
-    <link rel="prev" title="Welcome to your Jupyter Book" href="intro.html" />
+    <link rel="next" title="Paquetes" href="paquetes.html" />
+    <link rel="prev" title="Internet" href="intro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -109,7 +109,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="intro.html">
-                    Welcome to your Jupyter Book
+                    Internet
                 </a>
             </li>
         </ul>
@@ -120,7 +120,12 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="intro_python.html">
+  <a class="reference internal" href="paquetes.html">
+   Paquetes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="python.html">
    Introducción a Python
   </a>
  </li>
@@ -311,84 +316,69 @@ title="Print to PDF"
     </div>
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Shell
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gnu-bash">
+   GNU Bash
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#gnu-bash">
-     GNU Bash
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#valor-de-retorno">
-     Valor de retorno
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#procesos">
-     Procesos
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#valor-de-retorno">
+   Valor de retorno
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#procesos">
+   Procesos
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#trabajos">
      Trabajos
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#otras-formas-de-identificar-procesos">
      Otras formas de identificar procesos
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#entrada-salida-y-salida-de-error">
-     Entrada, salida y salida de error
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#redireccion">
-     Redirección
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#paquetes">
-     Paquetes
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#repositorios-de-paquetes">
-     Repositorios de paquetes
-    </a>
-   </li>
   </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#entrada-salida-y-salida-de-error">
+   Entrada, salida y salida de error
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#redireccion">
+   Redirección
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#catalogo-de-comandos">
    Catálogo de comandos
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#ficheros-y-directorios">
      Ficheros y directorios
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#subsection-sistema">
-     \subsection{Sistema}
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sistema">
+     Sistema
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id10">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id8">
      Procesos
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#usuarios-y-permisos">
      Usuarios y permisos
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#servicios">
      Servicios
     </a>
@@ -414,84 +404,69 @@ title="Print to PDF"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Shell
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gnu-bash">
+   GNU Bash
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#gnu-bash">
-     GNU Bash
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#valor-de-retorno">
-     Valor de retorno
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#procesos">
-     Procesos
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#valor-de-retorno">
+   Valor de retorno
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#procesos">
+   Procesos
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#trabajos">
      Trabajos
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#otras-formas-de-identificar-procesos">
      Otras formas de identificar procesos
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#entrada-salida-y-salida-de-error">
-     Entrada, salida y salida de error
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#redireccion">
-     Redirección
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#paquetes">
-     Paquetes
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#repositorios-de-paquetes">
-     Repositorios de paquetes
-    </a>
-   </li>
   </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#entrada-salida-y-salida-de-error">
+   Entrada, salida y salida de error
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#redireccion">
+   Redirección
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#catalogo-de-comandos">
    Catálogo de comandos
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#ficheros-y-directorios">
      Ficheros y directorios
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#subsection-sistema">
-     \subsection{Sistema}
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sistema">
+     Sistema
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id10">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id8">
      Procesos
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#usuarios-y-permisos">
      Usuarios y permisos
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#servicios">
      Servicios
     </a>
@@ -517,7 +492,7 @@ Como con cualquier tecnología o herramienta que merezca la pena, es fácil enco
 grandes partidarios y detractores. Lo cierto es que la shell es una herramienta extraña,
 oscura y de aspecto absolutamente espartano en un mundo en el que las pantallas
 multi-táctiles o el reconocimiento de voz son algo habitual.</p>
-<p>En general, una interfaz de comandos —a menudo denominada CLI— es mucho menos intuitiva<a class="footnote-reference brackets" href="#id11" id="id1">1</a>
+<p>En general, una interfaz de comandos —a menudo denominada CLI— es mucho menos intuitiva<a class="footnote-reference brackets" href="#id9" id="id1">1</a>
 que una GUI. Sin embargo, cuando la capacidad y el nivel de detalle (y por tanto la
 complejidad) de la herramienta aumenta, la interfaz gráfica resulta mucho más difícil de
 desarrollar, requiere tanto o más entrenamiento y su uso suele ser menos productivo que
@@ -542,7 +517,7 @@ interfaz gráfica e interfaz de comandos.</p>
 <p>En todo caso, es importante entender que es un error subestimar o considerar anticuada una
 aplicación simplemente por el hecho de usar una interfaz de comandos. A menudo, las
 aplicaciones bien diseñadas definen un conjunto de acciones en una librería, que pueden
-ser utilizadas indistintamente desde <em>front-ends</em> <a class="footnote-reference brackets" href="#id12" id="id2">3</a>, línea de comandos, o
+ser utilizadas indistintamente desde <em>front-ends</em> <a class="footnote-reference brackets" href="#id10" id="id2">3</a>, línea de comandos, o
 incluso desarrollando otras aplicaciones a medida. Un ejemplo de este tipo de aplicaciones
 puede ser VLC. Incluso servicios de Internet tan conocidos como HTTP, SMTP o FTP
 pueden ser utilizados mediante comandos de texto, tal como veremos en capítulos
@@ -592,7 +567,7 @@ dev<span class="w">   </span>initrd.img<span class="w">  </span>media<span class
 <p>Lo que ha ocurrido aquí es que la shell bash ha creado un proceso en el cuál ha ejecutado
 el programa <code class="docutils literal notranslate"><span class="pre">ls</span></code> con el argumento <code class="docutils literal notranslate"><span class="pre">/</span></code>, después esperó a que el programa terminase y
 recogió su valor de retorno. Ese valor lo almacenó en una «variable de entorno» llamada
-<code class="docutils literal notranslate"><span class="pre">?</span></code> <a class="footnote-reference brackets" href="#id13" id="id3">4</a>. Se puede obtener el valor de una variable de entorno utilizando el comando
+<code class="docutils literal notranslate"><span class="pre">?</span></code> <a class="footnote-reference brackets" href="#id11" id="id3">4</a>. Se puede obtener el valor de una variable de entorno utilizando el comando
 <code class="docutils literal notranslate"><span class="pre">echo</span></code> colocando el símbolo «$» delante del nombre de la variable, tal que:</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>david@amy:~$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$?</span>
 <span class="m">0</span>
@@ -676,13 +651,12 @@ siguiente comando envía la señal SIGKILL (9) al proceso con PID 5200:</p>
 </pre></div>
 </div>
 <p>Algunas señales pueden ser ignoradas o bien capturadas por el programa para realizar
-acciones especificadas por el programador<a class="footnote-reference brackets" href="#id14" id="id4">6</a>  como es el caso de SIGTERM, que podríamos
+acciones especificadas por el programador<a class="footnote-reference brackets" href="#id12" id="id4">6</a>  como es el caso de SIGTERM, que podríamos
 considerarla una solicitud amistosa de terminación. Otras señales (como SIGKILL) no pueden
 ser ignoradas para garantizar que el SO tiene el control sobre cualquier proceso.</p>
-</section>
 <section id="trabajos">
-<h2>Trabajos<a class="headerlink" href="#trabajos" title="Permalink to this headline">#</a></h2>
-<p>La shell crea un nuevo proceso hijo<a class="footnote-reference brackets" href="#id15" id="id5">7</a> para ejecutar cada comando que se le pide. El
+<h3>Trabajos<a class="headerlink" href="#trabajos" title="Permalink to this headline">#</a></h3>
+<p>La shell crea un nuevo proceso hijo<a class="footnote-reference brackets" href="#id13" id="id5">7</a> para ejecutar cada comando que se le pide. El
 comportamiento normal de la shell es esperar a que ese proceso termine antes de permitir
 la introducción de un nuevo comando. Esto es fácil de comprobar con el programa <code class="docutils literal notranslate"><span class="pre">sleep</span></code>.
 Es decir, por defecto, la ejecución de un comando es bloqueante, y a esto se llama
@@ -749,7 +723,7 @@ de su PID.</p>
 </div>
 </section>
 <section id="otras-formas-de-identificar-procesos">
-<h2>Otras formas de identificar procesos<a class="headerlink" href="#otras-formas-de-identificar-procesos" title="Permalink to this headline">#</a></h2>
+<h3>Otras formas de identificar procesos<a class="headerlink" href="#otras-formas-de-identificar-procesos" title="Permalink to this headline">#</a></h3>
 <p>A veces buscar en la lista de procesos (<code class="docutils literal notranslate"><span class="pre">ps</span></code>) no es la forma más cómoda de localizar
 un proceso. Puede ser más sencillo localizarlo por su nombre (con <code class="docutils literal notranslate"><span class="pre">pidof</span></code> o
 <code class="docutils literal notranslate"><span class="pre">pgrep</span></code>):</p>
@@ -774,6 +748,7 @@ david@amy:~$<span class="w"> </span>fuser<span class="w"> </span>--kill<span cla
 criterios (como el propietario o el órden de creación). Siempre hay una cantidad increible
 de alternativas para hacer cualquier cosa, que además se pueden combinar. Es lo mejor que
 tiene la shell, aunque de entrada no suene como algo bueno.</p>
+</section>
 </section>
 <section id="entrada-salida-y-salida-de-error">
 <h2>Entrada, salida y salida de error<a class="headerlink" href="#entrada-salida-y-salida-de-error" title="Permalink to this headline">#</a></h2>
@@ -803,15 +778,17 @@ para que la entrada y la salida de un proceso queden ligadas con otra cosa, tal
 como un fichero en disco o incluso otro proceso…</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p><strong>shell, consola y terminal</strong>: A menudo se confunden los términos «shell», «terminal» y «consola». Como hemos visto, la shell es un programa que interpreta y ejecuta comandos. El terminal es un
-dispositivo físico que permite introducir y representar texto, o un programa que lo emula. Una consola es precisamente un terminal físico.</p>
+<p><strong>shell, consola y terminal</strong>: A menudo se confunden los términos «shell», «terminal» y
+«consola». Como hemos visto, la shell es un programa que interpreta y ejecuta comandos. El
+terminal es un dispositivo físico que permite introducir y representar texto, o un
+programa que lo emula. Una consola es precisamente un terminal físico.</p>
 </div>
 <p>La anterior ejecución del comando <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">/</span></code> (el listado de ficheros del directorio raíz)
 apareció en pantalla debido a que su salida estándar corresponde por defecto al terminal.</p>
 </section>
 <section id="redireccion">
 <h2>Redirección<a class="headerlink" href="#redireccion" title="Permalink to this headline">#</a></h2>
-<p>Es posible alterar la salida estándar de cualquier programa para que utilice un fichero  simplemente con el símbolo ‘<code class="docutils literal notranslate"><span class="pre">&gt;</span></code>’ (mayor-que) seguido del nombre del fichero:</p>
+<p>Es posible alterar la salida estándar de cualquier programa para que utilice un fichero simplemente con el símbolo ‘<code class="docutils literal notranslate"><span class="pre">&gt;</span></code>’ (mayor-que) seguido del nombre del fichero:</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>david@amy:~$<span class="w"> </span>ls<span class="w"> </span>-l<span class="w"> </span>/<span class="w"> </span>&gt;<span class="w"> </span>/tmp/root-dir
 david@amy:~$
 </pre></div>
@@ -951,165 +928,14 @@ hacía con los comandos simples:</p>
 POSIX (en especial GNU) dispone de una gran cantidad de pequeños programas
 especializados —como los que se han introducido aquí— que pueden combinarse mediante
 redirección para cubrir una gran variedad de necesidades puntuales de una forma rápida y
-eficiente <a class="footnote-reference brackets" href="#id16" id="id6">8</a>.</p>
+eficiente <a class="footnote-reference brackets" href="#id14" id="id6">8</a>.</p>
 </section>
-<section id="paquetes">
-<h2>Paquetes<a class="headerlink" href="#paquetes" title="Permalink to this headline">#</a></h2>
-<p>Muchas distribuciones de GNU/Linux utilizan paquetes para distribuir sus programas. Un
-paquete no es más que una colección de ficheros (normalmente comprimidos) estructurados
-para ser colocados en rutas concretas dentro del sistema de ficheros cuando se instalan.</p>
-<p>En Debian GNU/Linux o Ubuntu, estos paquetes son ficheros con extensión <code class="docutils literal notranslate"><span class="pre">.deb</span></code>.
-Si descargas uno de estos ficheros directamente, puedes instalarlo con el comando <code class="docutils literal notranslate"><span class="pre">dpkg</span></code>:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>david@amy:~$<span class="w"> </span>ls
-gedit_3.38.1-1_amd64.deb
-david@amy:~$<span class="w"> </span>sudo<span class="w"> </span>dpkg<span class="w"> </span>-i<span class="w"> </span>gedit_3.38.1-1_amd64.deb
-<span class="o">(</span>Leyendo<span class="w"> </span>la<span class="w"> </span>base<span class="w"> </span>de<span class="w"> </span>datos<span class="w"> </span>...<span class="w"> </span><span class="m">497325</span><span class="w"> </span>ficheros<span class="w"> </span>o<span class="w"> </span>directorios<span class="w"> </span>instalados<span class="w"> </span>actualmente.<span class="o">)</span>
-Preparando<span class="w"> </span>para<span class="w"> </span>desempaquetar<span class="w"> </span>gedit_3.38.1-1_amd64.deb<span class="w"> </span>...
-Desempaquetando<span class="w"> </span>gedit<span class="w"> </span><span class="o">(</span><span class="m">3</span>.38.1-1<span class="o">)</span><span class="w"> </span>sobre<span class="w"> </span><span class="o">(</span><span class="m">3</span>.38.1-1<span class="o">)</span><span class="w"> </span>...
-Configurando<span class="w"> </span>gedit<span class="w"> </span><span class="o">(</span><span class="m">3</span>.38.1-1<span class="o">)</span><span class="w"> </span>...
-</pre></div>
-</div>
-<p>Una carácteristica muy importante de estos paquetes es que tienen <em>dependencias</em>, es
-decir, para que el programa que instalas pueda funcionar necesita que otros paquetes
-concretos estén instalados previamente. Puedes ver las dependencias (y otra mucha información)
-sobre un paquete con:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>david@amy:~$<span class="w"> </span>apt-cache<span class="w"> </span>show<span class="w"> </span>gedit
-Package:<span class="w"> </span>gedit
-Version:<span class="w"> </span><span class="m">3</span>.38.1-1
-Installed-Size:<span class="w"> </span><span class="m">1738</span>
-Maintainer:<span class="w"> </span>Debian<span class="w"> </span>GNOME<span class="w"> </span>Maintainers<span class="w"> </span>&lt;pkg-gnome-maintainers@lists.alioth.debian.org&gt;
-Architecture:<span class="w"> </span>amd64
-Depends:<span class="w"> </span>gedit-common<span class="w"> </span><span class="o">(</span><span class="s">&lt;&lt; 3.3</span><span class="m">9</span><span class="o">)</span>,<span class="w"> </span>gedit-common<span class="w"> </span><span class="o">(</span>&gt;<span class="o">=</span><span class="w"> </span><span class="m">3</span>.38<span class="o">)</span>,<span class="w"> </span>gir1.2-glib-2.0,<span class="w"> </span>gir1.2-gtk-3.0
-<span class="o">(</span>&gt;<span class="o">=</span><span class="w"> </span><span class="m">3</span>.22<span class="o">)</span>,<span class="w"> </span>gir1.2-gtksource-4,<span class="w"> </span>gir1.2-pango-1.0,<span class="w"> </span>gir1.2-peas-1.0,
-gsettings-desktop-schemas,<span class="w"> </span>iso-codes,<span class="w"> </span>python3-gi<span class="w"> </span><span class="o">(</span>&gt;<span class="o">=</span><span class="w"> </span><span class="m">3</span>.0<span class="o">)</span>,<span class="w"> </span>python3-gi-cairo<span class="w"> </span><span class="o">(</span>&gt;<span class="o">=</span><span class="w"> </span><span class="m">3</span>.0<span class="o">)</span>,
-<span class="o">[</span>...<span class="o">]</span>
-</pre></div>
-</div>
-<p>Como se puede ver, para muchos de ellos se indica que deben corresponder a cierta versión.
-En ese ejemplo, puedes ver que se requiere una versión del paquete <code class="docutils literal notranslate"><span class="pre">python3-gi</span></code>
-que sea mayor o igual a la 3.0.</p>
-<p>Obviamente encontrar, descargar e instalar manualmente (con <code class="docutils literal notranslate"><span class="pre">dpkg</span></code>) todos esos paquetes (y
-sus respectivas dependencias) es una tarea terriblemente pesada. Afortunadamente hay otro
-modo de hacerlo.</p>
-<p>El programa <code class="docutils literal notranslate"><span class="pre">apt</span></code> (o <code class="docutils literal notranslate"><span class="pre">apt-get</span></code>) puede determinar automática y recursivamente las
-dependencias de un paquete, descargarlos e instalarlos en el orden correcto.</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>david@amy:~$<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>gedit
-Leyendo<span class="w"> </span>lista<span class="w"> </span>de<span class="w"> </span>paquetes...<span class="w"> </span>Hecho
-Creando<span class="w"> </span>árbol<span class="w"> </span>de<span class="w"> </span>dependencias...<span class="w"> </span>Hecho
-Leyendo<span class="w"> </span>la<span class="w"> </span>información<span class="w"> </span>de<span class="w"> </span>estado...<span class="w"> </span>Hecho
-Se<span class="w"> </span>instalarán<span class="w"> </span>los<span class="w"> </span>siguientes<span class="w"> </span>paquetes<span class="w"> </span>adicionales:
-<span class="w">  </span>gedit-common<span class="w"> </span>gir1.2-gtksource-4<span class="w"> </span>libamtk-5-0<span class="w"> </span>libamtk-5-common<span class="w"> </span>libtepl-5-0
-Paquetes<span class="w"> </span>sugeridos:
-<span class="w">  </span>gedit-plugins
-Se<span class="w"> </span>instalarán<span class="w"> </span>los<span class="w"> </span>siguientes<span class="w"> </span>paquetes<span class="w"> </span>NUEVOS:
-<span class="w">  </span>gedit<span class="w"> </span>gedit-common<span class="w"> </span>gir1.2-gtksource-4<span class="w"> </span>libamtk-5-0<span class="w"> </span>libamtk-5-common<span class="w"> </span>libtepl-5-0
-<span class="m">0</span><span class="w"> </span>actualizados,<span class="w"> </span><span class="m">6</span><span class="w"> </span>nuevos<span class="w"> </span>se<span class="w"> </span>instalarán,<span class="w"> </span><span class="m">0</span><span class="w"> </span>para<span class="w"> </span>eliminar<span class="w"> </span>y<span class="w"> </span><span class="m">172</span><span class="w"> </span>no<span class="w"> </span>actualizados.
-Se<span class="w"> </span>necesita<span class="w"> </span>descargar<span class="w"> </span><span class="m">59</span>,0<span class="w"> </span>kB/2.146<span class="w"> </span>kB<span class="w"> </span>de<span class="w"> </span>archivos.
-Se<span class="w"> </span>utilizarán<span class="w"> </span><span class="m">15</span>,5<span class="w"> </span>MB<span class="w"> </span>de<span class="w"> </span>espacio<span class="w"> </span>de<span class="w"> </span>disco<span class="w"> </span>adicional<span class="w"> </span>después<span class="w"> </span>de<span class="w"> </span>esta<span class="w"> </span>operación.
-¿Desea<span class="w"> </span>continuar?<span class="w"> </span><span class="o">[</span>S/n<span class="o">]</span>
-</pre></div>
-</div>
-</section>
-<section id="repositorios-de-paquetes">
-<h2>Repositorios de paquetes<a class="headerlink" href="#repositorios-de-paquetes" title="Permalink to this headline">#</a></h2>
-<p>La pregunta obvia es «¿Cómo sabe <code class="docutils literal notranslate"><span class="pre">apt</span></code> de dónde descargar todos esos paquetes?». Las
-distribuciones proporcionan servidores (normalmente web o FTP) dónde dejan publicamente accesibles
-los ficheros <code class="docutils literal notranslate"><span class="pre">.deb</span></code>. Por ejemplo, en el caso de Debian en
-https://ftp.debian.org/debian/, del cual existen cientos de «copias espejo»
-(<em>mirrors</em>), normalmente una por país, como https://ftp.es.debian.org/debian/.</p>
-<p>En estos repositorios, los paquetes se organizan en «releases» (o versiones) <a class="footnote-reference brackets" href="#id17" id="id7">9</a> . En el
-caso de Debian, estas «releases» tienen un número de versión y un nombre asociado. Por
-ejemplo, Debian 10 lleva el nombre «buster».</p>
-<p>De este modo, si queremos instalar (o actualizar) a una <em>release</em>, debemos indicárselo a
-<code class="docutils literal notranslate"><span class="pre">apt</span></code> mediante el fichero <code class="docutils literal notranslate"><span class="pre">/etc/apt/sources.list</span></code>:</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>deb http://deb.debian.org/debian/ buster main contrib non-free
-</pre></div>
-</div>
-<p>Esta línea en concreto dice que queremos poder instalar paquetes oficiales mantenidos por
-Debian (<em>main</em>), contribuciones de terceros (<em>contrib</em>) y software con licencias no
-libres (<em>non-free</em>).</p>
-<p>Este fichero puede contener muchos repositorios, y también se pueden crear otros ficheros
-con extensión <code class="docutils literal notranslate"><span class="pre">.list</span></code> dentro del directorio <code class="docutils literal notranslate"><span class="pre">/etc/apt/sources.list.d</span></code> que tienen el
-mismo tipo de contenido.</p>
-<p>Para saber qué paquetes (y versiones) están disponibles en los repositorios configurados,
-<code class="docutils literal notranslate"><span class="pre">apt</span></code> debe descargar una especie de índices que se encuentran allí mismo. Para eso
-debemos ejecutar:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>david@amy:~$<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>update
-</pre></div>
-</div>
-<p>Esto debemos hacerlo regularmente <a class="footnote-reference brackets" href="#id18" id="id8">10</a> porque el contenido de los repositorios cambia
-y regulamente se añaden nuevos paquetes o versiones.</p>
-<p>En concreto en Debian hay siempre tres versiones activas:</p>
-<dl class="simple myst">
-<dt>stable</dt><dd><p>Es la última versión publicada y su contenido no debería cambiar. Esta
-corresponde con «buster» en el momento de escribir este documento.</p>
-</dd>
-<dt>testing</dt><dd><p>Contiene los paquetes que se están preparando para una futura versión
-estable y por tanto, cambia continuamente. En este momento se denomina «bullseye» y ese
-será el nombre que tendrá la siguiente versión estable.</p>
-</dd>
-<dt>unstable</dt><dd><p>Que tiene paquetes recién incorporados, experimentales o que tienen algunos
-problemas importantes para ser incluidos en una futura versión. Esta versión siempre se
-llama «sid».</p>
-</dd>
-</dl>
-<p>Por cuestiones de seguridad es importante que se puedan actualizar paquetes en los que se
-han descubierto vulnerabilidades o problemas graves, incluso aunque correspondan a una
-versión estable. Por eso, es conveniente tener los siguientes repositorios en el fichero
-<code class="docutils literal notranslate"><span class="pre">/etc/apt/sources.list</span></code>:</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>deb http://security.debian.org/debian-security buster/updates main
-deb http://deb.debian.org/debian/ buster-updates main
-</pre></div>
-</div>
-<p>Todo esto significa que los repositorios configurados determinan qué paquetes (y qué
-versiones) podemos instalar. Si queremos tener un sistema completamente actualizado, es
-decir, con las ultimas versiones de todos los paquetes disponibles en esos repositorios
-podemos ejecutar:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>david@amy:~$<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>upgrade
-</pre></div>
-</div>
-<p>Si incorporamos repositorios de versiones nuevas y queremos actualizarnos a ellos,
-tendremos que ejecutar:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>david@amy:~$<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>dist-upgrade
-</pre></div>
-</div>
-<p>Esto hará que la versión de nuestro sistema operativo corresponda con la versión del
-repositorio más actual. Eso lo podemos ver con:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>david@amy:~$<span class="w"> </span>lsb_release<span class="w"> </span>-a
-No<span class="w"> </span>LSB<span class="w"> </span>modules<span class="w"> </span>are<span class="w"> </span>available.
-Distributor<span class="w"> </span>ID:<span class="w">	</span>Debian
-Description:<span class="w">	</span>Debian<span class="w"> </span>GNU/Linux<span class="w"> </span>bullseye/sid
-Release:<span class="w">	</span><span class="m">10</span>.8
-Codename:<span class="w">	</span>buster
-</pre></div>
-</div>
-<p>También podemos saber qué versiones de un determinado paquete tenemos disponibles en los
-repositorios configurados y en cuál de ellos están:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>david@amy:~$<span class="w"> </span>apt-cache<span class="w"> </span>policy<span class="w"> </span>openconnect
-openconnect:
-<span class="w">  </span>Instalados:<span class="w"> </span><span class="o">(</span>ninguno<span class="o">)</span>
-<span class="w">  </span>Candidato:<span class="w">  </span><span class="m">8</span>.02-1+deb10u1
-<span class="w">  </span>Tabla<span class="w"> </span>de<span class="w"> </span>versión:
-<span class="w">     </span><span class="m">8</span>.10-2+b1<span class="w"> </span><span class="m">650</span>
-<span class="w">        </span><span class="m">650</span><span class="w"> </span>http://deb.debian.org/debian<span class="w"> </span>testing/main<span class="w"> </span>amd64<span class="w"> </span>Packages
-<span class="w">        </span><span class="m">600</span><span class="w"> </span>http://deb.debian.org/debian<span class="w"> </span>sid/main<span class="w"> </span>amd64<span class="w"> </span>Packages
-<span class="w">     </span><span class="m">8</span>.02-1+deb10u1<span class="w"> </span><span class="m">700</span>
-<span class="w">        </span><span class="m">700</span><span class="w"> </span>http://deb.debian.org/debian<span class="w"> </span>buster/main<span class="w"> </span>amd64<span class="w"> </span>Packages
-<span class="w">        </span><span class="m">700</span><span class="w"> </span>http://security.debian.org/debian-security<span class="w"> </span>buster/updates/main<span class="w"> </span>amd64<span class="w"> </span>Packages
-</pre></div>
-</div>
-<p>Esto significa, que no podremos instalar versiones de los paquetes que no estén en los
-repositorios configurados. La solución puede ser añadir un repositorio más reciente que sí
-lo contenga, pero teniendo cuidado porque las nuevas versiones de las dependencias podrían
-afectar a otros paquetes.</p>
-</section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="catalogo-de-comandos">
-<h1>Catálogo de comandos<a class="headerlink" href="#catalogo-de-comandos" title="Permalink to this headline">#</a></h1>
+<section id="catalogo-de-comandos">
+<h2>Catálogo de comandos<a class="headerlink" href="#catalogo-de-comandos" title="Permalink to this headline">#</a></h2>
 <p>A continuación se introducen brevemente algunos de los programas más comunes y útiles
 cuando se trabaja con la shell.</p>
 <section id="ficheros-y-directorios">
-<h2>Ficheros y directorios<a class="headerlink" href="#ficheros-y-directorios" title="Permalink to this headline">#</a></h2>
+<h3>Ficheros y directorios<a class="headerlink" href="#ficheros-y-directorios" title="Permalink to this headline">#</a></h3>
 <dl class="simple myst">
 <dt><code class="docutils literal notranslate"><span class="pre">cp</span></code> — <em>copy</em></dt><dd><p>Dados un nombre de fichero existente y un directorio o nombre de fichero, copia el
 primero en el segundo. Si el fichero destino existe, lo sobrescribe.</p>
@@ -1173,7 +999,7 @@ utiliza habitualmente como condición en estructuras de control <code class="doc
 <dt><code class="docutils literal notranslate"><span class="pre">touch</span></code></dt><dd><p>Cambia la fecha de un fichero (por defecto ahora). Si el fichero indicado no existe,
 crea uno vacío.</p>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">tr</span></code> — <em>translate</em></dt><dd><p>Lee líneas de su entrada y las escribe a su salida reemplazando <em>tokens</em> <a class="footnote-reference brackets" href="#id19" id="id9">11</a> tal como
+<dt><code class="docutils literal notranslate"><span class="pre">tr</span></code> — <em>translate</em></dt><dd><p>Lee líneas de su entrada y las escribe a su salida reemplazando <em>tokens</em> <a class="footnote-reference brackets" href="#id15" id="id7">11</a> tal como
 lo indiquen sus opciones.</p>
 </dd>
 </dl>
@@ -1194,8 +1020,8 @@ rm:<span class="w"> </span>remove<span class="w"> </span>regular<span class="w">
 </dd>
 </dl>
 </section>
-<section id="subsection-sistema">
-<h2>\subsection{Sistema}<a class="headerlink" href="#subsection-sistema" title="Permalink to this headline">#</a></h2>
+<section id="sistema">
+<h3>Sistema<a class="headerlink" href="#sistema" title="Permalink to this headline">#</a></h3>
 <dl class="simple myst">
 <dt><code class="docutils literal notranslate"><span class="pre">dd</span></code></dt><dd><p>Copia bloques de bytes en dispositivos (ficheros o discos).</p>
 </dd>
@@ -1217,8 +1043,8 @@ Linux<span class="w"> </span>amy<span class="w"> </span><span class="m">5</span>
 </dd>
 </dl>
 </section>
-<section id="id10">
-<h2>Procesos<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h2>
+<section id="id8">
+<h3>Procesos<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h3>
 <dl class="simple myst">
 <dt><code class="docutils literal notranslate"><span class="pre">nice</span></code></dt><dd><p>Ejecuta un programa fijando un nivel de prioridad.</p>
 </dd>
@@ -1235,7 +1061,7 @@ incorrecta respectivamente.</p>
 </dl>
 </section>
 <section id="usuarios-y-permisos">
-<h2>Usuarios y permisos<a class="headerlink" href="#usuarios-y-permisos" title="Permalink to this headline">#</a></h2>
+<h3>Usuarios y permisos<a class="headerlink" href="#usuarios-y-permisos" title="Permalink to this headline">#</a></h3>
 <dl class="simple myst">
 <dt><code class="docutils literal notranslate"><span class="pre">chmod</span></code> — <em>change mode</em></dt><dd><p>Cambia los permisos de lectura, escritura y ejecución de un fichero o directorio.</p>
 </dd>
@@ -1258,7 +1084,7 @@ conexión (<em>login</em>).</p>
 </dl>
 </section>
 <section id="servicios">
-<h2>Servicios<a class="headerlink" href="#servicios" title="Permalink to this headline">#</a></h2>
+<h3>Servicios<a class="headerlink" href="#servicios" title="Permalink to this headline">#</a></h3>
 <p>Los servicios son programas en segundo plano (que arrancan normalmente el iniciar el
 sistema) que se encuentran bajo el control del SO que no se ejecutan directamente por
 los usuarios y se encargan de tareas específicas: firewall, sonido, bluetooth, etc.,
@@ -1278,42 +1104,36 @@ los comandos <code class="docutils literal notranslate"><span class="pre">legacy
 *[POSIX]: Portable Operating System Interface for uniX</p>
 <hr class="footnotes docutils" />
 <dl class="footnote brackets">
-<dt class="label" id="id11"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dt class="label" id="id9"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
 <dd><p>El manejo <em>intuitivo</em> se refiere a la posibilidad de realizar un uso productivo de
 una herramienta sin conocimiento ni instrucción previa. El adjetivo se puede aplicar tanto
 a la herramienta como al usuario.</p>
 </dd>
-<dt class="label" id="id12"><span class="brackets"><a class="fn-backref" href="#id2">3</a></span></dt>
+<dt class="label" id="id10"><span class="brackets"><a class="fn-backref" href="#id2">3</a></span></dt>
 <dd><p>Se denomina <em>front-end</em> a la capa de software que proporciona una interfaz —del tipo
 que sea— a un programa o librería que ofrece su funcionalidad por medio de una serie de
 funciones o clases (API).</p>
 </dd>
-<dt class="label" id="id13"><span class="brackets"><a class="fn-backref" href="#id3">4</a></span></dt>
+<dt class="label" id="id11"><span class="brackets"><a class="fn-backref" href="#id3">4</a></span></dt>
 <dd><p>Sí, el signo de interrogación</p>
 </dd>
-<dt class="label" id="id14"><span class="brackets"><a class="fn-backref" href="#id4">6</a></span></dt>
+<dt class="label" id="id12"><span class="brackets"><a class="fn-backref" href="#id4">6</a></span></dt>
 <dd><p>Vea <code class="docutils literal notranslate"><span class="pre">man</span> <span class="pre">signal</span></code>.</p>
 </dd>
-<dt class="label" id="id15"><span class="brackets"><a class="fn-backref" href="#id5">7</a></span></dt>
+<dt class="label" id="id13"><span class="brackets"><a class="fn-backref" href="#id5">7</a></span></dt>
 <dd><p>La propia shell también se ejecuta en un proceso, que puede haber sido creado a su
 vez por otra shell.</p>
 </dd>
-<dt class="label" id="id16"><span class="brackets"><a class="fn-backref" href="#id6">8</a></span></dt>
+<dt class="label" id="id14"><span class="brackets"><a class="fn-backref" href="#id6">8</a></span></dt>
 <dd><p>La web \url{https://www.commandlinefu.com/} es una buena prueba de la
 gran versatilidad de la redirección y las capacidades de la shell.</p>
 </dd>
-<dt class="label" id="id17"><span class="brackets"><a class="fn-backref" href="#id7">9</a></span></dt>
-<dd><p>https://www.debian.org/releases/</p>
-</dd>
-<dt class="label" id="id18"><span class="brackets"><a class="fn-backref" href="#id8">10</a></span></dt>
-<dd><p>De hecho las distribuciones actuales tienen sistemas que lo hacen de forma
-autómática.</p>
-</dd>
-<dt class="label" id="id19"><span class="brackets"><a class="fn-backref" href="#id9">11</a></span></dt>
+<dt class="label" id="id15"><span class="brackets"><a class="fn-backref" href="#id7">11</a></span></dt>
 <dd><p>Un <em>token</em> es cualquier combinación de caracteres que cumpla una expresión regular
 concreta.</p>
 </dd>
 </dl>
+</section>
 </section>
 </section>
 
@@ -1348,13 +1168,13 @@ concreta.</p>
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Welcome to your Jupyter Book</p>
+            <p class="prev-next-title">Internet</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="intro_python.html" title="next page">
+    <a class='right-next' id="next-link" href="paquetes.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Introducción a Python</p>
+        <p class="prev-next-title">Paquetes</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

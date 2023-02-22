@@ -1,4 +1,4 @@
-# Internet
+# Prefacio
 
 Las redes de comunicaciones, y especialmente Internet, se han convertido en una parte
 esencial de nuestras vidas. Internet ha cambiado radicalmente nuestra forma de comprar,
@@ -21,7 +21,7 @@ seguido en este libro es un tanto particular. Se basa en dos tecnologías muy co
 - El lenguaje de programación Python.
 
 
-# GNU
+## GNU
 
 GNU es un sistema operativo estilo POSIX concebido y desarrollado bajo el concepto de
 software libre. Esto tiene dos implicaciones muy importantes:
@@ -46,7 +46,7 @@ supuesto, es posible usar cualquiera de las abundantes distribuciones basadas en
 [^1]: https://www.debian.org
 
 
-# Python
+## Python
 
 Python es un lenguaje de programación interpretado, dinámico y orientado a objetos. A
 pesar de ser un lenguaje muy completo y potente, su aprendizaje resulta sorprendentemente sencillo. Permite, incluso a un programador novato, ser productivo en muy poco tiempo, en comparación con otros lenguajes como Java, C++, C#, etc.
@@ -60,7 +60,7 @@ implementar en otro lenguaje.
 Python también es software libre, lo que significa que está disponible para cualquiera en cualquier plataforma. Está respaldado por una gran comunidad de usuarios y desarrolladores y suele ser fácil encontrar ayuda incluso en temas muy específicos.
 
 
-# Contenido de los capítulos
+## Contenido de los capítulos
 
 
 Shell
@@ -71,13 +71,13 @@ Conectividad
 computador.
 
 
-# Ejercicios
+## Ejercicios
 
 A lo largo del texto se proponen ejercicios, identificados en la forma «[E`n`]», siendo
 `n` un número creciente. La realización de estos ejercicios, normalmente muy prácticos, es importante para una adecuada asimilación de los conceptos y manejo de las herramientas.
 
 
-# Sobre los ejemplos
+## Sobre los ejemplos
 
 Todos los ejemplos que aparecen en este documento (y algunos otros) están disponibles para descarga a través del repositorio git en https://github.com/UCLM-ARCO/net-book-code.git.
 Aunque es posible descargar estos ficheros individualmente o como un archivo comprimido,

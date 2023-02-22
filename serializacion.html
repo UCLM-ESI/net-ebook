@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Serialización y deserialización &#8212; Redes 2</title>
+    <title>Serialización &#8212; Redes 2</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -108,7 +108,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="intro.html">
-                    Internet
+                    Prefacio
                 </a>
             </li>
         </ul>
@@ -125,7 +125,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="python.html">
-   Introducción a Python
+   Python
   </a>
  </li>
  <li class="toctree-l1">
@@ -135,7 +135,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Serialización y deserialización
+   Serialización
   </a>
  </li>
 </ul>
@@ -400,7 +400,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Serialización y deserialización</h1>
+                <h1>Serialización</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -467,41 +467,26 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="serializacion-y-deserializacion">
-<h1>Serialización y deserialización<a class="headerlink" href="#serializacion-y-deserializacion" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="serializacion">
+<h1>Serialización<a class="headerlink" href="#serializacion" title="Permalink to this headline">#</a></h1>
 <p>El único modo posible de procesar y almacenar datos en un computador actual es el código binario.
-Pero, salvo unas pocas excepciones, rara vez resulta suficientemente expresivo para representar información útil
-para las personas.
+Pero, salvo unas pocas excepciones, rara vez resulta suficientemente expresivo para representar información útil para las personas.
 Por ese motivo se utilizan distintas formas de interpretar el código binario en función del tipo de dato que se desea:
 entero, decimal, cadena de caracteres, fecha, etc.
-Lo importante es recordar que, sea cual sea su representación en un lenguaje de programación de alto nivel determinado,
-en la memoria o registros de las computadoras, todo dato es a fin de cuentas una secuencia de bits.</p>
+Lo importante es recordar que, sea cual sea su representación en un lenguaje de programación de alto nivel determinado, en la memoria o registros de las computadoras, todo dato es a fin de cuentas una secuencia de bits.</p>
 <p>La serialización es el proceso de codificar los datos que manejan los programas
 (enteros, cadenas, imágenes, etc.) en secuencias de bytes susceptibles de ser almacenadas en un fichero o
 enviadas a través de la red.
-Por el contrario, la des-serialización es el proceso inverso.
-Más concretamente, estamos tratando lo «serialización binaria».
-También existen muchos formatos de serialización textual como
-XML, JavaScript Object Notation (JSON), YAML Ain’t Markup Language (YAML), etc.,
-que no vamos a tratar en este capítulo.</p>
-<p>Es importante aclarar que no se debe confundir «codificación» con «cifrado» (o «encriptación»).
-Codificar es simplemente aplicar una transformación que modifica el modo en que se representan los datos,
-pero no implica el uso de ninguna clave ni ocultación u ofuscación del mensaje.
-Por ejemplo, un mensaje codificado en Morse es perfectamente legible por cualquiera que conozca el código</p>
+Por el contrario, la des-serialización es el proceso inverso. Más concretamente, estamos tratando lo «serialización binaria». También existen muchos formatos de serialización textual como XML, JavaScript Object Notation (JSON), YAML Ain’t Markup Language (YAML), etc., que no vamos a tratar en este capítulo.</p>
+<p>Es importante aclarar que no se debe confundir «codificación» con «cifrado» (o «encriptación»). Codificar es simplemente aplicar una transformación que modifica el modo en que se representan los datos, pero no implica el uso de ninguna clave ni ocultación u ofuscación del mensaje. Por ejemplo, un mensaje codificado en Morse es perfectamente legible por cualquiera que conozca el código</p>
 <section id="representacion-solo-eso">
 <h2>Representación, sólo eso<a class="headerlink" href="#representacion-solo-eso" title="Permalink to this headline">#</a></h2>
-<p>Una de las excepciones a las que alude la sección anterior es la <em>programación de sistemas</em>,
-es decir, aquellos programas que consumen directamente servicios del SO.
+<p>Una de las excepciones a las que alude la sección anterior es la <em>programación de sistemas</em>, es decir, aquellos programas que consumen directamente servicios del SO.
 El binario resulta útil para manejar campos de bits, banderas binarias o máscaras,
 muy comunes cuando se manipulan registros de control, operaciones de E/S, etc.
 Por eso es necesario manejar adecuadamente datos con estas representaciones.</p>
-<p>Sin embargo, como las personas, la mayoría de los lenguajes de programación utilizan la base decimal
-para expresar todo tipo de cantidades.
-Pero también ofrecen mecanismos para realizar cambios de base.</p>
-<p>Python permite expresar literales numéricos en varios formatos.
-A continuación, en todos los ejemplos se representa el número 42;
-y en todos los casos, si se asigna a una variable,
-se está creando un entero (tipo int) con el mismo valor.</p>
+<p>Sin embargo, como las personas, la mayoría de los lenguajes de programación utilizan la base decimal para expresar todo tipo de cantidades. Pero también ofrecen mecanismos para realizar cambios de base.</p>
+<p>Python permite expresar literales numéricos en varios formatos.A continuación, en todos los ejemplos se representa el número 42; y en todos los casos, si se asigna a una variable, se está creando un entero (tipo int) con el mismo valor.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">decimal</span> <span class="o">=</span> <span class="mi">42</span>
@@ -718,21 +703,13 @@ bytes (números de 8 bits) y su carácter equivalente. En Python estas funciones
 </div>
 </div>
 </div>
-<p>Se puede ver en los ejemplos anteriores que, por ejemplo, el valor equivalente al carácter “0” es 48,
-mientras que el caracter equivalente al valor numérico 0 es el carácter “\x00”.</p>
-<p>Es especialemten importante tener claro que los caracteres numéricos <strong>no son equivalentes</strong> a los valores que representan.
-También resulta digno de mención que la secuencia <code class="docutils literal notranslate"><span class="pre">\n</span></code> es un sólo caracter,
-ya que la barra es lo que se conoce como <strong>«carácter de escape»</strong>.
-Es decir, cambia el significado del siguiente carácter. En este caso, significa «nueva línea»,
-como ya sabéis.</p>
-<p>De la misma manera, cuando un caracter toma un valor que no corresponde con ningún carácter imprimible,
-como en el caso anterior del caracter equivalente al número 0,
-Python lo representa con <code class="docutils literal notranslate"><span class="pre">&quot;\x00&quot;</span></code>, siendo los dos caracteres que siguen al <code class="docutils literal notranslate"><span class="pre">\x</span></code> el valor hexadecimal del número.</p>
-<p>Como se explicó en la sesión de introducción a Python, las cadenas son un tipo inmutable,
-lo que implica que no puede modificarse su contenido.
+<p>Se puede ver en los ejemplos anteriores que, por ejemplo, el valor equivalente al carácter “0” es 48, mientras que el caracter equivalente al valor numérico 0 es el carácter “\x00”.</p>
+<p>Es especialemten importante tener claro que los caracteres numéricos <strong>no son equivalentes</strong> a los valores que representan. También resulta digno de mención que la secuencia ‘<code class="docutils literal notranslate"><span class="pre">\n</span></code>’ es un sólo caracter, ya que la barra es lo que se conoce como <strong>«carácter de escape»</strong>. Es decir, cambia el significado del siguiente carácter. En este caso, significa «nueva línea», como ya sabéis.</p>
+<p>De la misma manera, cuando un caracter toma un valor que no corresponde con ningún carácter imprimible, como en el caso anterior del caracter equivalente al número 0,
+Python lo representa con ‘<code class="docutils literal notranslate"><span class="pre">\x00</span></code>’, siendo los dos caracteres que siguen al <code class="docutils literal notranslate"><span class="pre">\x</span></code> el valor hexadecimal del número.</p>
+<p>Como se explicó en la sesión de introducción a Python, las cadenas son un tipo inmutable, lo que implica que no puede modificarse su contenido.
 Para añadir o modificar algún element en una cadena, debemos crear una nueva modificada a partir de la primera.</p>
-<p>Sin embargo, Python proporciona el tipo <strong><code class="docutils literal notranslate"><span class="pre">bytearray</span></code></strong> que permite almacenar una secuencia de bytes,
-modificar su contenido, y obtener fácilmente la lista de caracteres o secuencia de enteros equivalente.</p>
+<p>Sin embargo, Python proporciona el tipo <strong><code class="docutils literal notranslate"><span class="pre">bytearray</span></code></strong> que permite almacenar una secuencia de bytes, modificar su contenido, y obtener fácilmente la lista de caracteres o secuencia de enteros equivalente.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">buf</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">(</span><span class="s2">&quot;abcd&quot;</span><span class="p">,</span> <span class="s2">&quot;ascii&quot;</span><span class="p">)</span>

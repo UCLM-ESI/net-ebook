@@ -686,7 +686,8 @@ title="Print to PDF"
 <h1>Python<a class="headerlink" href="#python" title="Permalink to this headline">#</a></h1>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.core.interactiveshell</span> <span class="kn">import</span> <span class="n">InteractiveShell</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Un pequeño ajuste de configuración para simplificar el uso de jupyter notebook en los ejemplos</span>
+<span class="kn">from</span> <span class="nn">IPython.core.interactiveshell</span> <span class="kn">import</span> <span class="n">InteractiveShell</span>
 <span class="n">InteractiveShell</span><span class="o">.</span><span class="n">ast_node_interactivity</span> <span class="o">=</span> <span class="s2">&quot;all&quot;</span>
 </pre></div>
 </div>
@@ -736,7 +737,7 @@ title="Print to PDF"
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">66</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">18</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">a</span> <span class="o">=</span> <span class="s2">&quot;Hola&quot;</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">a</span> <span class="o">+</span> <span class="mi">1</span>
 
@@ -849,7 +850,7 @@ False
 </section>
 <section id="bytes">
 <h4><code class="docutils literal notranslate"><span class="pre">bytes</span></code><a class="headerlink" href="#bytes" title="Permalink to this headline">#</a></h4>
-<p>Es un tipo muy similar al anterior, pero en vez de secuencias de caracteres, permite manejar secuencias de bytes. Todos los accesos a bajo nivel respecto al sistema operativo. Las operaciones de lectura y escritura en ficheros pueden ser realizadas con el tipo <code class="docutils literal notranslate"><span class="pre">bytes</span></code>, y la recepción y envío de datos a través de sockets, que veremos intensivamente a lo largo de la asignatura, utilizan cadenas de <code class="docutils literal notranslate"><span class="pre">bytes</span></code>.</p>
+<p>Es un tipo muy similar al anterior, pero en vez de secuencias de caracteres, permite manejar secuencias de bytes. Las operaciones de lectura y escritura de bajo nivel en ficheros o dispositivos pueden ser realizadas con secuencias de <code class="docutils literal notranslate"><span class="pre">bytes</span></code>, y también la recepción y envío de datos a través de sockets.</p>
 <p>Debemos tener en cuenta que podemos transformar cadenas de carácteres en cadenas de bytes y viceversa. Es realmente importante entender la diferencia entre ambos tipos de datos, así como entender cómo transformar entre ellos.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -886,8 +887,8 @@ False
 </section>
 <section id="tuple">
 <h4><code class="docutils literal notranslate"><span class="pre">tuple</span></code><a class="headerlink" href="#tuple" title="Permalink to this headline">#</a></h4>
-<p>Es una agrupación de 1 o más valores, similar al concepto matemático de tupla. Pueden usarse para empaquetar varias variables, y no es necesario que todas sean del mismo tipo.</p>
-<p>Asimismo, las tuplas son inmutables, al igual que los <code class="docutils literal notranslate"><span class="pre">str</span></code> o  los <code class="docutils literal notranslate"><span class="pre">bytes</span></code>: no pueden modificarse una vez inicializadas.</p>
+<p>Es una agrupación de 1 o más valores, similar al concepto matemático de tupla. Pueden usarse para empaquetar varias valores, que además pueden ser de tipo diferente.</p>
+<p>Las tuplas, al igual que las <code class="docutils literal notranslate"><span class="pre">str</span></code> o  los <code class="docutils literal notranslate"><span class="pre">bytes</span></code>, son tipos inmutables: no pueden modificarse una vez inicializadas.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Empaquetado de variables</span>
@@ -911,7 +912,7 @@ False
 </section>
 <section id="list">
 <h4><code class="docutils literal notranslate"><span class="pre">list</span></code><a class="headerlink" href="#list" title="Permalink to this headline">#</a></h4>
-<p>Una lista es la implementación en Python de los vectores o arrays de otros lenguajes. Al igual que las tuplas, permite que cada elemento de la lista sea de tipo diferente.</p>
+<p>Una lista es la implementación en Python de los vectores o arrays de otros lenguajes. Al igual que las tuplas, permite que sus elementos sean de tipo diferente.</p>
 <p>Al contrario que los anteriores, las listas son mutables y pueden ser modificadas:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -927,7 +928,7 @@ False
 </div>
 </div>
 </div>
-<p>Las listas también permiten realizar operaciones de suma y multiplicación</p>
+<p>Las listas también permiten realizar operaciones de suma y multiplicación, entendidas como concatenación y repetición respectivamente.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">l</span> <span class="o">+</span> <span class="p">[</span><span class="mi">5</span><span class="p">]</span>
@@ -948,8 +949,8 @@ False
 </div>
 </div>
 </div>
-<p>Todos los tipos de secuencia vistos permiten el acceso a uno o varios elementos de la misma a través de índices del modo habitual, utilizando corchetes como ya se ha mostrado en algunos de elos ejemplos.</p>
-<p>También se permite hacer “rodajas” o <em>“slicing”</em> o usar números negativos cómo índices:</p>
+<p>Todos los tipos de secuencia que hemos visto permiten el acceso a uno o varios elementos de la misma a través de índices del modo habitual, utilizando corchetes como ya se ha mostrado en algunos de elos ejemplos.</p>
+<p>Pero además, es posible hacer “rodajas” o <em>“slicing”</em> o usar números negativos cómo índices:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cadena</span> <span class="o">=</span> <span class="s2">&quot;Hola mundo&quot;</span>
@@ -1161,59 +1162,50 @@ This will be always executed
 <p>En las funciones y métodos Python no se indica el tipo de los argumentos que recibe o el del valor que devuelve. En cierto modo, se asume que se va a invocar del modo correcto, es decir, no hace comprobación de tipos (<em>type checking</em>).</p>
 <p>Si bien esto le da mucha flexibilidad, a la hora de validar una llamada o documentar un API de módulo o clase puede ser un problema, por lo que desde hace unos años se introdujo el llamado <em>hinting</em> de tipos.</p>
 <p>Sin embargo cuando indicamos el tipo mediante <em>hinting</em> solo estamos haciendo una anotación y no tiene ningún efecto aparente. Si realmente queremos typechecking y forzar la correspondencia de tipos, tendremos que utilizar herramientas externas como <code class="docutils literal notranslate"><span class="pre">mypy</span></code>, que hace esa verificación estática del código.</p>
-<p>Vamos a instalar el soporte de <code class="docutils literal notranslate"><span class="pre">mypy</span></code> para poder probar la comprobación de tipos.</p>
+<p>Esta sería una versión de la función <code class="docutils literal notranslate"><span class="pre">factorial()</span></code> con <em>type hinting</em> y una llamada incorrecta (que guardamos en el fichero <code class="docutils literal notranslate"><span class="pre">factorial.py</span></code>):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>nb_mypy<span class="w"> </span>&gt;<span class="w"> </span>/dev/null
-<span class="o">%</span><span class="k">load_ext</span> nb_mypy
-<span class="o">%</span><span class="k">nb_mypy</span> On
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The nb_mypy extension is already loaded. To reload it, use:
-  %reload_ext nb_mypy
-</pre></div>
-</div>
-</div>
-</div>
-<p>Y esta sería una versión de la función <code class="docutils literal notranslate"><span class="pre">factorial()</span></code> con <em>type hinting</em>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%file</span> factorial.py
+
+<span class="k">def</span> <span class="nf">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
     <span class="k">return</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">else</span> <span class="n">n</span> <span class="o">*</span> <span class="n">factorial</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
 
-<span class="n">factorial</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">factorial</span><span class="p">(</span><span class="s2">&quot;hola&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3628800
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Overwriting factorial.py
 </pre></div>
 </div>
 </div>
 </div>
-<p>Y veamos qué ocurre cuando el tipo del argumento no concuerda con lo especificado.</p>
+<p>Instalamos <code class="docutils literal notranslate"><span class="pre">mypy</span></code> para poder probar la comprobación de tipos.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">factorial</span><span class="p">(</span><span class="s2">&quot;hola&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>mypy
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;cell&gt;1: <span class=" -Color -Color-Bold -Color-Bold-Red">error:</span> Argument 1 to <span class=" -Color -Color-Bold">&quot;factorial&quot;</span> has incompatible type <span class=" -Color -Color-Bold">&quot;str&quot;</span>; expected <span class=" -Color -Color-Bold">&quot;int&quot;</span>  <span class=" -Color -Color-Yellow">[arg-type]</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: mypy in /home/david/.local/share/virtualenvs/net-book-bM-vswVT/lib/python3.9/site-packages (1.0.1)
+Requirement already satisfied: tomli&gt;=1.1.0 in /home/david/.local/share/virtualenvs/net-book-bM-vswVT/lib/python3.9/site-packages (from mypy) (2.0.1)
+Requirement already satisfied: typing-extensions&gt;=3.10 in /home/david/.local/share/virtualenvs/net-book-bM-vswVT/lib/python3.9/site-packages (from mypy) (4.5.0)
+Requirement already satisfied: mypy-extensions&gt;=0.4.3 in /home/david/.local/share/virtualenvs/net-book-bM-vswVT/lib/python3.9/site-packages (from mypy) (1.0.0)
 </pre></div>
 </div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">199</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">factorial</span><span class="p">(</span><span class="s2">&quot;hola&quot;</span><span class="p">)</span>
-
-<span class="nn">Cell In[198], line 2,</span> in <span class="ni">factorial</span><span class="nt">(n)</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">def</span> <span class="nf">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-<span class="ne">----&gt; </span><span class="mi">2</span>     <span class="k">return</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">else</span> <span class="n">n</span> <span class="o">*</span> <span class="n">factorial</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-
-<span class="ne">TypeError</span>: unsupported operand type(s) for -: &#39;str&#39; and &#39;int&#39;
+</div>
+</div>
+<p>Y veamos qué ocurre cuando analizamos el código:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>mypy<span class="w"> </span>factorial.py
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>factorial.py:5: <span class=" -Color -Color-Bold -Color-Bold-Red">error:</span> Argument 1 to <span class=" -Color -Color-Bold">&quot;factorial&quot;</span> has incompatible type <span class=" -Color -Color-Bold">&quot;str&quot;</span>; expected <span class=" -Color -Color-Bold">&quot;int&quot;</span>  <span class=" -Color -Color-Yellow">[arg-type]</span>
+<span class=" -Color -Color-Bold -Color-Bold-Red">Found 1 error in 1 file (checked 1 source file)</span>
 </pre></div>
 </div>
 </div>

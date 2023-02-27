@@ -6,7 +6,8 @@ BOOK_PDF = _build/latex/book.pdf
 all: check _build
 
 _build: ${BOOK_SOURCES}
-	jb build -W .
+	# jb build -W .
+	jb build .
 
 # ${BOOK_PDF}: ${BOOK_SOURCES}
 # 	jb build -W -n --builder pdflatex .

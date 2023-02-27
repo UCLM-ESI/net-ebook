@@ -19,13 +19,11 @@ bibtex_bibfiles:
 
 # Information about where the book exists on the web
 repository:
-  url: https://github.com/joselsegura/redes2-lab
+  url: https://github.com/uclm-esi/net-book
   branch: main
-
 html:
   use_issues_button: true
   use_repository_button: true
-
 
 parse:
   myst_enable_extensions:

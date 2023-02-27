@@ -26,14 +26,14 @@ espera de conexiones, mientras que el cliente SSH es el que inicia la conexión.
 Para probar SSH vamos a utilizar un contenedor docker. Para construir la imagen
 docker correspondiente, descarga el repositorio `git` con el siguiente comando:
 
-```shell
+```console
 ana@laptop:~$ git clone https://github.com/UCLM-ARCO/net-book-code
 ```
 
 Y ejecuta el siguiente comando dentro del directorio `ssh-docker`. Esto crea la
 imagen y arranca el contenedor que ejecuta el servidor SSH:
 
-```shell
+```console
 ana@laptop:~/net-book-code/ssh-docker$ docker-compose up -d
 [...]
 ```
@@ -42,7 +42,7 @@ En un sistema GNU/Linux utilizar SSH es muy sencillo. Basta con abrir un termina
 indicar a través del comando `ssh` el nombre de usuario, el computador
 remoto y el puerto (si es distinto del 22).
 
-```shell
+```console
 ana@laptop:~$ ssh user@172.20.0.2
 user@172.20.0.2's password:
 user@viper:~$
@@ -59,7 +59,7 @@ Para simplificar el comando de conexión se puede escribir un fichero de configu
 llamado  `~/.ssh/config` en el **computador cliente**. Para el caso anterior, el fichero
 podría ser algo como:
 
-```plain
+```
 Host viper
     hostname 172.20.0.2
     User user
@@ -69,7 +69,7 @@ Es importante señalar que este fichero debe tener permisos de lectura/escritura
 el usuario (`-rw-r--r--`) o será ignorado. Una vez tengas esta configuración puedes
 conectar simplemente con:
 
-```plain
+```console
 ana@laptop:~$ ssh viper
 user@172.20.0.2's password:
 ```
@@ -90,7 +90,7 @@ usuario y nunca debe ser accesible para nadie más.
 Para generar el par de claves ejecuta el siguiente comando aceptando todos los valores por
 defecto (pulsa ENTER):
 
-```shell
+```console
 ana@laptop:~$ ssh-keygen
 Generating public/private rsa key pair.
 Enter file in which to save the key (/home/ana/.ssh/id_rsa):
@@ -107,7 +107,7 @@ en el directorio `/home/ana/.ssh/`.
 
 Ahora se debe enviar la clave pública al servidor. Esto se puede hacer fácilmente con:
 
-```shell
+```console
 ana@laptop:~$ ssh-copy-id viper
 user@172.20.0.2's password:
 
@@ -124,7 +124,7 @@ este ejemplo).
 Y tal como indica, ahora deberíamos poder entrar en la máquina `viper` simplemente
 con:
 
-```shell
+```console
 ana@laptop:~$ ssh viper
 Last login: Mon Mar 14 21:07:15 2022 from 172.20.0.1
 user@viper:~$
@@ -139,7 +139,7 @@ autenticación SSH con clave pública.
 También es posible ejecutar un único comando en el servidor y ver la salida directamente
 en el computador cliente. Simplemente hay que escribir el comando a continuación:
 
-```shell
+```console
 ana@laptop:~$ ssh viper ls /home/
 user
 ```
@@ -159,7 +159,7 @@ modificar su configuración.
 
 Las claves de la CA se crean también con el comando `ssh-keygen`:
 
-```shell
+```console
 ~$ ssh-keygen -t rsa -f ca_key -P "" -C ca_key
 Generating public/private rsa key pair.
 Your identification has been saved in ca_key
@@ -195,14 +195,14 @@ determinado. Para ilustrar cómo funcionan vamos a generar un certificado para e
 `user` de la máquina `viper` como lo haría su administrador. Primero creamos un par de
 claves pública/privada para el usuario, con el nombre `user_key`.
 
-```shell
+```console
 $ ssh-keygen -f user_key
 ```
 
 Después, se firma la clave pública del usuario (`user_key.pub`) con la clave
 privada de la CA (`ca_key`):
 
-```shell
+```console
 $ ssh-keygen -s ca_key -I viper -n user user_key.pub
 ```
 
@@ -226,7 +226,7 @@ este caso únicamente el usuario `user`.
 En el servidor, es necesario almacenar la clave pública de la CA con los permisos
 adecuados (644). En la máquina `viper`:
 
-```shell
+```console
 root@viper:/etc/ssh# chmod 644 ca_key.pub
 root@viper:/etc/ssh# ls -la ca_key.pub
 -rw-r--r-- 1 user user    562 Mar  3 09:13 ca_key.pub
@@ -242,7 +242,7 @@ TrustedUserCAKeys /etc/ssh/ca_key.pub
 
 Para que los cambios tengan efecto reiniciamos el servidor SSH (`sshd`) con:
 
-```shell
+```console
 root@viper:/home/user# systemctl restart sshd
 ```
 
@@ -254,7 +254,7 @@ Por otro lado, el cliente tiene que copiar su clave privada (`user_key`) y su
 certificado (`user_key-cert.pub`) en su directorio
 `~/.ssh/`:
 
-```shell
+```console
 ana@laptop:~$ ls -l ~/.ssh
 -rw------- 1 ana    ana    2590 mar  3 09:35 user_key
 -rw-rw-r-- 1 ana    ana    2020 mar  3 09:40 user_key-cert.pub
@@ -264,14 +264,14 @@ ana@laptop:~$ ls -l ~/.ssh
 Además, habrá de indicar que quiere usar esa clave a la hora de acceder a la máquina
 `viper`:
 
-```shell
+```console
 ana@laptop:~$ ssh -i ~/.ssh/user_key viper
 ```
 
 Para mayor comodidad, puede añadirse la clave a la configuración de `viper` en
 `~/.ssh/config`:
 
-```plain
+```
 Host viper
     Hostname localhost
     Port 2200
@@ -281,7 +281,7 @@ Host viper
 
 Y con esto se podrá acceder simplemente con:
 
-```shell
+```console
 ana@laptop:~$ ssh viper
 ```
 
@@ -303,7 +303,7 @@ OpenSSH lo incorpora y está activado por defecto.
 
 Con la configuración expricada previamente,  es tan sencillo como:
 
-```shell
+```console
 $ scp un-fichero viper:
 un-fichero                                              100%    5    16.6KB/s   00:00
 ```

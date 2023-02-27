@@ -1,0 +1,743 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>SSH &#8212; Redes 2</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Chat UDP" href="udp_chat.html" />
+    <link rel="prev" title="Python" href="python.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Redes 2</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Prefacio
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="shell.html">
+   Shell
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="paquetes.html">
+   Paquetes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="python.html">
+   Python
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   SSH
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="udp_chat.html">
+   Chat UDP
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="serializacion.html">
+   Serialización
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/uclm-esi/net-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/uclm-esi/net-book/issues/new?title=Issue%20on%20page%20%2Fssh.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/ssh.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#shell-segura">
+   Shell segura
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#configuracion">
+   Configuración
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#acceso-con-clave-publica">
+   Acceso con clave pública
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#autenticacion-mediante-certificado">
+   Autenticación mediante certificado
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#un-certificado-para-el-usuario">
+     Un certificado para el usuario
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#copia-remota-de-ficheros-con-scp">
+   Copia remota de ficheros con SCP
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>SSH</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#shell-segura">
+   Shell segura
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#configuracion">
+   Configuración
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#acceso-con-clave-publica">
+   Acceso con clave pública
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#autenticacion-mediante-certificado">
+   Autenticación mediante certificado
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#un-certificado-para-el-usuario">
+     Un certificado para el usuario
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#copia-remota-de-ficheros-con-scp">
+   Copia remota de ficheros con SCP
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="ssh">
+<h1>SSH<a class="headerlink" href="#ssh" title="Permalink to this headline">#</a></h1>
+<p>SSH es un protocolo de aplicación que permite establecer conexiones con máquinas remotas.
+Podríamos decir que es una versión mejorada del veterano <code class="docutils literal notranslate"><span class="pre">telnet</span></code> <a class="footnote-reference brackets" href="#id3" id="id1">1</a>, pero es
+mucho más que eso. SSH proporciona un canal seguro (cifrado) para ejecutar comandos,
+transferir ficheros (con <code class="docutils literal notranslate"><span class="pre">scp</span></code>), redireccionar conexiones, crear túneles
+que pueden transportar datos de conexiones arbitrarias o simplemente como sistema de
+autenticación, y mucho más.</p>
+<section id="shell-segura">
+<h2>Shell segura<a class="headerlink" href="#shell-segura" title="Permalink to this headline">#</a></h2>
+<p>Como ya indica su nombre, el uso más común de la aplicación SSH es el de «shell remota»,
+es decir, un programa que permite abrir una sesión en un computador remoto y ejecutar
+comandos. En este capítulo vamos a usar concretamente la aplicación OpenSSH, que en el
+caso de sistemas GNU/Linux suele estar disponible como dos paquetes: <code class="docutils literal notranslate"><span class="pre">openssh-server</span></code> y
+<code class="docutils literal notranslate"><span class="pre">openssh-client</span></code>. Por supuesto, existen otras muchas implementaciones para casi cualquier
+SO.</p>
+<p>Se trata, por supuesto, de una aplicación cliente-servidor, es decir, el servidor SSH, que
+debe estar instalado en cada computador al que pretendamos acceder, siempre está a la
+espera de conexiones, mientras que el cliente SSH es el que inicia la conexión.</p>
+<p>Para probar SSH vamos a utilizar un contenedor docker. Para construir la imagen
+docker correspondiente, descarga el repositorio <code class="docutils literal notranslate"><span class="pre">git</span></code> con el siguiente comando:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">ana@laptop:~$ </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/UCLM-ARCO/net-book-code
+</pre></div>
+</div>
+<p>Y ejecuta el siguiente comando dentro del directorio <code class="docutils literal notranslate"><span class="pre">ssh-docker</span></code>. Esto crea la
+imagen y arranca el contenedor que ejecuta el servidor SSH:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">ana@laptop:~/net-book-code/ssh-docker$ </span>docker-compose<span class="w"> </span>up<span class="w"> </span>-d
+<span class="go">[...]</span>
+</pre></div>
+</div>
+<p>En un sistema GNU/Linux utilizar SSH es muy sencillo. Basta con abrir un terminal e
+indicar a través del comando <code class="docutils literal notranslate"><span class="pre">ssh</span></code> el nombre de usuario, el computador
+remoto y el puerto (si es distinto del 22).</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">ana@laptop:~$ </span>ssh<span class="w"> </span>user@172.20.0.2
+<span class="go">user@172.20.0.2&#39;s password:</span>
+<span class="gp">user@viper:~$</span>
+</pre></div>
+</div>
+<p>El comando <code class="docutils literal notranslate"><span class="pre">ssh</span></code> trata de establecer una conexión segura con el servidor SSH
+que hay en 172.20.0.2 (el contenedor docker). Concretamente queremos acceder con la cuenta
+del usuario  <code class="docutils literal notranslate"><span class="pre">user</span></code>. Este proceso pide la contraseña asociada a
+ese usuario, que no se muestra al introducirla. Es nuestro caso es <code class="docutils literal notranslate"><span class="pre">secret</span></code>.</p>
+</section>
+<section id="configuracion">
+<h2>Configuración<a class="headerlink" href="#configuracion" title="Permalink to this headline">#</a></h2>
+<p>Para simplificar el comando de conexión se puede escribir un fichero de configuración
+llamado  <code class="docutils literal notranslate"><span class="pre">~/.ssh/config</span></code> en el <strong>computador cliente</strong>. Para el caso anterior, el fichero
+podría ser algo como:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Host</span> <span class="n">viper</span>
+    <span class="n">hostname</span> <span class="mf">172.20.0.2</span>
+    <span class="n">User</span> <span class="n">user</span>
+</pre></div>
+</div>
+<p>Es importante señalar que este fichero debe tener permisos de lectura/escritura solo para
+el usuario (<code class="docutils literal notranslate"><span class="pre">-rw-r--r--</span></code>) o será ignorado. Una vez tengas esta configuración puedes
+conectar simplemente con:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">ana@laptop:~$ </span>ssh<span class="w"> </span>viper
+<span class="go">user@172.20.0.2&#39;s password:</span>
+</pre></div>
+</div>
+<p>Este modo de autenticación con usuario/clave se llama de «clave privada» porque se
+asume que solamente el usuario la conoce.</p>
+</section>
+<section id="acceso-con-clave-publica">
+<h2>Acceso con clave pública<a class="headerlink" href="#acceso-con-clave-publica" title="Permalink to this headline">#</a></h2>
+<p>Para evitar tener que escribir constantemente la clave cada vez que conectas a una misma
+máquina, SSH ofrece un sistema de autenticación de «clave pública». Este sistema utiliza
+un par de claves privada/pública. La clave pública se coloca en el nodo al que quieres
+acceder y, de hecho, no hay ningún problema en que cualquiera la pueda leer o copiar (por
+eso se llama <em>pública</em>). Sin embargo, la clave privada debe quedar custodiada por el
+usuario y nunca debe ser accesible para nadie más.</p>
+<p>Para generar el par de claves ejecuta el siguiente comando aceptando todos los valores por
+defecto (pulsa ENTER):</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">ana@laptop:~$ </span>ssh-keygen
+<span class="go">Generating public/private rsa key pair.</span>
+<span class="go">Enter file in which to save the key (/home/ana/.ssh/id_rsa):</span>
+<span class="go">Enter passphrase (empty for no passphrase):</span>
+<span class="go">Enter same passphrase again:</span>
+<span class="go">Your identification has been saved in /home/ana/.ssh/id_rsa</span>
+<span class="go">Your public key has been saved in /home/ana/.ssh/id_rsa.pub</span>
+<span class="go">The key fingerprint is:</span>
+<span class="go">SHA256:KXUrUqPxk/EPiXEBfgqK3HlSqvhphSeh6O+qm9tz1DM ana@laptop</span>
+</pre></div>
+</div>
+<p>Esto genera dos ficheros llamados <code class="docutils literal notranslate"><span class="pre">id_rsa</span></code> (clave privada) y <code class="docutils literal notranslate"><span class="pre">id_rsa.pub</span></code> (clave pública)
+en el directorio <code class="docutils literal notranslate"><span class="pre">/home/ana/.ssh/</span></code>.</p>
+<p>Ahora se debe enviar la clave pública al servidor. Esto se puede hacer fácilmente con:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">ana@laptop:~$ </span>ssh-copy-id<span class="w"> </span>viper
+<span class="go">user@172.20.0.2&#39;s password:</span>
+
+<span class="go">Number of key(s) added: 1</span>
+
+<span class="go">Now try logging into the machine, with:   &quot;ssh &#39;viper&#39;&quot;</span>
+<span class="go">and check to make sure that only the key(s) you cantead were added.</span>
+</pre></div>
+</div>
+<p>Este programa almacena la clave pública del usuario —por defecto,
+<code class="docutils literal notranslate"><span class="pre">~/.ssh/id\_rsa.pub</span></code>— en el fichero <code class="docutils literal notranslate"><span class="pre">~/.ssh/authorized_keys</span></code> del servidor (<code class="docutils literal notranslate"><span class="pre">viper</span></code> en
+este ejemplo).</p>
+<p>Y tal como indica, ahora deberíamos poder entrar en la máquina <code class="docutils literal notranslate"><span class="pre">viper</span></code> simplemente
+con:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">ana@laptop:~$ </span>ssh<span class="w"> </span>viper
+<span class="go">Last login: Mon Mar 14 21:07:15 2022 from 172.20.0.1</span>
+<span class="gp">user@viper:~$</span>
+</pre></div>
+</div>
+<p>Esto no solo es interesante porque ahorra al usuario tener que escribir su contraseña
+constantemente. Además permite que las aplicaciones puedan automatizar tareas sin la
+intervención de un usuario. Los sistemas de control de versiones (como <code class="docutils literal notranslate"><span class="pre">git</span></code>) o
+sistemas de Integración o Despliegue Continuo (CI/CD) utilizan habitualmente
+autenticación SSH con clave pública.</p>
+<p>También es posible ejecutar un único comando en el servidor y ver la salida directamente
+en el computador cliente. Simplemente hay que escribir el comando a continuación:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">ana@laptop:~$ </span>ssh<span class="w"> </span>viper<span class="w"> </span>ls<span class="w"> </span>/home/
+<span class="go">user</span>
+</pre></div>
+</div>
+</section>
+<section id="autenticacion-mediante-certificado">
+<h2>Autenticación mediante certificado<a class="headerlink" href="#autenticacion-mediante-certificado" title="Permalink to this headline">#</a></h2>
+<p>Otra forma de autenticar usuarios es mediante certificados, una opción algo más
+avanzada que la autenticación con clave pública, que hemos visto en la sección anterior.
+Estos certificados son emitidos por una autoridad de certificación (CA), que firma
+(con su clave privada) el par de claves (privada/pública) de los usuarios. El resultado
+son certificados que permiten autenticar usuarios en hosts y viceversa.</p>
+<p>La ventaja de este sistema es que el administrador de un servidor puede expedir
+certificados para un número arbitrario de usuarios. Un mismo par de claves firmado por un
+administrador puede otorgar derecho de acceso a múltiples servidores sin tener que
+modificar su configuración.</p>
+<p>Las claves de la CA se crean también con el comando <code class="docutils literal notranslate"><span class="pre">ssh-keygen</span></code>:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">~$ ssh-keygen -t rsa -f ca_key -P &quot;&quot; -C ca_key</span>
+<span class="go">Generating public/private rsa key pair.</span>
+<span class="go">Your identification has been saved in ca_key</span>
+<span class="go">Your public key has been saved in ca_key.pub</span>
+<span class="go">The key fingerprint is:</span>
+<span class="go">SHA256:nbN+pdyB3paUUnoPe60KJbkC3flKiXCVbSIH51wQXbo ca_key</span>
+</pre></div>
+</div>
+<p>Aunque <code class="docutils literal notranslate"><span class="pre">ssh-keygen</span></code> proporciona multitud de opciones, en este caso solamente utilizamos
+algunas de ellas:</p>
+<dl class="simple myst">
+<dt><code class="docutils literal notranslate"><span class="pre">-t</span></code></dt><dd><p>permite indicar el algoritmo (en este caso cifrado RSA.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-f</span></code></dt><dd><p>especifica el nombre del fichero destino.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-P</span></code></dt><dd><p>define la contraseña (vacía en este caso).</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-C</span></code></dt><dd><p>añade un comentario que aparece al final de la clave pública.</p>
+</dd>
+</dl>
+<p>La clave privada (<code class="docutils literal notranslate"><span class="pre">ca_key</span></code>), por supuesto, debe almacenarse de forma segura, ya que es con
+la que se firma y emite los certificados. La clave pública (<code class="docutils literal notranslate"><span class="pre">ca_key.pub</span></code>) es la que se
+utiliza el servidor SSH en el proceso de autenticación de los clientes.</p>
+<section id="un-certificado-para-el-usuario">
+<h3>Un certificado para el usuario<a class="headerlink" href="#un-certificado-para-el-usuario" title="Permalink to this headline">#</a></h3>
+<p>Los certificados SSH de usuario hacen posible autenticar usuarios en un servidor
+determinado. Para ilustrar cómo funcionan vamos a generar un certificado para el usuario
+<code class="docutils literal notranslate"><span class="pre">user</span></code> de la máquina <code class="docutils literal notranslate"><span class="pre">viper</span></code> como lo haría su administrador. Primero creamos un par de
+claves pública/privada para el usuario, con el nombre <code class="docutils literal notranslate"><span class="pre">user_key</span></code>.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>ssh-keygen<span class="w"> </span>-f<span class="w"> </span>user_key
+</pre></div>
+</div>
+<p>Después, se firma la clave pública del usuario (<code class="docutils literal notranslate"><span class="pre">user_key.pub</span></code>) con la clave
+privada de la CA (<code class="docutils literal notranslate"><span class="pre">ca_key</span></code>):</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>ssh-keygen<span class="w"> </span>-s<span class="w"> </span>ca_key<span class="w"> </span>-I<span class="w"> </span>viper<span class="w"> </span>-n<span class="w"> </span>user<span class="w"> </span>user_key.pub
+</pre></div>
+</div>
+<p>Con este comando se ha generado también el certificado <code class="docutils literal notranslate"><span class="pre">user_key-cert.pub</span></code>.</p>
+<p>Las opciones que se han usado en la firma son:</p>
+<dl class="simple myst">
+<dt><code class="docutils literal notranslate"><span class="pre">-s</span></code></dt><dd><p>para indicar la clave con la que se quiere firmar (<em>sign</em>).</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-I</span></code></dt><dd><p>para determinar la identidad del certificado, normalmente el nombre del <em>host</em> (puede
+utilizarse en el futuro para revocar un certificado, por ejemplo).</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">-n</span></code></dt><dd><p>que permite definir una lista de usuarios y/o <em>hosts</em> donde el certificado es válido (en
+este caso únicamente el usuario <code class="docutils literal notranslate"><span class="pre">user</span></code>.</p>
+</dd>
+</dl>
+<p>En el servidor, es necesario almacenar la clave pública de la CA con los permisos
+adecuados (644). En la máquina <code class="docutils literal notranslate"><span class="pre">viper</span></code>:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">root@viper:/etc/ssh# </span>chmod<span class="w"> </span><span class="m">644</span><span class="w"> </span>ca_key.pub
+<span class="gp">root@viper:/etc/ssh# </span>ls<span class="w"> </span>-la<span class="w"> </span>ca_key.pub
+<span class="go">-rw-r--r-- 1 user user    562 Mar  3 09:13 ca_key.pub</span>
+</pre></div>
+</div>
+<p>Para indicar que todas las claves de usuario firmadas por la CA se pueden autenticar
+en el servidor, se debe añadir lo siguiente en el archivo de configuración
+<code class="docutils literal notranslate"><span class="pre">/etc/ssh/sshd\_config</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">TrustedUserCAKeys</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">ssh</span><span class="o">/</span><span class="n">ca_key</span><span class="o">.</span><span class="n">pub</span>
+</pre></div>
+</div>
+<p>Para que los cambios tengan efecto reiniciamos el servidor SSH (<code class="docutils literal notranslate"><span class="pre">sshd</span></code>) con:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">root@viper:/home/user# </span>systemctl<span class="w"> </span>restart<span class="w"> </span>sshd
+</pre></div>
+</div>
+<p>Con esto termina la configuración el servidor (<code class="docutils literal notranslate"><span class="pre">viper</span></code> en este ejemplo). Este proceso
+lo realizar automáticamente la contrucción de la imagen docker y se puede ver en el
+fichero <code class="docutils literal notranslate"><span class="pre">Dockerfile</span></code>.</p>
+<p>Por otro lado, el cliente tiene que copiar su clave privada (<code class="docutils literal notranslate"><span class="pre">user_key</span></code>) y su
+certificado (<code class="docutils literal notranslate"><span class="pre">user_key-cert.pub</span></code>) en su directorio
+<code class="docutils literal notranslate"><span class="pre">~/.ssh/</span></code>:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">ana@laptop:~$ </span>ls<span class="w"> </span>-l<span class="w"> </span>~/.ssh
+<span class="go">-rw------- 1 ana    ana    2590 mar  3 09:35 user_key</span>
+<span class="go">-rw-rw-r-- 1 ana    ana    2020 mar  3 09:40 user_key-cert.pub</span>
+<span class="go">-rw-rw-r-- 1 ana    ana     137 mar  3 10:04 config</span>
+</pre></div>
+</div>
+<p>Además, habrá de indicar que quiere usar esa clave a la hora de acceder a la máquina
+<code class="docutils literal notranslate"><span class="pre">viper</span></code>:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">ana@laptop:~$ </span>ssh<span class="w"> </span>-i<span class="w"> </span>~/.ssh/user_key<span class="w"> </span>viper
+</pre></div>
+</div>
+<p>Para mayor comodidad, puede añadirse la clave a la configuración de <code class="docutils literal notranslate"><span class="pre">viper</span></code> en
+<code class="docutils literal notranslate"><span class="pre">~/.ssh/config</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Host</span> <span class="n">viper</span>
+    <span class="n">Hostname</span> <span class="n">localhost</span>
+    <span class="n">Port</span> <span class="mi">2200</span>
+    <span class="n">User</span> <span class="n">user</span>
+    <span class="n">IdentityFile</span> <span class="o">~/.</span><span class="n">ssh</span><span class="o">/</span><span class="n">user_key</span>
+</pre></div>
+</div>
+<p>Y con esto se podrá acceder simplemente con:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">ana@laptop:~$ </span>ssh<span class="w"> </span>viper
+</pre></div>
+</div>
+<p>La diferencia respecto a lo explicado en la sección</p>
+<p>es que el
+usuario nunca necesitó una clave textual para acceder al servidor. De hecho, el servidor
+se puede configurar para que la única forma de autenticación permitida sea mediante clave
+pública <a class="footnote-reference brackets" href="#id4" id="id2">2</a>, de modo que no hay posibilidad de
+usar <code class="docutils literal notranslate"><span class="pre">ssh-copy-id</span></code>. Esto se considera más seguro.</p>
+</section>
+</section>
+<section id="copia-remota-de-ficheros-con-scp">
+<h2>Copia remota de ficheros con SCP<a class="headerlink" href="#copia-remota-de-ficheros-con-scp" title="Permalink to this headline">#</a></h2>
+<p>SCP es un protocolo de copia segura de ficheros entre computadores cualesquiera
+conectados a Internet. Resulta especialmente cómodo ya que el propio servidor de
+OpenSSH lo incorpora y está activado por defecto.</p>
+<p>Con la configuración expricada previamente,  es tan sencillo como:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>scp<span class="w"> </span>un-fichero<span class="w"> </span>viper:
+<span class="go">un-fichero                                              100%    5    16.6KB/s   00:00</span>
+</pre></div>
+</div>
+<p>El formato básico es similar al comando <code class="docutils literal notranslate"><span class="pre">cp</span></code> estándar, es decir, se indica origen y
+destino. Si alguno de los dos es remoto (que es obviamente lo normal) se debe indicar el
+nombre de un nodo seguido de ‘<code class="docutils literal notranslate"><span class="pre">:</span></code>’, tal como aparece en el ejemplo anterior.</p>
+<p>También es posible copiar directorios recursivamente si se utiliza la opción <code class="docutils literal notranslate"><span class="pre">-r</span></code>.</p>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="id3"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>y tremendamente inseguro.</p>
+</dd>
+<dt class="label" id="id4"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dd><p><code class="docutils literal notranslate"><span class="pre">PasswordAuthentication</span> <span class="pre">no</span></code></p>
+</dd>
+</dl>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="python.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Python</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="udp_chat.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Chat UDP</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Departamento ATC<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

@@ -52,7 +52,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Chat UDP" href="udp_chat.html" />
+    <link rel="next" title="SSH" href="ssh.html" />
     <link rel="prev" title="Paquetes" href="paquetes.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -130,6 +130,11 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="ssh.html">
+   SSH
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="udp_chat.html">
    Chat UDP
   </a>
@@ -198,7 +203,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/joselsegura/redes2-lab/main?urlpath=tree/python.ipynb"
+        <a href="https://mybinder.org/v2/gh/uclm-esi/net-book/main?urlpath=tree/python.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -241,7 +246,7 @@ title="Fullscreen mode"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://github.com/joselsegura/redes2-lab"
+        <a href="https://github.com/uclm-esi/net-book"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -258,7 +263,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/joselsegura/redes2-lab/issues/new?title=Issue%20on%20page%20%2Fpython.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/uclm-esi/net-book/issues/new?title=Issue%20on%20page%20%2Fpython.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -485,8 +490,13 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#python-y-los-tipos">
-   Python y los tipos
+  <a class="reference internal nav-link" href="#fichero-ejecutable">
+   Fichero ejecutable
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#type-checking">
+   Type checking
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -658,8 +668,13 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#python-y-los-tipos">
-   Python y los tipos
+  <a class="reference internal nav-link" href="#fichero-ejecutable">
+   Fichero ejecutable
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#type-checking">
+   Type checking
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -686,7 +701,8 @@ title="Print to PDF"
 <h1>Python<a class="headerlink" href="#python" title="Permalink to this headline">#</a></h1>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Un pequeño ajuste de configuración para simplificar el uso de jupyter notebook en los ejemplos</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Un pequeño ajuste de configuración para simplificar el uso de jupyter</span>
+<span class="c1"># notebook en los ejemplos</span>
 <span class="kn">from</span> <span class="nn">IPython.core.interactiveshell</span> <span class="kn">import</span> <span class="n">InteractiveShell</span>
 <span class="n">InteractiveShell</span><span class="o">.</span><span class="n">ast_node_interactivity</span> <span class="o">=</span> <span class="s2">&quot;all&quot;</span>
 </pre></div>
@@ -729,7 +745,7 @@ title="Print to PDF"
 <p>Python no permite hacer operaciones entre diferentes tipos de forma explícita:</p>
 <div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="s2">&quot;Hola&quot;</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="s2">&quot;Hola&quot;</span>
 <span class="n">a</span> <span class="o">+</span> <span class="mi">1</span>
 </pre></div>
 </div>
@@ -754,7 +770,7 @@ title="Print to PDF"
 <p>Asimismo, podemos cambiar dinámicamente el tipo de una variable. En realidad, Python destruye la variable definida previamente y crea una nueva con el mismo nombre.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="s2">&quot;Hola&quot;</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="s2">&quot;Hola&quot;</span>
 <span class="n">a</span>
 <span class="n">a</span> <span class="o">=</span> <span class="mi">5</span>
 <span class="n">a</span>
@@ -786,7 +802,7 @@ title="Print to PDF"
 <h3>Booleanos<a class="headerlink" href="#booleanos" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="kc">True</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="kc">True</span>
 <span class="n">a</span>
 <span class="n">b</span> <span class="o">=</span> <span class="kc">False</span>
 <span class="n">b</span>
@@ -810,7 +826,7 @@ False
 <p>Los 3 tipos numéricos básicos son <code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">float</span></code> y <code class="docutils literal notranslate"><span class="pre">complex</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">5</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">5</span>
 <span class="n">b</span> <span class="o">=</span> <span class="mf">3.14</span>
 <span class="n">c</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">5</span><span class="n">j</span>
 
@@ -835,7 +851,7 @@ False
 <p>Representa a una cadena de texto habitual, que contenga caracteres imprimibles. Las cadenas permiten operaciones como la suma y la multiplicación:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;Hola&quot;</span> <span class="o">+</span> <span class="s2">&quot; mundo&quot;</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;Hola&quot;</span> <span class="o">+</span> <span class="s2">&quot; mundo&quot;</span>
 <span class="s2">&quot;\o/ &quot;</span> <span class="o">*</span> <span class="mi">20</span>
 </pre></div>
 </div>
@@ -854,7 +870,7 @@ False
 <p>Debemos tener en cuenta que podemos transformar cadenas de carácteres en cadenas de bytes y viceversa. Es realmente importante entender la diferencia entre ambos tipos de datos, así como entender cómo transformar entre ellos.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&quot;Hello world&quot;</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&quot;Hello world&quot;</span>
 <span class="n">c</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&quot;</span><span class="se">\x00\x01\x02</span><span class="s2">&quot;</span>
 <span class="n">d</span> <span class="o">=</span> <span class="s2">&quot;ñandú&quot;</span><span class="o">.</span><span class="n">encode</span><span class="p">()</span>
 
@@ -891,7 +907,7 @@ False
 <p>Las tuplas, al igual que las <code class="docutils literal notranslate"><span class="pre">str</span></code> o  los <code class="docutils literal notranslate"><span class="pre">bytes</span></code>, son tipos inmutables: no pueden modificarse una vez inicializadas.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Empaquetado de variables</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Empaquetado de variables</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span>
 <span class="n">x</span>
 <span class="c1"># Desempaquetado de variables</span>
@@ -916,7 +932,7 @@ False
 <p>Al contrario que los anteriores, las listas son mutables y pueden ser modificadas:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
 <span class="n">l</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3</span>
 <span class="n">l</span>
 </pre></div>
@@ -931,7 +947,7 @@ False
 <p>Las listas también permiten realizar operaciones de suma y multiplicación, entendidas como concatenación y repetición respectivamente.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">l</span> <span class="o">+</span> <span class="p">[</span><span class="mi">5</span><span class="p">]</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">l</span> <span class="o">+</span> <span class="p">[</span><span class="mi">5</span><span class="p">]</span>
 <span class="n">l</span> <span class="o">*</span> <span class="mi">2</span>
 <span class="n">l</span>
 </pre></div>
@@ -953,7 +969,7 @@ False
 <p>Pero además, es posible hacer “rodajas” o <em>“slicing”</em> o usar números negativos cómo índices:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cadena</span> <span class="o">=</span> <span class="s2">&quot;Hola mundo&quot;</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cadena</span> <span class="o">=</span> <span class="s2">&quot;Hola mundo&quot;</span>
 <span class="n">cadena</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
 <span class="n">cadena</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 <span class="n">cadena</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">6</span><span class="p">]</span>
@@ -991,7 +1007,7 @@ False
 <p>Son tablas asociativas o <em>hash maps</em>. Tanto clave como valores pueden ser de cualquier tipo:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">notas</span> <span class="o">=</span> <span class="p">{</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">notas</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">&quot;antonio&quot;</span><span class="p">:</span> <span class="mf">7.8</span><span class="p">,</span>
     <span class="s2">&quot;maria&quot;</span><span class="p">:</span> <span class="mi">9</span><span class="p">,</span>
 <span class="p">}</span>
@@ -1027,7 +1043,7 @@ False
 <p>Todas estas estructuras de control funcionan de la forma habitual, a excepción del <code class="docutils literal notranslate"><span class="pre">for</span></code> que tiene una sintaxis diferente a la habitual de C:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">metales</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;oro&quot;</span><span class="p">,</span> <span class="s2">&quot;plata&quot;</span><span class="p">,</span> <span class="s2">&quot;bronce&quot;</span><span class="p">]</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">metales</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;oro&quot;</span><span class="p">,</span> <span class="s2">&quot;plata&quot;</span><span class="p">,</span> <span class="s2">&quot;bronce&quot;</span><span class="p">]</span>
 
 <span class="k">for</span> <span class="n">metal</span> <span class="ow">in</span> <span class="n">metales</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">metal</span><span class="p">)</span>
@@ -1045,7 +1061,7 @@ bronce
 <p>En Python también tenemos el operador ternario para sustituir los típicos bloques <code class="docutils literal notranslate"><span class="pre">if-else</span></code> que se utilizan para realizar una asignación:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">valor</span> <span class="o">=</span> <span class="mi">10</span> <span class="k">if</span> <span class="mi">5</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="mi">0</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">valor</span> <span class="o">=</span> <span class="mi">10</span> <span class="k">if</span> <span class="mi">5</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="mi">0</span>
 <span class="n">valor</span>
 </pre></div>
 </div>
@@ -1069,7 +1085,7 @@ bronce
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
     <span class="k">assert</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;1 is not equal to 2&quot;</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This shouln&#39;t happen&quot;</span><span class="p">)</span>
 <span class="k">except</span> <span class="ne">AssertionError</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
@@ -1098,7 +1114,7 @@ This will be always executed
 <p>La sintaxis para definir una función es la siguiente:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Calculate the factorial for the number n recursively&quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
         <span class="k">return</span> <span class="mi">1</span>
@@ -1119,11 +1135,12 @@ This will be always executed
 </section>
 <section id="python-is-different">
 <h2>Python is different<a class="headerlink" href="#python-is-different" title="Permalink to this headline">#</a></h2>
-<p>Cuando se empieza a utilizar Python solemos hacerlo de manera muy parecida a los lenguajes tradicionales. Sin embargo, hay formas más “pythónicas” de implementar las cosas.</p>
+<p>Cuando se empieza a utilizar Python solemos hacerlo de manera muy parecida a los lenguajes tradicionales. Por ejemplo, el soporte de programación funcional que incluye el lenguaje permite hacer la función factorial de un modo diferente:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">reduce</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">reduce</span>
 <span class="kn">from</span> <span class="nn">operator</span> <span class="kn">import</span> <span class="n">mul</span>
+
 <span class="n">factorial</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">n</span><span class="p">:</span> <span class="n">reduce</span><span class="p">(</span><span class="n">mul</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
 
 <span class="n">factorial</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
@@ -1139,7 +1156,7 @@ This will be always executed
 <p>También podemos generar listas o diccionarios utilizando la sintaxis <em>“comprehension”</em>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">even</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">even</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span>
 <span class="n">even</span>
 
 <span class="n">fast_cubes</span> <span class="o">=</span> <span class="p">{</span><span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">)}</span>
@@ -1157,15 +1174,25 @@ This will be always executed
 </div>
 </div>
 </section>
-<section id="python-y-los-tipos">
-<h2>Python y los tipos<a class="headerlink" href="#python-y-los-tipos" title="Permalink to this headline">#</a></h2>
-<p>En las funciones y métodos Python no se indica el tipo de los argumentos que recibe o el del valor que devuelve. En cierto modo, se asume que se va a invocar del modo correcto, es decir, no hace comprobación de tipos (<em>type checking</em>).</p>
-<p>Si bien esto le da mucha flexibilidad, a la hora de validar una llamada o documentar un API de módulo o clase puede ser un problema, por lo que desde hace unos años se introdujo el llamado <em>hinting</em> de tipos.</p>
-<p>Sin embargo cuando indicamos el tipo mediante <em>hinting</em> solo estamos haciendo una anotación y no tiene ningún efecto aparente. Si realmente queremos typechecking y forzar la correspondencia de tipos, tendremos que utilizar herramientas externas como <code class="docutils literal notranslate"><span class="pre">mypy</span></code>, que hace esa verificación estática del código.</p>
+<section id="fichero-ejecutable">
+<h2>Fichero ejecutable<a class="headerlink" href="#fichero-ejecutable" title="Permalink to this headline">#</a></h2>
+<p>Lo normal es escribir un programa en un fichero de texto —con extensión <code class="docutils literal notranslate"><span class="pre">.py</span></code> utilizando algún buen IDE. Después la idea es poder ejecutar ese fichero como cualquier otro programa. Para que esto funcione, debemos escribir un <em>shebang</em> en la primera línea del fichero. Esto es habitual en lenguajes interpretados y le dice a la shell qué debe ejecutar para poder lanzar este programa.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
+</pre></div>
+</div>
+<p>Y no olvides darle permisos de ejecución:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>chmod<span class="w"> </span>+x<span class="w"> </span>fichero.py
+</pre></div>
+</div>
+</section>
+<section id="type-checking">
+<h2>Type checking<a class="headerlink" href="#type-checking" title="Permalink to this headline">#</a></h2>
+<p>En la definición de variables, funciones y métodos Python no se indican los tipos, solo los nombres. En cierto modo, se asume que se va a invocar del modo correcto, es decir, no hace comprobación de tipos (<em>type checking</em>). Si bien esto le da mucha flexibilidad, a la hora de validar una llamada o documentar un API de módulo o clase puede ser un problema, por lo que desde hace unos años se introdujo el llamado <em>hinting</em> de tipos.</p>
+<p>Sin embargo cuando indicamos el tipo mediante <em>hinting</em> solo estamos haciendo una anotación y no tiene ningún efecto aparente. Si realmente queremos <em>typechecking</em> y forzar la correspondencia de tipos, tendremos que utilizar herramientas externas como <code class="docutils literal notranslate"><span class="pre">mypy</span></code>, que hace esa verificación estática del código.</p>
 <p>Esta sería una versión de la función <code class="docutils literal notranslate"><span class="pre">factorial()</span></code> con <em>type hinting</em> y una llamada incorrecta (que guardamos en el fichero <code class="docutils literal notranslate"><span class="pre">factorial.py</span></code>):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%file</span> factorial.py
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">file</span> <span class="n">factorial</span><span class="o">.</span><span class="n">py</span>
 
 <span class="k">def</span> <span class="nf">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
     <span class="k">return</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">else</span> <span class="n">n</span> <span class="o">*</span> <span class="n">factorial</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
@@ -1175,7 +1202,7 @@ This will be always executed
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Overwriting factorial.py
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Writing factorial.py
 </pre></div>
 </div>
 </div>
@@ -1183,15 +1210,15 @@ This will be always executed
 <p>Instalamos <code class="docutils literal notranslate"><span class="pre">mypy</span></code> para poder probar la comprobación de tipos.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>mypy
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>! pip install mypy
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: mypy in /home/david/.local/share/virtualenvs/net-book-bM-vswVT/lib/python3.9/site-packages (1.0.1)
 Requirement already satisfied: tomli&gt;=1.1.0 in /home/david/.local/share/virtualenvs/net-book-bM-vswVT/lib/python3.9/site-packages (from mypy) (2.0.1)
-Requirement already satisfied: typing-extensions&gt;=3.10 in /home/david/.local/share/virtualenvs/net-book-bM-vswVT/lib/python3.9/site-packages (from mypy) (4.5.0)
 Requirement already satisfied: mypy-extensions&gt;=0.4.3 in /home/david/.local/share/virtualenvs/net-book-bM-vswVT/lib/python3.9/site-packages (from mypy) (1.0.0)
+Requirement already satisfied: typing-extensions&gt;=3.10 in /home/david/.local/share/virtualenvs/net-book-bM-vswVT/lib/python3.9/site-packages (from mypy) (4.5.0)
 </pre></div>
 </div>
 </div>
@@ -1199,7 +1226,7 @@ Requirement already satisfied: mypy-extensions&gt;=0.4.3 in /home/david/.local/s
 <p>Y veamos qué ocurre cuando analizamos el código:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span><span class="w"> </span>mypy<span class="w"> </span>factorial.py
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>! mypy factorial.py
 </pre></div>
 </div>
 </div>
@@ -1210,6 +1237,8 @@ Requirement already satisfied: mypy-extensions&gt;=0.4.3 in /home/david/.local/s
 </div>
 </div>
 </div>
+<p>El programa nos avisa de que el argumento que estamos pasando a la función es en realidad una cadena, un tipo de dato que no se corresponde con el
+esperado.</p>
 </section>
 <section id="depuracion">
 <h2>Depuración<a class="headerlink" href="#depuracion" title="Permalink to this headline">#</a></h2>
@@ -1278,10 +1307,10 @@ Requirement already satisfied: mypy-extensions&gt;=0.4.3 in /home/david/.local/s
             <p class="prev-next-title">Paquetes</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="udp_chat.html" title="next page">
+    <a class='right-next' id="next-link" href="ssh.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Chat UDP</p>
+        <p class="prev-next-title">SSH</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

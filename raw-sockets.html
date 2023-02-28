@@ -1,0 +1,1036 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>7. Sockets RAW &#8212; Redes 2</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="6. Serialización" href="serializacion.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Redes 2</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Prefacio
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="shell.html">
+   1. Shell
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="paquetes.html">
+   2. Paquetes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="python.html">
+   3. Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ssh.html">
+   4. SSH
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="udp_chat.html">
+   5. Chat UDP
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="serializacion.html">
+   6. Serialización
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   7. Sockets RAW
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/uclm-esi/net-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/uclm-esi/net-book/issues/new?title=Issue%20on%20page%20%2Fraw-sockets.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/raw-sockets.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#acceso-privilegiado">
+   7.1. Acceso privilegiado
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tipos">
+   7.2. Tipos
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sockets-af-packet-sock-raw">
+   7.3. Sockets AF_PACKET:SOCK_RAW
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#construir-y-enviar-tramas">
+     7.3.1. Construir y enviar tramas
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#implementando-un-arping">
+     7.3.2. Implementando un
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       arping
+      </span>
+     </code>
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#generando-mensajes">
+       7.3.2.1. Generando mensajes
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#leyendo-mensajes">
+       7.3.2.2. Leyendo mensajes
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#programa-principal">
+       7.3.2.3. Programa principal
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sockets-af-inet-sock-raw">
+   7.4. Sockets AF_INET:SOCK_RAW
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#capturando-mensajes">
+     7.4.1. Capturando mensajes
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#enviando">
+     7.4.2. Enviando
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ip-hdrincl">
+     7.4.3. IP_HDRINCL
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ejercicios">
+   7.5. Ejercicios
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Sockets RAW</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#acceso-privilegiado">
+   7.1. Acceso privilegiado
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tipos">
+   7.2. Tipos
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sockets-af-packet-sock-raw">
+   7.3. Sockets AF_PACKET:SOCK_RAW
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#construir-y-enviar-tramas">
+     7.3.1. Construir y enviar tramas
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#implementando-un-arping">
+     7.3.2. Implementando un
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       arping
+      </span>
+     </code>
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#generando-mensajes">
+       7.3.2.1. Generando mensajes
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#leyendo-mensajes">
+       7.3.2.2. Leyendo mensajes
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#programa-principal">
+       7.3.2.3. Programa principal
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sockets-af-inet-sock-raw">
+   7.4. Sockets AF_INET:SOCK_RAW
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#capturando-mensajes">
+     7.4.1. Capturando mensajes
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#enviando">
+     7.4.2. Enviando
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ip-hdrincl">
+     7.4.3. IP_HDRINCL
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ejercicios">
+   7.5. Ejercicios
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="sockets-raw">
+<span id="chap-raw-sockets"></span><h1><span class="section-number">7. </span>Sockets RAW<a class="headerlink" href="#sockets-raw" title="Permalink to this headline">#</a></h1>
+<p>Los sockets más usados con diferencia son los TCP seguidos de los UDP. Sin
+embargo, hay muchos otros tipos de socket. Este capítulo es una introducción muy práctica
+a los «sockets RAW» <a class="footnote-reference brackets" href="#id9" id="id1">1</a>.</p>
+<p>El término «raw» <a class="footnote-reference brackets" href="#id10" id="id2">2</a> en informática suele hacer referencia al acceso de bajo nivel a un
+recurso o dispositivo, o al menos con menor intervención  terceros (normalmente el sistema
+operativo). Este tipo de acceso directo tiene tres implicaciones principales:</p>
+<ul class="simple">
+<li><p>Mayor flexibilidad, al no estar limitado por las reglas o normas que impongan las
+capas de alto nivel que ofrece el sistema operativo.</p></li>
+<li><p>Acceso privilegiado, debido precisamente a que dichas posibilidades tienen un
+impacto directo sobre la seguridad del sistema y la privacidad de sus usuarios.</p></li>
+<li><p>Menos soporte, ya que son precisamente las capas del sistema operativo que se dejan
+a un lado las que simplifican el manejo del recurso. El «modo RAW» conlleva un nivel de
+abstracción mucho menor y por tanto, más complejidad técnica.</p></li>
+</ul>
+<p>Estas tres cuestiones se pueden aplicar casi a cualquier cosa que permita un acceso «raw»,
+sea un periférico USB, una consola o, como en este caso, un socket.</p>
+<p>Con los sockets <code class="docutils literal notranslate"><span class="pre">AF_INET:SOCK_STREAM</span></code> o <code class="docutils literal notranslate"><span class="pre">AF_INET:SOCK_DGRAM</span></code> no es posible acceder (para
+leer o escribir) a las cabeceras de ninguno de los protocolos de TCP/IP de la capa de
+transporte o inferior, ya sea IP, ICMP, ARP, TCP, etc. Esos sockets únicamente permiten
+indicar cuál será la carga útil de los segmentos TCP o UDP y solo indirectamente se
+puede influir en algunos de los campos de sus cabeceras:  puerto origen y destino y poco
+más <a class="footnote-reference brackets" href="#id11" id="id3">3</a>.</p>
+<p>En raras situaciones se necesita ofrecer servicios que implican a protocolos de capas 2 y
+3, o a las cabeceras de tramas, paquetes y segmentos, que normalmente quedan fuera de la
+vista del programador. Algunos programas que sí lo necesitan pueden ser <code class="docutils literal notranslate"><span class="pre">ping</span></code>,
+<code class="docutils literal notranslate"><span class="pre">traceroute</span></code>, <code class="docutils literal notranslate"><span class="pre">arping</span></code> o un <em>sniffer</em> cualquiera. Entonces ¿cómo se hacen estos programas?
+La respuesta, como podrás adivinar, pasa por los sockets RAW.</p>
+<section id="acceso-privilegiado">
+<h2><span class="section-number">7.1. </span>Acceso privilegiado<a class="headerlink" href="#acceso-privilegiado" title="Permalink to this headline">#</a></h2>
+<p>Como se decía un poco más arriba, el uso de un socket RAW requiere de los privilegios
+correspondientes, concretamente, se requieren permisos de superusuario. Solo el <code class="docutils literal notranslate"><span class="pre">root</span></code> o
+un programa ejecutado con sus privilegios <a class="footnote-reference brackets" href="#id12" id="id4">4</a> tendrá permiso para crear sockets RAW.</p>
+<p>Si tu interfaz de red es una tarjeta Ethernet, únicamente las tramas broadcast, multicast
+o que vayan dirigidas específicamente a su dirección MAC serán capturadas y entregadas al
+subsistema de red. Sin embargo, si pretendes utilizar un socket RAW, es muy probable que
+te interese recibir todo el tráfico que llegue a la interfaz de red de tu computador, y no
+sólo el mencionado. Para lograr eso es necesario activar el «modo promiscuo» de la
+NIC. Eso se puede lograr con el comando <code class="docutils literal notranslate"><span class="pre">ip</span></code>:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>ip<span class="w"> </span>link<span class="w"> </span><span class="nb">set</span><span class="w"> </span>eth0<span class="w"> </span>promisc<span class="w"> </span>on
+</pre></div>
+</div>
+<p>O bien con <code class="docutils literal notranslate"><span class="pre">ifconfig</span></code>:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>ifconfig<span class="w"> </span>eth0<span class="w"> </span>promisc
+</pre></div>
+</div>
+<p>De modo análogo se puede saber si una interfaz está en modo promiscuo con:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>ip<span class="w"> </span>link<span class="w"> </span>show<span class="w"> </span>eth0
+<span class="go">2: eth0: &lt;BROADCAST,MULTICAST,PROMISC,UP,LOWER_UP&gt; mtu 1500 qdisc \</span>
+<span class="go">         pfifo_fast state UP qlen 1000</span>
+<span class="go">    link/ether 00:1b:c2:32:71:32 brd ff:ff:ff:ff:ff:ff</span>
+</pre></div>
+</div>
+<p>Y el equivalente con <code class="docutils literal notranslate"><span class="pre">ifconfig</span></code>:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>/sbin/ifconfig<span class="w"> </span>eth0
+<span class="go">eth0      Link encap:Ethernet  HWaddr 00:1e:c9:34:7e:92</span>
+<span class="go">          inet addr:192.168.2.4  Bcast:192.168.2.255  Mask:255.255.255.0</span>
+<span class="go">          inet6 addr: fe80::21e:c9ff:fe34:7e92/64 Scope:Link</span>
+<span class="go">          UP BROADCAST RUNNING PROMISC MULTICAST  MTU:1500  Metric:1</span>
+<span class="go">          RX packets:160791 errors:0 dropped:0 overruns:0 frame:0</span>
+<span class="go">          TX packets:121923 errors:0 dropped:0 overruns:0 carrier:0</span>
+<span class="go">          collisions:0 txqueuelen:1000</span>
+<span class="go">          RX bytes:177101459 (168.8 MiB)  TX bytes:18361567 (17.5 MiB)</span>
+<span class="go">          Memory:fdfe0000-fe000000</span>
+</pre></div>
+</div>
+</section>
+<section id="tipos">
+<h2><span class="section-number">7.2. </span>Tipos<a class="headerlink" href="#tipos" title="Permalink to this headline">#</a></h2>
+<p>Lo primero a tener en cuenta es que hay dos tipos básicos de socket raw, y que la decisión
+de cuál utilizar depende totalmente del objetivo y requisitos de la aplicación que se
+desea:</p>
+<dl class="simple myst">
+<dt>Familia AF_PACKET</dt><dd><p>Los sockets raw de la familia AF_PACKET son los de más bajo   nivel y permiten leer y
+escribir cabeceras de protocolos de cualquier capa.</p>
+</dd>
+<dt>Familia AF_INET</dt><dd><p>Los sockets raw AF_INET delegan al sistema operativo la
+construcción de las cabeceras de enlace y permiten una manipulación «compartida» de las
+cabeceras de red.</p>
+</dd>
+</dl>
+<p>En las próximas secciones veremos en detalle la utilidad y funcionamiento de ambas
+familias.</p>
+</section>
+<section id="sockets-af-packet-sock-raw">
+<h2><span class="section-number">7.3. </span>Sockets AF_PACKET:SOCK_RAW<a class="headerlink" href="#sockets-af-packet-sock-raw" title="Permalink to this headline">#</a></h2>
+<p>Son los sockets raw más flexibles y de más bajo nivel, y representan la elección obligada
+si el objetivo es crear un <em>sniffer</em> o algo parecido. Precisamente el siguiente
+listado es un <em>sniffer</em> extremadamente básico que imprime por consola las tramas
+Ethernet/WiFi completas recibidas por cualquier interfaz y portando cualquier protocolo.</p>
+<p>Y a continuación se muestra cómo ejecutar este programa, y su salida:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>sudo<span class="w"> </span>./sniff-all.py
+<span class="go">--</span>
+<span class="go">(b&#39;\xff\xff\xff\xff\xff\xff\xa8\x92,\xce\xcd\xb3\x08\x06\x00\x01\x08\x00\x06\x04\x00\x01\xa8\x92,</span>
+<span class="go">\xce\xcd\xb3\xac\x13\xb0O\x00\x00\x00\x00\x00\x00\xac\x13\xb0\x01&#39;, (&#39;eth0&#39;, 2054, 1, 1, &#39;\xa8\x92,</span>
+<span class="go">\xce\xcd\xb3&#39;))</span>
+</pre></div>
+</div>
+<p>Haciendo modificaciones mínimas a este programa es posible filtrar el tráfico en dos
+aspectos:</p>
+<dl class="simple myst">
+<dt>Tipo de trama</dt><dd><p>Es decir, el código que identifica el protocolo encapsulado como carga
+útil <a class="footnote-reference brackets" href="#id13" id="id5">5</a>. Para ello se utiliza el tercer campo del constructor de <code class="docutils literal notranslate"><span class="pre">socket</span></code>.</p>
+</dd>
+<dt>La interfaz de red</dt><dd><p>Se logra vinculando el socket a una interfaz de red concreta por medio del método
+<code class="docutils literal notranslate"><span class="pre">bind()</span></code>.</p>
+</dd>
+</dl>
+<p>El uso de ambos «filtros» queda demostrado en el siguiente programa, llamado
+<code class="docutils literal notranslate"><span class="pre">sniff-arp.py</span></code>. Sólo muestra menajes ARP recibidos por la interfaz que se
+indique como argumento:</p>
+<p>Y el programa en acción:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>sudo<span class="w"> </span>./sniff-arp.py<span class="w"> </span>wlan0
+<span class="go">--</span>
+<span class="go">b&#39;\xff\xff\xff\xff\xff\xffl&gt;m\x84y\x1d\x08\x06\x00\x01\x08\x00\x06\x04\x00\x01l&gt;m\x84y</span>
+<span class="go">\x1d\xa1C\x11&lt;\x00\x00\x00\x00\x00\x00\xa1C\x11\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00</span>
+<span class="go">\x00\x00\x00\x00\x00\x00\x00\x00\x00&#39;</span>
+</pre></div>
+</div>
+<p>Si te fijas, es fácil identificar la cabecera Ethernet en esa secuencia de bytes. Aparecen
+6 bytes <code class="docutils literal notranslate"><span class="pre">0xff</span></code>, que corresponden a la dirección broadcast de Ethernet; y más
+adelante <code class="docutils literal notranslate"><span class="pre">0x0806</span></code>, que como hemos visto en el programa, corresponden al tipo de
+payload ARP.</p>
+<p>De este modo tan sencillo es posible realizar un <em>sniffer</em> completamente a medida de
+las necesidades concretas. Pero todo esto sólo sirve para leer tramas. Ahora veremos cómo
+enviar, lo que abre un interesante mundo de posibilidades.</p>
+<p>Si quieres identificar el origen del paquete puedes utilizar el método <code class="docutils literal notranslate"><span class="pre">recvfrom()</span></code>
+en lugar de <code class="docutils literal notranslate"><span class="pre">recv()</span></code>. En ese caso el valor de retorno es una tupla que incluye,
+entre otras cosas, el nombre de la interfaz (p.ej «eth0») y la dirección MAC origen como
+una secuencia de bytes.</p>
+<section id="construir-y-enviar-tramas">
+<h3><span class="section-number">7.3.1. </span>Construir y enviar tramas<a class="headerlink" href="#construir-y-enviar-tramas" title="Permalink to this headline">#</a></h3>
+<p>El mismo socket creado en los ejemplos anteriores se puede utilizar para enviar
+datos. Para sintetizar un paquete, es decir, construir cabeceras de acuerdo a las
+especificaciones, se utiliza normalmente el módulo <code class="docutils literal notranslate"><span class="pre">struct</span></code> <a class="footnote-reference brackets" href="#id14" id="id6">6</a>.</p>
+<p>El siguiente listado envía una cabecera Ethernet cuyos campos son:</p>
+<ul class="simple">
+<li><p>Destino: FF:FF:FF:FF:FF:FF</p></li>
+<li><p>Origen: 00:01:02:03:04:05</p></li>
+<li><p>Protocolo: 0x0806 (ARP)</p></li>
+</ul>
+<p>Si capturas esa trama con {wireshark<code class="docutils literal notranslate"><span class="pre">o</span></code>tshark` verás que aparece con un
+«malformed packet», y con razón: es sólo una cabecera ¡no tiene carga útil!</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>tshark<span class="w"> </span>-a<span class="w"> </span>duration:7<span class="w"> </span>-n<span class="w"> </span>-f<span class="w"> </span>arp
+<span class="go">Capturing on &#39;wlan0&#39;</span>
+<span class="go">    1 0.000000000 00:01:02:03:04:05 → ff:ff:ff:ff:ff:ff ARP 14 [Malformed Packet]</span>
+</pre></div>
+</div>
+<p>Y eso lógicamente contradice todas las normas del protocolo Ethernet. Resumiendo, este
+programa no sirve para nada, sólo para que veas que se puede construir y enviar lo que
+quieras a la red, incluso aunque sea un completo sinsentido.</p>
+</section>
+<section id="implementando-un-arping">
+<h3><span class="section-number">7.3.2. </span>Implementando un <code class="docutils literal notranslate"><span class="pre">arping</span></code><a class="headerlink" href="#implementando-un-arping" title="Permalink to this headline">#</a></h3>
+<p>Aunque hay muchas variantes, el programa <code class="docutils literal notranslate"><span class="pre">arping</span></code> envía una petición ARP
+Request y espera la respuesta correspondiente. En esta sección veremos una implementación
+que sirve para ilustrar el uso de los sockets raw de la familia <code class="docutils literal notranslate"><span class="pre">AF_PACKET</span></code></p>
+<section id="generando-mensajes">
+<h4><span class="section-number">7.3.2.1. </span>Generando mensajes<a class="headerlink" href="#generando-mensajes" title="Permalink to this headline">#</a></h4>
+<p>El programa necesita enviar mensajes ARP Request, que irán encapsulados en tramas
+Ethernet. Una forma de implementar esta tarea (llamada a veces «sintetizar paquetes») y
+aprovechar la POO es escribir una clase por cada tipo de mensaje. Por tanto, la clase
+para generar el mensaje ARP Request es algo tan sencillo como esto:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Ether</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hwsrc</span><span class="p">,</span> <span class="n">hwdst</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">hwsrc</span> <span class="o">=</span> <span class="n">hwsrc</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">hwdst</span> <span class="o">=</span> <span class="n">hwdst</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">payload</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">def</span> <span class="nf">set_payload</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">payload</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">payload</span> <span class="o">=</span> <span class="n">payload</span>
+        <span class="n">payload</span><span class="o">.</span><span class="n">frame</span> <span class="o">=</span> <span class="bp">self</span>
+
+    <span class="k">def</span> <span class="nf">serialize</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">retval</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="s2">&quot;!6s6sh&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">hwdst</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">hwsrc</span><span class="p">,</span>
+                             <span class="bp">self</span><span class="o">.</span><span class="n">payload</span><span class="o">.</span><span class="n">proto</span><span class="p">)</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">payload</span><span class="o">.</span><span class="n">serialize</span><span class="p">()</span>
+
+        <span class="k">return</span> <span class="n">retval</span> <span class="o">+</span> <span class="p">(</span><span class="mi">60</span><span class="o">-</span><span class="nb">len</span><span class="p">(</span><span class="n">retval</span><span class="p">))</span> <span class="o">*</span> <span class="s2">&quot;</span><span class="se">\x00</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+<p>Lo único a destacar de la clase <code class="docutils literal notranslate"><span class="pre">Ether</span></code> es el método <code class="docutils literal notranslate"><span class="pre">serialize()</span></code> que se encarga de
+generar la representación binaria de los datos que corresponden a la cabecera,
+concretamente dirección MAC destino, MAC origen, protocolo (el que indique el payload) y a
+continuación el payload propiamente dicho. Esos datos se empaquetan en binario gracias a
+<code class="docutils literal notranslate"><span class="pre">struct.pack()</span></code> <a class="footnote-reference brackets" href="#id15" id="id7">7</a> indicando que se trata de 2 secuencias de 6 bytes (<code class="docutils literal notranslate"><span class="pre">6s6s</span></code>) y un
+entero de 16 bits (<code class="docutils literal notranslate"><span class="pre">h</span></code>). La última línea de ese método calcula y concatena el relleno
+(<em>padding</em>) necesario para que la trama alcance el tamaño mínimo necesario de 60 bytes.</p>
+<p>La clase para generar mensajes ARP Request es incluso más sencilla:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ArpRequest</span><span class="p">:</span>
+    <span class="n">proto</span> <span class="o">=</span> <span class="n">ETH_P_ARP</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">psrc</span><span class="p">,</span> <span class="n">pdst</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">psrc</span> <span class="o">=</span> <span class="n">socket</span><span class="o">.</span><span class="n">inet_aton</span><span class="p">(</span><span class="n">psrc</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pdst</span> <span class="o">=</span> <span class="n">socket</span><span class="o">.</span><span class="n">inet_aton</span><span class="p">(</span><span class="n">pdst</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">frame</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">def</span> <span class="nf">serialize</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">struct</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="s2">&quot;!HHbbH6s4s6s4s&quot;</span><span class="p">,</span> <span class="mh">0x1</span><span class="p">,</span> <span class="mh">0x0800</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span>
+                           <span class="bp">self</span><span class="o">.</span><span class="n">frame</span><span class="o">.</span><span class="n">hwsrc</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">psrc</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\x00</span><span class="s2">&quot;</span><span class="p">,</span>  <span class="bp">self</span><span class="o">.</span><span class="n">pdst</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="leyendo-mensajes">
+<h4><span class="section-number">7.3.2.2. </span>Leyendo mensajes<a class="headerlink" href="#leyendo-mensajes" title="Permalink to this headline">#</a></h4>
+<p>La otra funcionalidad importante del programa es reconocer los mensajes que se obtendrán
+como respuesta si todo va bien. Se trata de discretizar el valor de cada campo
+representándolo en un formato adecuado. Esa tarea se suele llamar «disección de
+paquetes». Como en el caso anterior, una buena forma de hacer esto es delegar el
+reconocimiento (<em>parsing</em>) de cada tipo de mensaje en una clase específica. Hace
+falta una clase para reconocer tramas Ethernet y otra para reconocer mensajes ARP Reply.</p>
+<p>La clase para reconocer tramas Ethernet puede ser algo tan sencillo como esto:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">EtherDissector</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">frame</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">hwdst</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">hwsrc</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">proto</span><span class="p">)</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">unpack</span><span class="p">(</span><span class="s2">&quot;!6s6sh&quot;</span><span class="p">,</span> <span class="n">frame</span><span class="p">[:</span><span class="mi">14</span><span class="p">])</span>
+        <span class="k">except</span> <span class="n">struct</span><span class="o">.</span><span class="n">error</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">DissectionError</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">payload</span> <span class="o">=</span> <span class="n">frame</span><span class="p">[</span><span class="mi">14</span><span class="p">:]</span>
+</pre></div>
+</div>
+<p>El constructor acepta por parámetro una secuencia de bytes, es decir, la trama tal como se
+lee del socket. Los valores que «desempaqueta» con <code class="docutils literal notranslate"><span class="pre">struct</span></code> y que estarán
+accesibles como atributos públicos son: dirección MAC destino, MAC origen, protocolo y
+payload.</p>
+<p>El disector del mensaje ARP Reply, llamado <code class="docutils literal notranslate"><span class="pre">ArpReplyDissector</span></code>, es también muy
+sencillo:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ArpReplyDissector</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">msg</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">msg</span> <span class="o">=</span> <span class="n">msg</span>
+
+        <span class="k">if</span> <span class="n">struct</span><span class="o">.</span><span class="n">unpack</span><span class="p">(</span><span class="s2">&quot;!H&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">msg</span><span class="p">[</span><span class="mi">6</span><span class="p">:</span><span class="mi">8</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="n">ARP_REPLY</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">DissectionError</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">hwsrc</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">psrc</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">hwdst</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">pdst</span><span class="p">)</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">unpack</span><span class="p">(</span><span class="s2">&quot;!6s4s6s4s&quot;</span><span class="p">,</span> <span class="n">msg</span><span class="p">[</span><span class="mi">8</span><span class="p">:</span><span class="mi">28</span><span class="p">])</span>
+        <span class="k">except</span> <span class="n">struct</span><span class="o">.</span><span class="n">error</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">DissectionError</span>
+</pre></div>
+</div>
+<p>El constructor de la clase acepta por parámetro una secuencia de bytes, que corresponden
+con la carga útil de una trama. Como antes, los valores de todos los campos quedan
+disponibles como atributos de la instancia. Si algún campo o formato no corresponde, el
+constructor lanza la excepción <code class="docutils literal notranslate"><span class="pre">DissectionError</span></code>.</p>
+</section>
+<section id="programa-principal">
+<h4><span class="section-number">7.3.2.3. </span>Programa principal<a class="headerlink" href="#programa-principal" title="Permalink to this headline">#</a></h4>
+<p>Solo queda escribir la función principal, la que realmente crea, lee y escribe en el
+socket. Aparece en el siguiente listado:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">main</span><span class="p">(</span><span class="n">ipsrc</span><span class="p">,</span> <span class="n">ipdst</span><span class="p">,</span> <span class="n">iface</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Request: Who has </span><span class="si">{0}</span><span class="s2">? Tell </span><span class="si">{1}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">ipdst</span><span class="p">,</span> <span class="n">ipsrc</span><span class="p">))</span>
+
+    <span class="n">sock</span> <span class="o">=</span> <span class="n">socket</span><span class="o">.</span><span class="n">socket</span><span class="p">(</span><span class="n">socket</span><span class="o">.</span><span class="n">AF_PACKET</span><span class="p">,</span> <span class="n">socket</span><span class="o">.</span><span class="n">SOCK_RAW</span><span class="p">,</span>
+                         <span class="n">socket</span><span class="o">.</span><span class="n">htons</span><span class="p">(</span><span class="n">ETH_P_ARP</span><span class="p">))</span>
+    <span class="n">sock</span><span class="o">.</span><span class="n">bind</span><span class="p">((</span><span class="n">iface</span><span class="p">,</span> <span class="n">ETH_P_ARP</span><span class="p">))</span>
+
+    <span class="n">frame</span> <span class="o">=</span> <span class="n">Ether</span><span class="p">(</span><span class="n">sock</span><span class="o">.</span><span class="n">getsockname</span><span class="p">()[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">BROADCAST</span><span class="p">)</span>
+    <span class="n">frame</span><span class="o">.</span><span class="n">set_payload</span><span class="p">(</span><span class="n">ArpRequest</span><span class="p">(</span><span class="n">ipsrc</span><span class="p">,</span> <span class="n">ipdst</span><span class="p">))</span>
+
+    <span class="n">sock</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">frame</span><span class="o">.</span><span class="n">serialize</span><span class="p">())</span>
+
+    <span class="k">while</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">eth</span> <span class="o">=</span> <span class="n">EtherDissector</span><span class="p">(</span><span class="n">sock</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="mi">2048</span><span class="p">))</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">arp_reply</span> <span class="o">=</span> <span class="n">ArpReplyDissector</span><span class="p">(</span><span class="n">eth</span><span class="o">.</span><span class="n">payload</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">arp_reply</span><span class="o">.</span><span class="n">hwdst</span> <span class="o">==</span> <span class="n">frame</span><span class="o">.</span><span class="n">hwsrc</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Reply:   </span><span class="si">{0}</span><span class="s2"> is at </span><span class="si">{1}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                      <span class="n">ipdst</span><span class="p">,</span> <span class="n">display_mac</span><span class="p">(</span><span class="n">arp_reply</span><span class="o">.</span><span class="n">hwsrc</span><span class="p">)))</span>
+                <span class="k">break</span>
+        <span class="k">except</span> <span class="n">DissectionError</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>La función <code class="docutils literal notranslate"><span class="pre">main()</span></code> acepta las direcciones IP del host origen y destino, y la
+interfaz de red (línea 1). Primero crea y vincula el socket a la interfaz solicitada
+(lineas 4-6). A continuación crea una trama Ethernet con destino <em>broadcast</em> y
+origen la MAC de la interfaz (línea 8), y le fija como payload una instancia de
+<code class="docutils literal notranslate"><span class="pre">ArpRequest</span></code>. El método <code class="docutils literal notranslate"><span class="pre">send()</span></code> envía la trama en su formato binario (línea
+11).</p>
+<p>El bucle <code class="docutils literal notranslate"><span class="pre">while</span></code> espera la respuesta. En cada iteración se lee y disecciona una
+trama (línea 14). Si esa trama contiene un mensaje ARP Reply, es decir, si
+<code class="docutils literal notranslate"><span class="pre">ArpReplyDissector</span></code> no lanza la excepción <code class="docutils literal notranslate"><span class="pre">DissectionError</span></code>, se comprueba
+además que esa sea la respuesta ARP que se espera y no otra (línea 18). Si es así se
+imprime la dirección IP del destino y la dirección MAC asociada a esa IP, que es el
+objetivo final del programa (líneas 19-20). Puedes encontrar una versión ampliada en el
+fichero <code class="docutils literal notranslate"><span class="pre">raw/arping.py</span></code>.</p>
+</section>
+</section>
+</section>
+<section id="sockets-af-inet-sock-raw">
+<h2><span class="section-number">7.4. </span>Sockets AF_INET:SOCK_RAW<a class="headerlink" href="#sockets-af-inet-sock-raw" title="Permalink to this headline">#</a></h2>
+<p>A pesar de la flexibilidad y potencia de los sockets AF_PACKET, no siempre son la mejor
+elección ya que el programador debe parsear y generar el contenido de todas las cabeceras.
+Eso puede ser bastante engorroso cuando entra en juego el cálculo de checksums u otros
+datos no tan directos.</p>
+<p>Los sockets AF_INET:SOCK_RAW pueden ser una buena alternativa si solo te interesa
+«tocar» las cabeceras de transporte, dejando al sistema operativo todo el trabajo
+relacionado con las de enlace, y opcionalmente las de red.</p>
+<section id="capturando-mensajes">
+<h3><span class="section-number">7.4.1. </span>Capturando mensajes<a class="headerlink" href="#capturando-mensajes" title="Permalink to this headline">#</a></h3>
+<p>El siguiente programa imprime por consola todos los paquetes IP que contengan un segmento
+UDP:</p>
+<p>La función <code class="docutils literal notranslate"><span class="pre">getprotobyname()</span></code> devuelve el número de protocolo <a class="footnote-reference brackets" href="#id16" id="id8">8</a> a partir de
+su nombre (linea 4). Es interesante destacar que el resultado del método <code class="docutils literal notranslate"><span class="pre">recv()</span></code>
+es el paquete IP completo, incluyendo cabecera (línea 7).</p>
+<p>Como en el caso de los socket AF_PACKET puedes identificar el origen del paquete (su
+dirección IP) sin tener que parsear la cabecera IP. Para lograrlo utiliza el método
+<code class="docutils literal notranslate"><span class="pre">recvfrom()</span></code> en lugar de <code class="docutils literal notranslate"><span class="pre">recv()</span></code>. En ese caso el valor de retorno es una
+tupla con la forma (datos, dirección), teniendo en cuenta que la dirección es su vez una
+tupla <code class="docutils literal notranslate"><span class="pre">(IP,</span> <span class="pre">0)</span></code>.</p>
+</section>
+<section id="enviando">
+<h3><span class="section-number">7.4.2. </span>Enviando<a class="headerlink" href="#enviando" title="Permalink to this headline">#</a></h3>
+<p>Para enviar datos sobre este tipo de socket debes utilizar el método <code class="docutils literal notranslate"><span class="pre">sendto()</span></code>
+indicando la dirección destino. El <code class="xref std std-numref docutils literal notranslate"><span class="pre">lst:raw:send-udp</span></code> envía envía un segmento
+UDP «sintético», pero válido, que contiene el texto «hello Inet».</p>
+<p>Puedes comprobar su funcionamiento ejecutando un servidor UDP en el puerto 2000
+gracias a <code class="docutils literal notranslate"><span class="pre">ncat</span></code>. En un terminal ejecuta:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>ncat<span class="w"> </span>-l<span class="w"> </span>-p<span class="w"> </span><span class="m">2000</span>
+</pre></div>
+</div>
+<p>Y en otro terminal, pero en la misma máquina, ejecuta:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>./send-udp.py
+</pre></div>
+</div>
+<p>Si todo ha ido bien, en el primer terminal debería aparecer el texto «Hello Inet».</p>
+</section>
+<section id="ip-hdrincl">
+<h3><span class="section-number">7.4.3. </span>IP_HDRINCL<a class="headerlink" href="#ip-hdrincl" title="Permalink to this headline">#</a></h3>
+<p>Como has podido comprobar en el ejemplo anterior, es posible enviar un segmento sin tener
+que construir la cabecera IP, únicamente la UDP. Sin embargo, puede haber ocasiones en las
+que el programador necesite «tocar» también la cabecera IP. Eso se consigue con la opción
+IP_HDRINCL.</p>
+<p>La ventaja respecto al socket AF_PACKET es doble: no hay que molestarse con la cabecera
+de enlace, y además el SO puede rellenar por nosotros algunos de los campos más
+latosos si así queremos (poniendo ceros en ellos). Esos campos son:</p>
+<ul class="simple">
+<li><p>El checksum.</p></li>
+<li><p>La dirección IP origen.</p></li>
+<li><p>El identificador del mensaje.</p></li>
+<li><p>El campo de longitud total.</p></li>
+</ul>
+<p>Esta opción, como la gran mayoría, debe fijarse explícitamente después de crear el socket
+por medio del método <code class="docutils literal notranslate"><span class="pre">setsockopt()</span></code>, tal como se indica:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sock</span><span class="o">.</span><span class="n">setsockopt</span><span class="p">(</span><span class="n">socket</span><span class="o">.</span><span class="n">SOL_IP</span><span class="p">,</span> <span class="n">socket</span><span class="o">.</span><span class="n">IP_HDRINCL</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Esto resulta muy útil cuando quieres utilizar el socket para enviar distintos protocolos,
+y por tanto necesitas tener acceso al campo <em>proto</em>. Para poder hacer eso ha de crearse
+un socket de un <em>protocolo</em> especial identificado como <code class="docutils literal notranslate"><span class="pre">IPPROTO_RAW</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sock</span> <span class="o">=</span> <span class="n">socket</span><span class="o">.</span><span class="n">socket</span><span class="p">(</span><span class="n">socket</span><span class="o">.</span><span class="n">AF_INET</span><span class="p">,</span> <span class="n">socket</span><span class="o">.</span><span class="n">SOCK_RAW</span><span class="p">,</span> <span class="n">socket</span><span class="o">.</span><span class="n">IPPROTO_RAW</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Aunque tiene un pequeño inconveniente: no se puede leer de este tipo de socket, tendrás
+que crear un socket adicional para poder leer los mensajes entrantes.</p>
+</section>
+</section>
+<section id="ejercicios">
+<h2><span class="section-number">7.5. </span>Ejercicios<a class="headerlink" href="#ejercicios" title="Permalink to this headline">#</a></h2>
+<p>A continuación se propone una lista de pequeñas herramientas de captura que pueden ser
+utilizadas para análisis, monitorización y validación de tráfico, y detección de
+anomalías. Los programas resultantes deberían funcionar correctamente al menos en una
+plataforma GNU/Linux.</p>
+<p>Para una red Ethernet, escriba un programa que cuente el número de tramas que
+aparecen en el enlace con la granularidad temporal indicada como parámetro (en
+minutos) y lo imprima en consola tal como se indica. La primera columna es el tiempo en
+segundos del inicio del intervalo y la segunda en el número de tramas que han aparecido
+en la red en dicho intervalo:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>./frame-count.py<span class="w"> </span><span class="m">2</span>
+<span class="go">Slot size: 120s</span>
+<span class="go">  0:  12</span>
+<span class="go">120:  14</span>
+<span class="go">240: 150</span>
+<span class="go">Capture time: 281.2s</span>
+</pre></div>
+</div>
+<p>Para una red Ethernet, escriba un programa que cuente el número de paquetes de cada
+protocolo (níveles red y transporte) durante el tiempo que esté en ejecución. Ejemplo de
+uso:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>./package-type-count.py
+<span class="go">Capture time: 123.4s</span>
+<span class="go">ARP:  50</span>
+<span class="go">IP:  500</span>
+<span class="go">UDP:  80</span>
+<span class="go">TCP: 420</span>
+</pre></div>
+</div>
+<p>Para una red Ethernet, escriba un programa que calcule una estadística del tamaño de
+las tramas (en bytes) que aparecen en la red, con la granularidad indicada en
+bytes. Ejemplo de uso:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>./frame-sizes.py<span class="w"> </span><span class="m">300</span>
+<span class="go">Capture time: 120.2s</span>
+<span class="go">  46 - 300: 340</span>
+<span class="go"> 301 - 600:  62</span>
+<span class="go"> 601 - 900:  10</span>
+<span class="go"> 901 -1200  140</span>
+<span class="go">1201 -1500: 970</span>
+</pre></div>
+</div>
+<p>Para una red Ethernet, escriba un programa que calcule una estadística de la
+utilización y lo exprese como porcentaje de la capacidad del enlace. Debe realizarse con
+la granularidad indicada (en minutos). Ejemplo de uso:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>./utilization.py<span class="w"> </span><span class="m">2</span>
+<span class="go">Slot size: 120s</span>
+<span class="go">  0:  22%</span>
+<span class="go">120:  35%</span>
+<span class="go">240:   2%</span>
+<span class="go">Capture time: 341.2s</span>
+</pre></div>
+</div>
+<p>Para una red Ethernet, escriba un programa que calcule la utilización (tamaño total
+de tramas Ethernet) y el throughput (considerando payload de segmentos UDP y
+TCP). Ejemplo de uso:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>./bandwidth.py
+<span class="go">Capture time: 380.6s</span>
+<span class="go">Utilization:  1280 Kbps</span>
+<span class="go">Throughput:    992 Kpbs</span>
+</pre></div>
+</div>
+<p>Escriba un programa que calcule el <em>tiempo medio de inactividad</em> (Average Idle
+Time) de un enlace durante el tiempo de ejecución del programa.</p>
+<p>Escriba un programa que mida la utilización que un host hace de un enlace (dada su
+dirección MAC) durante el tiempo de ejecución del programa.</p>
+<p>Escribe un programa que capture tramas Ethernet de una interfaz indicada como
+argumento e imprima por pantalla las direcciones origen y destino, el campo tipo y
+tamaño del payload de cada trama que reciba.</p>
+<p>Escribe un programa que capture paquetes IP de una interfaz de red indicada
+como argumento e imprima en pantalla el valor de los campos más importantes de la
+cabecera en un formato adecuado.</p>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="id9"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Concepto a veces traducido como «conector directo».</p>
+</dd>
+<dt class="label" id="id10"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dd><p>El adjetivo «raw» (crudo) se utiliza como contraposición a «cooked» (cocinado), que
+se emplea cuando se ofrece un acceso con algún preprocesamiento o asistencia en la
+gestión de un recurso o dispositivo.</p>
+</dd>
+<dt class="label" id="id11"><span class="brackets"><a class="fn-backref" href="#id3">3</a></span></dt>
+<dd><p>a menos que acudamos a llamadas al sistema como <code class="docutils literal notranslate"><span class="pre">setsockopt</span></code>.</p>
+</dd>
+<dt class="label" id="id12"><span class="brackets"><a class="fn-backref" href="#id4">4</a></span></dt>
+<dd><p>bit SUID</p>
+</dd>
+<dt class="label" id="id13"><span class="brackets"><a class="fn-backref" href="#id5">5</a></span></dt>
+<dd><p>http://www.iana.org/assignments/ethernet-numbers</p>
+</dd>
+<dt class="label" id="id14"><span class="brackets"><a class="fn-backref" href="#id6">6</a></span></dt>
+<dd><p>Consulte el capítulo <span class="xref std std-ref">chap:codificacion</span> para más información sobre dicho
+módulo.</p>
+</dd>
+<dt class="label" id="id15"><span class="brackets"><a class="fn-backref" href="#id7">7</a></span></dt>
+<dd><p>Ver http://docs.python.org/library/struct.html#format-characters</p>
+</dd>
+<dt class="label" id="id16"><span class="brackets"><a class="fn-backref" href="#id8">8</a></span></dt>
+<dd><p>http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xml</p>
+</dd>
+</dl>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="serializacion.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">6. </span>Serialización</p>
+        </div>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Departamento ATC<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

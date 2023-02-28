@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Serialización &#8212; Redes 2</title>
+    <title>6. Serialización &#8212; Redes 2</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,7 +52,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Chat UDP" href="udp_chat.html" />
+    <link rel="next" title="7. Sockets RAW" href="raw-sockets.html" />
+    <link rel="prev" title="5. Chat UDP" href="udp_chat.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -115,32 +116,37 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="shell.html">
-   Shell
+   1. Shell
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="paquetes.html">
-   Paquetes
+   2. Paquetes
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="python.html">
-   Python
+   3. Python
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ssh.html">
-   SSH
+   4. SSH
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="udp_chat.html">
-   Chat UDP
+   5. Chat UDP
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Serialización
+   6. Serialización
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="raw-sockets.html">
+   7. Sockets RAW
   </a>
  </li>
 </ul>
@@ -351,49 +357,49 @@ title="Print to PDF"
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#representacion-solo-eso">
-   Representación, sólo eso
+   6.1. Representación, sólo eso
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#los-enteros-en-python">
-   Los enteros en Python
+   6.2. Los enteros en Python
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#caracteres">
-   Caracteres
+   6.3. Caracteres
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#tipos-multibyte-y-ordenamiento">
-   Tipos multibyte y ordenamiento
+   6.4. Tipos multibyte y ordenamiento
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#cadenas-de-caracteres-y-secuencias-de-bytes">
-   Cadenas de caracteres y secuencias de bytes
+   6.5. Cadenas de caracteres y secuencias de bytes
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#empaquetado">
-   Empaquetado
+   6.6. Empaquetado
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#cadena-de-formato">
-     Cadena de formato
+     6.6.1. Cadena de formato
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#ejemplo-de-empaquetado-cabecera-de-una-trama-ethernet">
-     Ejemplo de empaquetado: cabecera de una trama Ethernet
+     6.6.2. Ejemplo de empaquetado: cabecera de una trama Ethernet
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#desempaquetado">
-   Desempaquetado
+   6.7. Desempaquetado
   </a>
  </li>
 </ul>
@@ -417,49 +423,49 @@ title="Print to PDF"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#representacion-solo-eso">
-   Representación, sólo eso
+   6.1. Representación, sólo eso
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#los-enteros-en-python">
-   Los enteros en Python
+   6.2. Los enteros en Python
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#caracteres">
-   Caracteres
+   6.3. Caracteres
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#tipos-multibyte-y-ordenamiento">
-   Tipos multibyte y ordenamiento
+   6.4. Tipos multibyte y ordenamiento
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#cadenas-de-caracteres-y-secuencias-de-bytes">
-   Cadenas de caracteres y secuencias de bytes
+   6.5. Cadenas de caracteres y secuencias de bytes
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#empaquetado">
-   Empaquetado
+   6.6. Empaquetado
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#cadena-de-formato">
-     Cadena de formato
+     6.6.1. Cadena de formato
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#ejemplo-de-empaquetado-cabecera-de-una-trama-ethernet">
-     Ejemplo de empaquetado: cabecera de una trama Ethernet
+     6.6.2. Ejemplo de empaquetado: cabecera de una trama Ethernet
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#desempaquetado">
-   Desempaquetado
+   6.7. Desempaquetado
   </a>
  </li>
 </ul>
@@ -473,7 +479,7 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="serializacion">
-<h1>Serialización<a class="headerlink" href="#serializacion" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">6. </span>Serialización<a class="headerlink" href="#serializacion" title="Permalink to this headline">#</a></h1>
 <p>El único modo posible de procesar y almacenar datos en un computador actual es el código binario.
 Pero, salvo unas pocas excepciones, rara vez resulta suficientemente expresivo para representar información útil para las personas.
 Por ese motivo se utilizan distintas formas de interpretar el código binario en función del tipo de dato que se desea:
@@ -485,7 +491,7 @@ enviadas a través de la red.
 Por el contrario, la des-serialización es el proceso inverso. Más concretamente, estamos tratando lo «serialización binaria». También existen muchos formatos de serialización textual como XML, JavaScript Object Notation (JSON), YAML Ain’t Markup Language (YAML), etc., que no vamos a tratar en este capítulo.</p>
 <p>Es importante aclarar que no se debe confundir «codificación» con «cifrado» (o «encriptación»). Codificar es simplemente aplicar una transformación que modifica el modo en que se representan los datos, pero no implica el uso de ninguna clave ni ocultación u ofuscación del mensaje. Por ejemplo, un mensaje codificado en Morse es perfectamente legible por cualquiera que conozca el código</p>
 <section id="representacion-solo-eso">
-<h2>Representación, sólo eso<a class="headerlink" href="#representacion-solo-eso" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">6.1. </span>Representación, sólo eso<a class="headerlink" href="#representacion-solo-eso" title="Permalink to this headline">#</a></h2>
 <p>Una de las excepciones a las que alude la sección anterior es la <em>programación de sistemas</em>, es decir, aquellos programas que consumen directamente servicios del SO.
 El binario resulta útil para manejar campos de bits, banderas binarias o máscaras,
 muy comunes cuando se manipulan registros de control, operaciones de E/S, etc.
@@ -579,7 +585,7 @@ pudiendo indicarse la base:</p>
 de representar el mismo dato, y que internamente para el computador son indistinguibles.</p>
 </section>
 <section id="los-enteros-en-python">
-<h2>Los enteros en Python<a class="headerlink" href="#los-enteros-en-python" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">6.2. </span>Los enteros en Python<a class="headerlink" href="#los-enteros-en-python" title="Permalink to this headline">#</a></h2>
 <p>El tipo más simple de cualquier lenguaje de programación suele ser <code class="docutils literal notranslate"><span class="pre">byte</span></code>,
 que se corresponde con una secuencia de 8 bits.
 Suele ser un entero sin signo, es decir, puede representar números enteros en el rango [0, 255].
@@ -603,7 +609,7 @@ de gestionar la memoria necesaria:</p>
 En las próximas secciones veremos cómo realizar esa tarea en Python.</p>
 </section>
 <section id="caracteres">
-<h2>Caracteres<a class="headerlink" href="#caracteres" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">6.3. </span>Caracteres<a class="headerlink" href="#caracteres" title="Permalink to this headline">#</a></h2>
 <p>La condificación de caracteres más simple (y una de las más antiguas) consiste en asignar un número a cada carácter del alfabeto.
 <strong>ASCII</strong> fue creado por ANSI en 1963 como una evolución de la condificación utilizada anteriormente en telegrafía.
 Es un código de 7 bits (128 símbolos) que incluye los caracteres alfanuméricos de la lengua inglesa,
@@ -733,7 +739,7 @@ Decoded buf: bcd
 </div>
 </section>
 <section id="tipos-multibyte-y-ordenamiento">
-<h2>Tipos multibyte y ordenamiento<a class="headerlink" href="#tipos-multibyte-y-ordenamiento" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">6.4. </span>Tipos multibyte y ordenamiento<a class="headerlink" href="#tipos-multibyte-y-ordenamiento" title="Permalink to this headline">#</a></h2>
 <p>En muchísimas ocasiones necesitamos utilizar nímeros enteros o reales que internamente van a ocupar más de un byte de memoria.
 Ésto hace que aparezca un nuevo problema muy interesante: ¿cómo deben ordenarse los múltiples bytes que representan el dato?</p>
 <p>Dependiendo de cómo se ordenen los bytes de un mismo dato entre ellos, se distingue entre <em>little endian</em> y <em>big endian</em>.
@@ -818,7 +824,7 @@ podemos observar lo siguiente:</p>
 </ul>
 </section>
 <section id="cadenas-de-caracteres-y-secuencias-de-bytes">
-<h2>Cadenas de caracteres y secuencias de bytes<a class="headerlink" href="#cadenas-de-caracteres-y-secuencias-de-bytes" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">6.5. </span>Cadenas de caracteres y secuencias de bytes<a class="headerlink" href="#cadenas-de-caracteres-y-secuencias-de-bytes" title="Permalink to this headline">#</a></h2>
 <p>En Python 3 las cadenas de caracteres (tipo <code class="docutils literal notranslate"><span class="pre">str</span></code>) utilizan Unicode como codificación.
 Ésto hace que, por defecto, no podamos utilizar <code class="docutils literal notranslate"><span class="pre">str</span></code> para escribir en un fichero o para enviar a través de un socket.
 Estas operaciones requieren del uso de la secuencia de bytes (tipo <code class="docutils literal notranslate"><span class="pre">bytes</span></code>).
@@ -906,14 +912,14 @@ ya que ni la “ñ” ni la “ú” son caracteres contemplados en esta codific
 </div>
 </section>
 <section id="empaquetado">
-<h2>Empaquetado<a class="headerlink" href="#empaquetado" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">6.6. </span>Empaquetado<a class="headerlink" href="#empaquetado" title="Permalink to this headline">#</a></h2>
 <p>Hemos visto anteriormente cómo poder convertir números enteros de 16 y 32 bits o cadenas a su representación en secuencia de bytes.
 Aunque el tipo <code class="docutils literal notranslate"><span class="pre">bytes</span></code> permite realizar múltiples operaciones, como la concatenación, partición o búsquedas,
 cuando queremos realizar varias conversiones a la vez puede volverse muy engorroso.</p>
 <p>Para ello Python proporciona el módulo <code class="docutils literal notranslate"><span class="pre">struct</span></code> que nos permite realizar transformaciones entre datos y su representación y viceversa.</p>
 <p>En primer lugar, veremos como convertir un conjunto de datos a una secuencia de bytes equivalente utilizando <code class="docutils literal notranslate"><span class="pre">struct.pack()</span></code>.</p>
 <section id="cadena-de-formato">
-<h3>Cadena de formato<a class="headerlink" href="#cadena-de-formato" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">6.6.1. </span>Cadena de formato<a class="headerlink" href="#cadena-de-formato" title="Permalink to this headline">#</a></h3>
 <p>En primer lugar, la función <code class="docutils literal notranslate"><span class="pre">struct.pack()</span></code> debe conocer el tipo de datos, tamaño y ordenamiento
 que queremos aplicar a cada uno de los valores que queramos convertir.
 Para ello, el primer argumento que debe recibir <code class="docutils literal notranslate"><span class="pre">struct.pack()</span></code> es una cadena de formato.
@@ -970,7 +976,7 @@ The variable struct.error is an exception raised on errors.
 </div>
 </section>
 <section id="ejemplo-de-empaquetado-cabecera-de-una-trama-ethernet">
-<h3>Ejemplo de empaquetado: cabecera de una trama Ethernet<a class="headerlink" href="#ejemplo-de-empaquetado-cabecera-de-una-trama-ethernet" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">6.6.2. </span>Ejemplo de empaquetado: cabecera de una trama Ethernet<a class="headerlink" href="#ejemplo-de-empaquetado-cabecera-de-una-trama-ethernet" title="Permalink to this headline">#</a></h3>
 <p>Vamos a realizar un ejemplo en el que queremos empaquetar la cabecera de una trama Ethernet.
 La cabecera Ethernet es muy sencilla: únicamente consta de la dirección destino de la trama,
 la dirección origen y un entero corto (<em>short</em>).</p>
@@ -1016,7 +1022,7 @@ por lo qué la MAC destino deberá ser “FF:FF:FF:FF:FF:FF” y el tipo 0x0806:
 </section>
 </section>
 <section id="desempaquetado">
-<h2>Desempaquetado<a class="headerlink" href="#desempaquetado" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">6.7. </span>Desempaquetado<a class="headerlink" href="#desempaquetado" title="Permalink to this headline">#</a></h2>
 <p>Es el proceso opuesto al realizado en la sección anterior y se hace a través de la función <code class="docutils literal notranslate"><span class="pre">struct.unpack</span></code>.
 En este caso, la funcón acepta 2 argumentos: la cadena de formato y la secuencia de bytes
 de la que queremos desempaquetar los datos.</p>
@@ -1073,8 +1079,15 @@ Frame type (hex): 0x806
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Chat UDP</p>
+            <p class="prev-next-title"><span class="section-number">5. </span>Chat UDP</p>
         </div>
+    </a>
+    <a class='right-next' id="next-link" href="raw-sockets.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">7. </span>Sockets RAW</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
     </a>
 </div>
             </footer>

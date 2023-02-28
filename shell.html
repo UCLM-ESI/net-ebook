@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Shell &#8212; Redes 2</title>
+    <title>1. Shell &#8212; Redes 2</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,7 +52,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Paquetes" href="paquetes.html" />
+    <link rel="next" title="2. Paquetes" href="paquetes.html" />
     <link rel="prev" title="Prefacio" href="intro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -116,32 +116,37 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Shell
+   1. Shell
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="paquetes.html">
-   Paquetes
+   2. Paquetes
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="python.html">
-   Python
+   3. Python
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ssh.html">
-   SSH
+   4. SSH
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="udp_chat.html">
-   Chat UDP
+   5. Chat UDP
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="serializacion.html">
-   Serialización
+   6. Serialización
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="raw-sockets.html">
+   7. Sockets RAW
   </a>
  </li>
 </ul>
@@ -323,69 +328,69 @@ title="Print to PDF"
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#gnu-bash">
-   GNU Bash
+   1.1. GNU Bash
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#valor-de-retorno">
-   Valor de retorno
+   1.2. Valor de retorno
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#procesos">
-   Procesos
+   1.3. Procesos
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#trabajos">
-     Trabajos
+     1.3.1. Trabajos
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#otras-formas-de-identificar-procesos">
-     Otras formas de identificar procesos
+     1.3.2. Otras formas de identificar procesos
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#entrada-salida-y-salida-de-error">
-   Entrada, salida y salida de error
+   1.4. Entrada, salida y salida de error
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#redireccion">
-   Redirección
+   1.5. Redirección
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#catalogo-de-comandos">
-   Catálogo de comandos
+   1.6. Catálogo de comandos
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#ficheros-y-directorios">
-     Ficheros y directorios
+     1.6.1. Ficheros y directorios
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#sistema">
-     Sistema
+     1.6.2. Sistema
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id8">
-     Procesos
+    <a class="reference internal nav-link" href="#sec-procesos-more">
+     1.6.3. Procesos
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#usuarios-y-permisos">
-     Usuarios y permisos
+     1.6.4. Usuarios y permisos
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#servicios">
-     Servicios
+     1.6.5. Servicios
     </a>
    </li>
   </ul>
@@ -411,69 +416,69 @@ title="Print to PDF"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#gnu-bash">
-   GNU Bash
+   1.1. GNU Bash
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#valor-de-retorno">
-   Valor de retorno
+   1.2. Valor de retorno
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#procesos">
-   Procesos
+   1.3. Procesos
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#trabajos">
-     Trabajos
+     1.3.1. Trabajos
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#otras-formas-de-identificar-procesos">
-     Otras formas de identificar procesos
+     1.3.2. Otras formas de identificar procesos
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#entrada-salida-y-salida-de-error">
-   Entrada, salida y salida de error
+   1.4. Entrada, salida y salida de error
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#redireccion">
-   Redirección
+   1.5. Redirección
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#catalogo-de-comandos">
-   Catálogo de comandos
+   1.6. Catálogo de comandos
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#ficheros-y-directorios">
-     Ficheros y directorios
+     1.6.1. Ficheros y directorios
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#sistema">
-     Sistema
+     1.6.2. Sistema
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id8">
-     Procesos
+    <a class="reference internal nav-link" href="#sec-procesos-more">
+     1.6.3. Procesos
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#usuarios-y-permisos">
-     Usuarios y permisos
+     1.6.4. Usuarios y permisos
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#servicios">
-     Servicios
+     1.6.5. Servicios
     </a>
    </li>
   </ul>
@@ -489,7 +494,7 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="shell">
-<h1>Shell<a class="headerlink" href="#shell" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">1. </span>Shell<a class="headerlink" href="#shell" title="Permalink to this headline">#</a></h1>
 <p>El interprete de comandos (<em>shell</em>) es probablemente una de las herramientas más
 interesantes del sistema operativo GNU/Linux o POSIX en general. Una shell es
 esencialmente un programa interactivo que permite al usuario ejecutar otros programas.
@@ -497,7 +502,7 @@ Como con cualquier tecnología o herramienta que merezca la pena, es fácil enco
 grandes partidarios y detractores. Lo cierto es que la shell es una herramienta extraña,
 oscura y de aspecto absolutamente espartano en un mundo en el que las pantallas
 multi-táctiles o el reconocimiento de voz son algo habitual.</p>
-<p>En general, una interfaz de comandos —a menudo denominada CLI— es mucho menos intuitiva <a class="footnote-reference brackets" href="#id9" id="id1">1</a>
+<p>En general, una interfaz de comandos —a menudo denominada CLI— es mucho menos intuitiva <a class="footnote-reference brackets" href="#id10" id="id1">1</a>
 que una GUI. Sin embargo, cuando la capacidad y el nivel de detalle (y por tanto la
 complejidad) de la herramienta aumenta, la interfaz gráfica resulta mucho más difícil de
 desarrollar, requiere tanto o más entrenamiento y su uso suele ser menos productivo que
@@ -511,24 +516,25 @@ facilidad para combinar conjuntos de sentencias en forma de macros, lo que adem�
 automatizar tareas repetitivas. Especificar o documentar un procedimiento, incluso de
 complejidad media, usando comandos es mucho más sencillo que dar instrucciones para
 utilizar menús, botones y listas desplegables, algo que a menudo requiere grabar en vídeo
-la secuencia de acciones —los llamados \emph{screencast}.</p>
-<p>[//]: sidebar: FIXME: portada
-«In the Beginning… Was the Command Line»[^2] de Neal STEPHESON, es un ensayo crítico (y a
+la secuencia de acciones —los llamados <em>screencast</em>.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>«In the Beginning… Was the Command Line»<a class="footnote-reference brackets" href="#id11" id="id2">2</a> de Neal STEPHESON, es un ensayo crítico (y a
 ratos humorístico) sobre la influencia que los computadoras, los sistemas operativos y sus
 distintas filosofías tienen sobre la sociedad actual, y especialmente sobre las personas
 con inquietudes técnicas. Uno de los temas trata precisamente sobre las diferencias entre
 interfaz gráfica e interfaz de comandos.</p>
-<p>[^2] http://en.wikipedia.org/wiki/In_the_Beginning…_Was_the_Command_Line</p>
+</div>
 <p>En todo caso, es importante entender que es un error subestimar o considerar anticuada una
 aplicación simplemente por el hecho de usar una interfaz de comandos. A menudo, las
 aplicaciones bien diseñadas definen un conjunto de acciones en una librería, que pueden
-ser utilizadas indistintamente desde <em>front-ends</em> <a class="footnote-reference brackets" href="#id10" id="id2">3</a>, línea de comandos, o
+ser utilizadas indistintamente desde <em>front-ends</em> <a class="footnote-reference brackets" href="#id12" id="id3">3</a>, línea de comandos, o
 incluso desarrollando otras aplicaciones a medida. Un ejemplo de este tipo de aplicaciones
 puede ser VLC. Incluso servicios de Internet tan conocidos como HTTP, SMTP o FTP
 pueden ser utilizados mediante comandos de texto, tal como veremos en capítulos
 posteriores.</p>
 <section id="gnu-bash">
-<h2>GNU Bash<a class="headerlink" href="#gnu-bash" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">1.1. </span>GNU Bash<a class="headerlink" href="#gnu-bash" title="Permalink to this headline">#</a></h2>
 <p>Bash es probablemente una de las shells más famosas y potentes disponibles en los sistemas
 GNU. Los sistemas POSIX han conocido una larga variedad de shell’s desde principios de los
 años 70. Aunque bash tiene características muy interesantes (como la «complección»
@@ -545,7 +551,7 @@ la administración de sistemas hasta las más sofisticadas técnicas de pen-test
 por el desarrollo de aplicaciones de todo tipo.</p>
 </section>
 <section id="valor-de-retorno">
-<h2>Valor de retorno<a class="headerlink" href="#valor-de-retorno" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">1.2. </span>Valor de retorno<a class="headerlink" href="#valor-de-retorno" title="Permalink to this headline">#</a></h2>
 <p>En los sistemas POSIX se asume que cuando un programa acaba devuelve un valor entero.
 Este valor es recogido por su proceso padre (que puede ser una shell) y ofrece información
 muy útil para saber cómo ha ido su ejecución.</p>
@@ -555,6 +561,7 @@ Puede devolver un valor distinto (1, 2, etc) para indicar que hubo un problema c
 <code class="docutils literal notranslate"><span class="pre">main</span></code> ha de devolver un entero y que por defecto su valor de retorno debería ser
 cero. Según eso, el «hola mundo» correcto en C es el siguiente:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">argv</span><span class="p">[])</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="n">puts</span><span class="p">(</span><span class="s">&quot;hello world</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
@@ -563,16 +570,16 @@ cero. Según eso, el «hola mundo» correcto en C es el siguiente:</p>
 </div>
 <p>Por ejemplo, el siguiente listado muestra la ejecución del comando <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">/</span></code>, que lista
 el contenido del directorio raíz:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>david@amy:~$<span class="w"> </span>ls<span class="w"> </span>/
-bin<span class="w">   </span>etc<span class="w">         </span>lib<span class="w">         </span>mnt<span class="w">   </span>root<span class="w">  </span>selinux<span class="w">  </span>tmp<span class="w">  </span>vmlinuz
-boot<span class="w">  </span>home<span class="w">        </span>lost+found<span class="w">  </span>opt<span class="w">   </span>run<span class="w">   </span>srv<span class="w">      </span>usr
-dev<span class="w">   </span>initrd.img<span class="w">  </span>media<span class="w">       </span>proc<span class="w">  </span>sbin<span class="w">  </span>sys<span class="w">      </span>var
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">david@amy:~$ </span>ls<span class="w"> </span>/
+<span class="go">bin   etc         lib         mnt   root  selinux  tmp  vmlinuz</span>
+<span class="go">boot  home        lost+found  opt   run   srv      usr</span>
+<span class="go">dev   initrd.img  media       proc  sbin  sys      var</span>
 </pre></div>
 </div>
 <p>Lo que ha ocurrido aquí es que la shell bash ha creado un proceso en el cuál ha ejecutado
 el programa <code class="docutils literal notranslate"><span class="pre">ls</span></code> con el argumento <code class="docutils literal notranslate"><span class="pre">/</span></code>, después esperó a que el programa terminase y
 recogió su valor de retorno. Ese valor lo almacenó en una «variable de entorno» llamada
-<code class="docutils literal notranslate"><span class="pre">?</span></code> <a class="footnote-reference brackets" href="#id11" id="id3">4</a>. Se puede obtener el valor de una variable de entorno utilizando el comando
+<code class="docutils literal notranslate"><span class="pre">?</span></code> <a class="footnote-reference brackets" href="#id13" id="id4">4</a>. Se puede obtener el valor de una variable de entorno utilizando el comando
 <code class="docutils literal notranslate"><span class="pre">echo</span></code> colocando el símbolo «$» delante del nombre de la variable, tal que:</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>david@amy:~$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$?</span>
 <span class="m">0</span>
@@ -607,8 +614,7 @@ el usuario pulsa Control-C mientras un programa se ejecuta en una shell, esta le
 la señal SIGINT (-2) y ese será el valor de retorno del programa.</p>
 </section>
 <section id="procesos">
-<h2>Procesos<a class="headerlink" href="#procesos" title="Permalink to this headline">#</a></h2>
-<p>[//]: FIXME \label{sec:procesos}</p>
+<span id="sec-process"></span><h2><span class="section-number">1.3. </span>Procesos<a class="headerlink" href="#procesos" title="Permalink to this headline">#</a></h2>
 <p>El «proceso» es una abstracción del SO para ejecutar un programa conforme a
 determinados parámetros de seguridad, prioridad y privilegios de acceso a recursos.
 Cualquier proceso puede crear procesos hijos, que heredan algunas de sus propiedades tales
@@ -656,12 +662,12 @@ siguiente comando envía la señal SIGKILL (9) al proceso con PID 5200:</p>
 </pre></div>
 </div>
 <p>Algunas señales pueden ser ignoradas o bien capturadas por el programa para realizar
-acciones especificadas por el programador<a class="footnote-reference brackets" href="#id12" id="id4">6</a>  como es el caso de SIGTERM, que podríamos
+acciones especificadas por el programador<a class="footnote-reference brackets" href="#id14" id="id5">6</a>  como es el caso de SIGTERM, que podríamos
 considerarla una solicitud amistosa de terminación. Otras señales (como SIGKILL) no pueden
 ser ignoradas para garantizar que el SO tiene el control sobre cualquier proceso.</p>
 <section id="trabajos">
-<h3>Trabajos<a class="headerlink" href="#trabajos" title="Permalink to this headline">#</a></h3>
-<p>La shell crea un nuevo proceso hijo<a class="footnote-reference brackets" href="#id13" id="id5">7</a> para ejecutar cada comando que se le pide. El
+<h3><span class="section-number">1.3.1. </span>Trabajos<a class="headerlink" href="#trabajos" title="Permalink to this headline">#</a></h3>
+<p>La shell crea un nuevo proceso hijo<a class="footnote-reference brackets" href="#id15" id="id6">7</a> para ejecutar cada comando que se le pide. El
 comportamiento normal de la shell es esperar a que ese proceso termine antes de permitir
 la introducción de un nuevo comando. Esto es fácil de comprobar con el programa <code class="docutils literal notranslate"><span class="pre">sleep</span></code>.
 Es decir, por defecto, la ejecución de un comando es bloqueante, y a esto se llama
@@ -728,7 +734,7 @@ de su PID.</p>
 </div>
 </section>
 <section id="otras-formas-de-identificar-procesos">
-<h3>Otras formas de identificar procesos<a class="headerlink" href="#otras-formas-de-identificar-procesos" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">1.3.2. </span>Otras formas de identificar procesos<a class="headerlink" href="#otras-formas-de-identificar-procesos" title="Permalink to this headline">#</a></h3>
 <p>A veces buscar en la lista de procesos (<code class="docutils literal notranslate"><span class="pre">ps</span></code>) no es la forma más cómoda de localizar
 un proceso. Puede ser más sencillo localizarlo por su nombre (con <code class="docutils literal notranslate"><span class="pre">pidof</span></code> o
 <code class="docutils literal notranslate"><span class="pre">pgrep</span></code>):</p>
@@ -756,7 +762,7 @@ tiene la shell, aunque de entrada no suene como algo bueno.</p>
 </section>
 </section>
 <section id="entrada-salida-y-salida-de-error">
-<h2>Entrada, salida y salida de error<a class="headerlink" href="#entrada-salida-y-salida-de-error" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">1.4. </span>Entrada, salida y salida de error<a class="headerlink" href="#entrada-salida-y-salida-de-error" title="Permalink to this headline">#</a></h2>
 <p>En los sistemas POSIX los programas interaccionan con el SO únicamente por medio de
 ficheros —o de abstracciones que ofrecen el mismo interfaz de uso. Es decir, la lectura
 o escritura desde y hacia cualquier disco, pantalla, teclado, tarjeta de sonido o
@@ -792,7 +798,7 @@ programa que lo emula. Una consola es precisamente un terminal físico.</p>
 apareció en pantalla debido a que su salida estándar corresponde por defecto al terminal.</p>
 </section>
 <section id="redireccion">
-<h2>Redirección<a class="headerlink" href="#redireccion" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">1.5. </span>Redirección<a class="headerlink" href="#redireccion" title="Permalink to this headline">#</a></h2>
 <p>Es posible alterar la salida estándar de cualquier programa para que utilice un fichero simplemente con el símbolo ‘<code class="docutils literal notranslate"><span class="pre">&gt;</span></code>’ (mayor-que) seguido del nombre del fichero:</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>david@amy:~$<span class="w"> </span>ls<span class="w"> </span>-l<span class="w"> </span>/<span class="w"> </span>&gt;<span class="w"> </span>/tmp/root-dir
 david@amy:~$
@@ -933,14 +939,14 @@ hacía con los comandos simples:</p>
 POSIX (en especial GNU) dispone de una gran cantidad de pequeños programas
 especializados —como los que se han introducido aquí— que pueden combinarse mediante
 redirección para cubrir una gran variedad de necesidades puntuales de una forma rápida y
-eficiente <a class="footnote-reference brackets" href="#id14" id="id6">8</a>.</p>
+eficiente <a class="footnote-reference brackets" href="#id16" id="id7">8</a>.</p>
 </section>
 <section id="catalogo-de-comandos">
-<h2>Catálogo de comandos<a class="headerlink" href="#catalogo-de-comandos" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">1.6. </span>Catálogo de comandos<a class="headerlink" href="#catalogo-de-comandos" title="Permalink to this headline">#</a></h2>
 <p>A continuación se introducen brevemente algunos de los programas más comunes y útiles
 cuando se trabaja con la shell.</p>
 <section id="ficheros-y-directorios">
-<h3>Ficheros y directorios<a class="headerlink" href="#ficheros-y-directorios" title="Permalink to this headline">#</a></h3>
+<span id="sec-ficheros"></span><h3><span class="section-number">1.6.1. </span>Ficheros y directorios<a class="headerlink" href="#ficheros-y-directorios" title="Permalink to this headline">#</a></h3>
 <dl class="simple myst">
 <dt><code class="docutils literal notranslate"><span class="pre">cp</span></code> — <em>copy</em></dt><dd><p>Dados un nombre de fichero existente y un directorio o nombre de fichero, copia el
 primero en el segundo. Si el fichero destino existe, lo sobrescribe.</p>
@@ -1004,7 +1010,7 @@ utiliza habitualmente como condición en estructuras de control <code class="doc
 <dt><code class="docutils literal notranslate"><span class="pre">touch</span></code></dt><dd><p>Cambia la fecha de un fichero (por defecto ahora). Si el fichero indicado no existe,
 crea uno vacío.</p>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">tr</span></code> — <em>translate</em></dt><dd><p>Lee líneas de su entrada y las escribe a su salida reemplazando <em>tokens</em> <a class="footnote-reference brackets" href="#id15" id="id7">11</a> tal como
+<dt><code class="docutils literal notranslate"><span class="pre">tr</span></code> — <em>translate</em></dt><dd><p>Lee líneas de su entrada y las escribe a su salida reemplazando <em>tokens</em> <a class="footnote-reference brackets" href="#id17" id="id8">11</a> tal como
 lo indiquen sus opciones.</p>
 </dd>
 </dl>
@@ -1026,7 +1032,7 @@ rm:<span class="w"> </span>remove<span class="w"> </span>regular<span class="w">
 </dl>
 </section>
 <section id="sistema">
-<h3>Sistema<a class="headerlink" href="#sistema" title="Permalink to this headline">#</a></h3>
+<span id="sec-sistema"></span><h3><span class="section-number">1.6.2. </span>Sistema<a class="headerlink" href="#sistema" title="Permalink to this headline">#</a></h3>
 <dl class="simple myst">
 <dt><code class="docutils literal notranslate"><span class="pre">dd</span></code></dt><dd><p>Copia bloques de bytes en dispositivos (ficheros o discos).</p>
 </dd>
@@ -1048,8 +1054,8 @@ Linux<span class="w"> </span>amy<span class="w"> </span><span class="m">5</span>
 </dd>
 </dl>
 </section>
-<section id="id8">
-<h3>Procesos<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h3>
+<section id="sec-procesos-more">
+<span id="id9"></span><h3><span class="section-number">1.6.3. </span>Procesos<a class="headerlink" href="#sec-procesos-more" title="Permalink to this headline">#</a></h3>
 <dl class="simple myst">
 <dt><code class="docutils literal notranslate"><span class="pre">nice</span></code></dt><dd><p>Ejecuta un programa fijando un nivel de prioridad.</p>
 </dd>
@@ -1066,7 +1072,7 @@ incorrecta respectivamente.</p>
 </dl>
 </section>
 <section id="usuarios-y-permisos">
-<h3>Usuarios y permisos<a class="headerlink" href="#usuarios-y-permisos" title="Permalink to this headline">#</a></h3>
+<span id="sec-usuarios"></span><h3><span class="section-number">1.6.4. </span>Usuarios y permisos<a class="headerlink" href="#usuarios-y-permisos" title="Permalink to this headline">#</a></h3>
 <dl class="simple myst">
 <dt><code class="docutils literal notranslate"><span class="pre">chmod</span></code> — <em>change mode</em></dt><dd><p>Cambia los permisos de lectura, escritura y ejecución de un fichero o directorio.</p>
 </dd>
@@ -1089,7 +1095,7 @@ conexión (<em>login</em>).</p>
 </dl>
 </section>
 <section id="servicios">
-<h3>Servicios<a class="headerlink" href="#servicios" title="Permalink to this headline">#</a></h3>
+<span id="sec-services"></span><h3><span class="section-number">1.6.5. </span>Servicios<a class="headerlink" href="#servicios" title="Permalink to this headline">#</a></h3>
 <p>Los servicios son programas en segundo plano (que arrancan normalmente el iniciar el
 sistema) que se encuentran bajo el control del SO que no se ejecutan directamente por
 los usuarios y se encargan de tareas específicas: firewall, sonido, bluetooth, etc.,
@@ -1109,31 +1115,34 @@ los comandos <code class="docutils literal notranslate"><span class="pre">legacy
 *[POSIX]: Portable Operating System Interface for uniX</p>
 <hr class="footnotes docutils" />
 <dl class="footnote brackets">
-<dt class="label" id="id9"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dt class="label" id="id10"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
 <dd><p>El manejo <em>intuitivo</em> se refiere a la posibilidad de realizar un uso productivo de
 una herramienta sin conocimiento ni instrucción previa. El adjetivo se puede aplicar tanto
 a la herramienta como al usuario.</p>
 </dd>
-<dt class="label" id="id10"><span class="brackets"><a class="fn-backref" href="#id2">3</a></span></dt>
+<dt class="label" id="id11"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dd><p>http://en.wikipedia.org/wiki/In_the_Beginning…_Was_the_Command_Line</p>
+</dd>
+<dt class="label" id="id12"><span class="brackets"><a class="fn-backref" href="#id3">3</a></span></dt>
 <dd><p>Se denomina <em>front-end</em> a la capa de software que proporciona una interfaz —del tipo
 que sea— a un programa o librería que ofrece su funcionalidad por medio de una serie de
 funciones o clases (API).</p>
 </dd>
-<dt class="label" id="id11"><span class="brackets"><a class="fn-backref" href="#id3">4</a></span></dt>
+<dt class="label" id="id13"><span class="brackets"><a class="fn-backref" href="#id4">4</a></span></dt>
 <dd><p>Sí, el signo de interrogación</p>
 </dd>
-<dt class="label" id="id12"><span class="brackets"><a class="fn-backref" href="#id4">6</a></span></dt>
+<dt class="label" id="id14"><span class="brackets"><a class="fn-backref" href="#id5">6</a></span></dt>
 <dd><p>Vea <code class="docutils literal notranslate"><span class="pre">man</span> <span class="pre">signal</span></code>.</p>
 </dd>
-<dt class="label" id="id13"><span class="brackets"><a class="fn-backref" href="#id5">7</a></span></dt>
+<dt class="label" id="id15"><span class="brackets"><a class="fn-backref" href="#id6">7</a></span></dt>
 <dd><p>La propia shell también se ejecuta en un proceso, que puede haber sido creado a su
 vez por otra shell.</p>
 </dd>
-<dt class="label" id="id14"><span class="brackets"><a class="fn-backref" href="#id6">8</a></span></dt>
-<dd><p>La web \url{https://www.commandlinefu.com/} es una buena prueba de la
+<dt class="label" id="id16"><span class="brackets"><a class="fn-backref" href="#id7">8</a></span></dt>
+<dd><p>La web https://www.commandlinefu.com/ es una buena prueba de la
 gran versatilidad de la redirección y las capacidades de la shell.</p>
 </dd>
-<dt class="label" id="id15"><span class="brackets"><a class="fn-backref" href="#id7">11</a></span></dt>
+<dt class="label" id="id17"><span class="brackets"><a class="fn-backref" href="#id8">11</a></span></dt>
 <dd><p>Un <em>token</em> es cualquier combinación de caracteres que cumpla una expresión regular
 concreta.</p>
 </dd>
@@ -1179,7 +1188,7 @@ concreta.</p>
     <a class='right-next' id="next-link" href="paquetes.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Paquetes</p>
+        <p class="prev-next-title"><span class="section-number">2. </span>Paquetes</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

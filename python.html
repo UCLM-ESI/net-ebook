@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Python &#8212; Redes 2</title>
+    <title>3. Python &#8212; Redes 2</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,8 +52,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="SSH" href="ssh.html" />
-    <link rel="prev" title="Paquetes" href="paquetes.html" />
+    <link rel="next" title="4. SSH" href="ssh.html" />
+    <link rel="prev" title="2. Paquetes" href="paquetes.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -116,32 +116,37 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="shell.html">
-   Shell
+   1. Shell
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="paquetes.html">
-   Paquetes
+   2. Paquetes
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Python
+   3. Python
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ssh.html">
-   SSH
+   4. SSH
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="udp_chat.html">
-   Chat UDP
+   5. Chat UDP
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="serializacion.html">
-   Serialización
+   6. Serialización
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="raw-sockets.html">
+   7. Sockets RAW
   </a>
  </li>
 </ul>
@@ -352,70 +357,71 @@ title="Print to PDF"
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#que-es-python">
-   ¿Qué es Python?
+   3.1. ¿Qué es Python?
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#interpretado-o-compilado">
-     Interpretado o compilado
+     3.1.1. Interpretado o compilado
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#versiones-de-python">
-     Versiones de Python
+     3.1.2. Versiones de Python
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#indentacion-estricta">
-   Indentación estricta
+   3.2. Indentación estricta
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#variables-y-tipos">
-   Variables y tipos
+   3.3. Variables y tipos
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#tipado-fuerte">
-     Tipado fuerte
+     3.3.1. Tipado fuerte
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#tipado-dinamico">
-     Tipado dinámico
+     3.3.2. Tipado dinámico
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#tipos-de-datos">
-   Tipos de datos
+   3.4. Tipos de datos
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#valor-nulo">
-     Valor nulo
+     3.4.1. Valor nulo
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#booleanos">
-     Booleanos
+     3.4.2. Booleanos
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#valores-numericos">
-     Valores numéricos
+     3.4.3. Valores numéricos
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#secuencias">
-     Secuencias
+     3.4.4. Secuencias
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#str">
+       3.4.4.1.
        <code class="docutils literal notranslate">
         <span class="pre">
          str
@@ -425,6 +431,7 @@ title="Print to PDF"
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#bytes">
+       3.4.4.2.
        <code class="docutils literal notranslate">
         <span class="pre">
          bytes
@@ -434,6 +441,7 @@ title="Print to PDF"
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#tuple">
+       3.4.4.3.
        <code class="docutils literal notranslate">
         <span class="pre">
          tuple
@@ -443,6 +451,7 @@ title="Print to PDF"
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#list">
+       3.4.4.4.
        <code class="docutils literal notranslate">
         <span class="pre">
          list
@@ -454,59 +463,59 @@ title="Print to PDF"
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#diccionarios">
-     Diccionarios
+     3.4.5. Diccionarios
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#orientado-a-objetos">
-     Orientado a objetos
+     3.4.6. Orientado a objetos
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#modulos">
-   Módulos
+   3.5. Módulos
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#estructuras-de-control">
-   Estructuras de control
+   3.6. Estructuras de control
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#excepciones">
-   Excepciones
+   3.7. Excepciones
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#funciones">
-   Funciones
+   3.8. Funciones
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#python-is-different">
-   Python is different
+   3.9. Python is different
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#fichero-ejecutable">
-   Fichero ejecutable
+   3.10. Fichero ejecutable
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#type-checking">
-   Type checking
+   3.11. Type checking
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#depuracion">
-   Depuración
+   3.12. Depuración
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#y-no-se-queda-aqui">
-   Y no se queda aquí…
+   3.13. Y no se queda aquí…
   </a>
  </li>
 </ul>
@@ -530,70 +539,71 @@ title="Print to PDF"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#que-es-python">
-   ¿Qué es Python?
+   3.1. ¿Qué es Python?
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#interpretado-o-compilado">
-     Interpretado o compilado
+     3.1.1. Interpretado o compilado
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#versiones-de-python">
-     Versiones de Python
+     3.1.2. Versiones de Python
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#indentacion-estricta">
-   Indentación estricta
+   3.2. Indentación estricta
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#variables-y-tipos">
-   Variables y tipos
+   3.3. Variables y tipos
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#tipado-fuerte">
-     Tipado fuerte
+     3.3.1. Tipado fuerte
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#tipado-dinamico">
-     Tipado dinámico
+     3.3.2. Tipado dinámico
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#tipos-de-datos">
-   Tipos de datos
+   3.4. Tipos de datos
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#valor-nulo">
-     Valor nulo
+     3.4.1. Valor nulo
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#booleanos">
-     Booleanos
+     3.4.2. Booleanos
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#valores-numericos">
-     Valores numéricos
+     3.4.3. Valores numéricos
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#secuencias">
-     Secuencias
+     3.4.4. Secuencias
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#str">
+       3.4.4.1.
        <code class="docutils literal notranslate">
         <span class="pre">
          str
@@ -603,6 +613,7 @@ title="Print to PDF"
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#bytes">
+       3.4.4.2.
        <code class="docutils literal notranslate">
         <span class="pre">
          bytes
@@ -612,6 +623,7 @@ title="Print to PDF"
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#tuple">
+       3.4.4.3.
        <code class="docutils literal notranslate">
         <span class="pre">
          tuple
@@ -621,6 +633,7 @@ title="Print to PDF"
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#list">
+       3.4.4.4.
        <code class="docutils literal notranslate">
         <span class="pre">
          list
@@ -632,59 +645,59 @@ title="Print to PDF"
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#diccionarios">
-     Diccionarios
+     3.4.5. Diccionarios
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#orientado-a-objetos">
-     Orientado a objetos
+     3.4.6. Orientado a objetos
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#modulos">
-   Módulos
+   3.5. Módulos
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#estructuras-de-control">
-   Estructuras de control
+   3.6. Estructuras de control
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#excepciones">
-   Excepciones
+   3.7. Excepciones
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#funciones">
-   Funciones
+   3.8. Funciones
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#python-is-different">
-   Python is different
+   3.9. Python is different
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#fichero-ejecutable">
-   Fichero ejecutable
+   3.10. Fichero ejecutable
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#type-checking">
-   Type checking
+   3.11. Type checking
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#depuracion">
-   Depuración
+   3.12. Depuración
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#y-no-se-queda-aqui">
-   Y no se queda aquí…
+   3.13. Y no se queda aquí…
   </a>
  </li>
 </ul>
@@ -698,7 +711,7 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="python">
-<h1>Python<a class="headerlink" href="#python" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">3. </span>Python<a class="headerlink" href="#python" title="Permalink to this headline">#</a></h1>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Un pequeño ajuste de configuración para simplificar el uso de jupyter</span>
@@ -710,17 +723,17 @@ title="Print to PDF"
 </div>
 </div>
 <section id="que-es-python">
-<h2>¿Qué es Python?<a class="headerlink" href="#que-es-python" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">3.1. </span>¿Qué es Python?<a class="headerlink" href="#que-es-python" title="Permalink to this headline">#</a></h2>
 <p>Python es un lenguaje de programación orientado a objetos con soporte a múltiples paradigmas de programación, como programación imperativa, funcional o asíncrona.</p>
 <p>Es un lenguaje considerado multipropósito, ya que tiene desde librerías para acceder a operaciones de bajo nivel como para desarrollar aplicaciones multi hilo, multi proceso, distribuídas, bases de datos, interfaces gráficas, manejo de datos, juegos, gráficos 3D, cálculo científico, machine learning…</p>
 <p>Es considerado uno de los lenguajes más sencillos de aprender y es muy adecuado por su sintaxis para el aprendizaje de programación a alto nivel, ya que proporciona todas las herramientas habituales y estructuras de control típicas de todos los lenguajes de programación.</p>
 <section id="interpretado-o-compilado">
-<h3>Interpretado o compilado<a class="headerlink" href="#interpretado-o-compilado" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">3.1.1. </span>Interpretado o compilado<a class="headerlink" href="#interpretado-o-compilado" title="Permalink to this headline">#</a></h3>
 <p>La respuesta corta es <strong>interpretado</strong>, ya que los programas Python se ejecutan habitualmente utilizando el intérprete oficial, que toma el código fuente y lo ejecuta.</p>
 <p>En realidad, el intérprete hace una compilación previa a <em>bytecode</em>, que es ejecutado por el mismo intérprete. También existes otras implementaciones de Python en la que el “intérprete” es en realidad un compilador y genera ficheros binarios ejecutables dependientes de la plataforma, como si de C se tratara.</p>
 </section>
 <section id="versiones-de-python">
-<h3>Versiones de Python<a class="headerlink" href="#versiones-de-python" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">3.1.2. </span>Versiones de Python<a class="headerlink" href="#versiones-de-python" title="Permalink to this headline">#</a></h3>
 <p>Aunque es raro a día de encontrarnos con versiones antiguas de Python, históricamente algunas distribuciones mantienen el paquete para Python 2.7 (última versión liberada de Python 2.X).</p>
 <p>Aunque sea contraintuitivo, Python 2.X y Python 3.X son dos lenguajes que se consideran diferentes. El código escrito para Python 2.X no es, por defecto, compatible con Python 3.X.</p>
 <p>La versión más reciente de Python es la <a class="reference external" href="https://www.python.org/downloads/">3.11.2</a>, aunque para los ejemplos de este documento servirá cualquier versión de Python posterior a la 3.6.</p>
@@ -728,7 +741,7 @@ title="Print to PDF"
 </section>
 </section>
 <section id="indentacion-estricta">
-<h2>Indentación estricta<a class="headerlink" href="#indentacion-estricta" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">3.2. </span>Indentación estricta<a class="headerlink" href="#indentacion-estricta" title="Permalink to this headline">#</a></h2>
 <p>Una de las señas de identidad más características de Python es la <strong>obligación</strong> de utilizar indentación.</p>
 <p>Al contrario que otros lenguajes donde la indentación de los bloques de código es meramente estética, Python lo utiliza para definir los bloques de código.</p>
 <p>La única norma que el lenguaje necesita es que todos los elementos del mismo bloque de código estén indentandos de la misma forma, sea con espacios, tabuladores…</p>
@@ -738,10 +751,10 @@ title="Print to PDF"
 <p>Más adelante veremos ejemplos en los que se muestra cómo funciona la indentación de bloques.</p>
 </section>
 <section id="variables-y-tipos">
-<h2>Variables y tipos<a class="headerlink" href="#variables-y-tipos" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">3.3. </span>Variables y tipos<a class="headerlink" href="#variables-y-tipos" title="Permalink to this headline">#</a></h2>
 <p>Python es un lenguaje de tipado fuerte y dinámico:</p>
 <section id="tipado-fuerte">
-<h3>Tipado fuerte<a class="headerlink" href="#tipado-fuerte" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">3.3.1. </span>Tipado fuerte<a class="headerlink" href="#tipado-fuerte" title="Permalink to this headline">#</a></h3>
 <p>Python no permite hacer operaciones entre diferentes tipos de forma explícita:</p>
 <div class="cell tag_raises-exception docutils container">
 <div class="cell_input docutils container">
@@ -765,7 +778,7 @@ title="Print to PDF"
 <p>La operación ha lanzado el error <code class="docutils literal notranslate"><span class="pre">TypeError</span></code> y nos indica que no se puede usar la operación <code class="docutils literal notranslate"><span class="pre">+</span></code>, que para el tipo cadena implica la concatenación, pasándole un número entero.</p>
 </section>
 <section id="tipado-dinamico">
-<h3>Tipado dinámico<a class="headerlink" href="#tipado-dinamico" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">3.3.2. </span>Tipado dinámico<a class="headerlink" href="#tipado-dinamico" title="Permalink to this headline">#</a></h3>
 <p>Como se ha visto en el ejemplo anterior, en ningún momento indicamos que la variable <code class="docutils literal notranslate"><span class="pre">a</span></code> va a ser de tipo cadena, simplemente la asignamos y Python decide el tipo en función del valor de asignación.</p>
 <p>Asimismo, podemos cambiar dinámicamente el tipo de una variable. En realidad, Python destruye la variable definida previamente y crea una nueva con el mismo nombre.</p>
 <div class="cell docutils container">
@@ -789,9 +802,9 @@ title="Print to PDF"
 </section>
 </section>
 <section id="tipos-de-datos">
-<h2>Tipos de datos<a class="headerlink" href="#tipos-de-datos" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">3.4. </span>Tipos de datos<a class="headerlink" href="#tipos-de-datos" title="Permalink to this headline">#</a></h2>
 <section id="valor-nulo">
-<h3>Valor nulo<a class="headerlink" href="#valor-nulo" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">3.4.1. </span>Valor nulo<a class="headerlink" href="#valor-nulo" title="Permalink to this headline">#</a></h3>
 <p>Para definir una variable sin inicializar ni su tipo ni su valor, se puede usar <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
@@ -799,7 +812,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="booleanos">
-<h3>Booleanos<a class="headerlink" href="#booleanos" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">3.4.2. </span>Booleanos<a class="headerlink" href="#booleanos" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="kc">True</span>
@@ -821,7 +834,7 @@ False
 </div>
 </section>
 <section id="valores-numericos">
-<h3>Valores numéricos<a class="headerlink" href="#valores-numericos" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">3.4.3. </span>Valores numéricos<a class="headerlink" href="#valores-numericos" title="Permalink to this headline">#</a></h3>
 <p>Al contrario que en otros lenguajes, donde los tipos de datos pueden presentar diferentes tamaños (enteros desde 8 a 64 bits, punto flotanto, doble precisión…), en Python los tipos numéricos pueden almacenar valores tan altos como permita la memoria del programa y la compuadora donde se ejecute.</p>
 <p>Los 3 tipos numéricos básicos son <code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">float</span></code> y <code class="docutils literal notranslate"><span class="pre">complex</span></code>:</p>
 <div class="cell docutils container">
@@ -844,10 +857,10 @@ False
 </div>
 </section>
 <section id="secuencias">
-<h3>Secuencias<a class="headerlink" href="#secuencias" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">3.4.4. </span>Secuencias<a class="headerlink" href="#secuencias" title="Permalink to this headline">#</a></h3>
 <p>Los tipos de secuencia en Python son <code class="docutils literal notranslate"><span class="pre">str</span></code>, <code class="docutils literal notranslate"><span class="pre">bytes</span></code>, <code class="docutils literal notranslate"><span class="pre">tuple</span></code> y <code class="docutils literal notranslate"><span class="pre">list</span></code></p>
 <section id="str">
-<h4><code class="docutils literal notranslate"><span class="pre">str</span></code><a class="headerlink" href="#str" title="Permalink to this headline">#</a></h4>
+<h4><span class="section-number">3.4.4.1. </span><code class="docutils literal notranslate"><span class="pre">str</span></code><a class="headerlink" href="#str" title="Permalink to this headline">#</a></h4>
 <p>Representa a una cadena de texto habitual, que contenga caracteres imprimibles. Las cadenas permiten operaciones como la suma y la multiplicación:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -865,7 +878,7 @@ False
 </div>
 </section>
 <section id="bytes">
-<h4><code class="docutils literal notranslate"><span class="pre">bytes</span></code><a class="headerlink" href="#bytes" title="Permalink to this headline">#</a></h4>
+<h4><span class="section-number">3.4.4.2. </span><code class="docutils literal notranslate"><span class="pre">bytes</span></code><a class="headerlink" href="#bytes" title="Permalink to this headline">#</a></h4>
 <p>Es un tipo muy similar al anterior, pero en vez de secuencias de caracteres, permite manejar secuencias de bytes. Las operaciones de lectura y escritura de bajo nivel en ficheros o dispositivos pueden ser realizadas con secuencias de <code class="docutils literal notranslate"><span class="pre">bytes</span></code>, y también la recepción y envío de datos a través de sockets.</p>
 <p>Debemos tener en cuenta que podemos transformar cadenas de carácteres en cadenas de bytes y viceversa. Es realmente importante entender la diferencia entre ambos tipos de datos, así como entender cómo transformar entre ellos.</p>
 <div class="cell docutils container">
@@ -902,7 +915,7 @@ False
 </div>
 </section>
 <section id="tuple">
-<h4><code class="docutils literal notranslate"><span class="pre">tuple</span></code><a class="headerlink" href="#tuple" title="Permalink to this headline">#</a></h4>
+<h4><span class="section-number">3.4.4.3. </span><code class="docutils literal notranslate"><span class="pre">tuple</span></code><a class="headerlink" href="#tuple" title="Permalink to this headline">#</a></h4>
 <p>Es una agrupación de 1 o más valores, similar al concepto matemático de tupla. Pueden usarse para empaquetar varias valores, que además pueden ser de tipo diferente.</p>
 <p>Las tuplas, al igual que las <code class="docutils literal notranslate"><span class="pre">str</span></code> o  los <code class="docutils literal notranslate"><span class="pre">bytes</span></code>, son tipos inmutables: no pueden modificarse una vez inicializadas.</p>
 <div class="cell docutils container">
@@ -927,7 +940,7 @@ False
 </div>
 </section>
 <section id="list">
-<h4><code class="docutils literal notranslate"><span class="pre">list</span></code><a class="headerlink" href="#list" title="Permalink to this headline">#</a></h4>
+<h4><span class="section-number">3.4.4.4. </span><code class="docutils literal notranslate"><span class="pre">list</span></code><a class="headerlink" href="#list" title="Permalink to this headline">#</a></h4>
 <p>Una lista es la implementación en Python de los vectores o arrays de otros lenguajes. Al igual que las tuplas, permite que sus elementos sean de tipo diferente.</p>
 <p>Al contrario que los anteriores, las listas son mutables y pueden ser modificadas:</p>
 <div class="cell docutils container">
@@ -1003,7 +1016,7 @@ False
 </section>
 </section>
 <section id="diccionarios">
-<h3>Diccionarios<a class="headerlink" href="#diccionarios" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">3.4.5. </span>Diccionarios<a class="headerlink" href="#diccionarios" title="Permalink to this headline">#</a></h3>
 <p>Son tablas asociativas o <em>hash maps</em>. Tanto clave como valores pueden ser de cualquier tipo:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1028,17 +1041,17 @@ False
 <p>Además, hay otros tipos de datos nativos como <code class="docutils literal notranslate"><span class="pre">set</span></code> para manejo de conjuntos, pilas, colas, listas multidimensionales…</p>
 </section>
 <section id="orientado-a-objetos">
-<h3>Orientado a objetos<a class="headerlink" href="#orientado-a-objetos" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">3.4.6. </span>Orientado a objetos<a class="headerlink" href="#orientado-a-objetos" title="Permalink to this headline">#</a></h3>
 <p>Todos los tipos anteriores que hemos visto son clases en Python, y las variables, objetos de las mismas, y no son diferentes de cualquier clase y objeto que podamos definir nosotros.</p>
 </section>
 </section>
 <section id="modulos">
-<h2>Módulos<a class="headerlink" href="#modulos" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">3.5. </span>Módulos<a class="headerlink" href="#modulos" title="Permalink to this headline">#</a></h2>
 <p>Al igual que en otros lenguajes, Python permite agrupar el código dentro de ficheros y directorios. En Python llamamos <strong>módulo</strong> a un fichero con código Python. Los módulos se pueden importar desde otro módulo usando la sentencia <code class="docutils literal notranslate"><span class="pre">import</span></code>.</p>
 <p>Los módulos pueden agruparse también en “paquetes”.</p>
 </section>
 <section id="estructuras-de-control">
-<h2>Estructuras de control<a class="headerlink" href="#estructuras-de-control" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">3.6. </span>Estructuras de control<a class="headerlink" href="#estructuras-de-control" title="Permalink to this headline">#</a></h2>
 <p>Están disponibles todas aquellas que ya son habituales en otros lenguajes: <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">if-else</span></code>, <code class="docutils literal notranslate"><span class="pre">if-elif-else</span></code>, <code class="docutils literal notranslate"><span class="pre">for</span></code>, <code class="docutils literal notranslate"><span class="pre">while</span></code>, saltos incondicionales con <code class="docutils literal notranslate"><span class="pre">break</span></code> o <code class="docutils literal notranslate"><span class="pre">continue</span></code>,<code class="docutils literal notranslate"><span class="pre">return</span></code> y <code class="docutils literal notranslate"><span class="pre">yield</span></code> para generadores.</p>
 <p>Todas estas estructuras de control funcionan de la forma habitual, a excepción del <code class="docutils literal notranslate"><span class="pre">for</span></code> que tiene una sintaxis diferente a la habitual de C:</p>
 <div class="cell docutils container">
@@ -1074,7 +1087,7 @@ bronce
 </div>
 </section>
 <section id="excepciones">
-<h2>Excepciones<a class="headerlink" href="#excepciones" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">3.7. </span>Excepciones<a class="headerlink" href="#excepciones" title="Permalink to this headline">#</a></h2>
 <p>Las exceptiones en Python son objetos, por lo que podemos definir clases que hereden nuevas formas de excepción personalizadas y capturarlas en nuestros programas si es necesario.</p>
 <p>La sintaxis de captura de excepciones es similar a otros lenguajes:</p>
 <ul class="simple">
@@ -1110,7 +1123,7 @@ This will be always executed
 </div>
 </section>
 <section id="funciones">
-<h2>Funciones<a class="headerlink" href="#funciones" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">3.8. </span>Funciones<a class="headerlink" href="#funciones" title="Permalink to this headline">#</a></h2>
 <p>La sintaxis para definir una función es la siguiente:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1134,7 +1147,7 @@ This will be always executed
 </div>
 </section>
 <section id="python-is-different">
-<h2>Python is different<a class="headerlink" href="#python-is-different" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">3.9. </span>Python is different<a class="headerlink" href="#python-is-different" title="Permalink to this headline">#</a></h2>
 <p>Cuando se empieza a utilizar Python solemos hacerlo de manera muy parecida a los lenguajes tradicionales. Por ejemplo, el soporte de programación funcional que incluye el lenguaje permite hacer la función factorial de un modo diferente:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1175,7 +1188,7 @@ This will be always executed
 </div>
 </section>
 <section id="fichero-ejecutable">
-<h2>Fichero ejecutable<a class="headerlink" href="#fichero-ejecutable" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">3.10. </span>Fichero ejecutable<a class="headerlink" href="#fichero-ejecutable" title="Permalink to this headline">#</a></h2>
 <p>Lo normal es escribir un programa en un fichero de texto —con extensión <code class="docutils literal notranslate"><span class="pre">.py</span></code> utilizando algún buen IDE. Después la idea es poder ejecutar ese fichero como cualquier otro programa. Para que esto funcione, debemos escribir un <em>shebang</em> en la primera línea del fichero. Esto es habitual en lenguajes interpretados y le dice a la shell qué debe ejecutar para poder lanzar este programa.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
 </pre></div>
@@ -1186,7 +1199,7 @@ This will be always executed
 </div>
 </section>
 <section id="type-checking">
-<h2>Type checking<a class="headerlink" href="#type-checking" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">3.11. </span>Type checking<a class="headerlink" href="#type-checking" title="Permalink to this headline">#</a></h2>
 <p>En la definición de variables, funciones y métodos Python no se indican los tipos, solo los nombres. En cierto modo, se asume que se va a invocar del modo correcto, es decir, no hace comprobación de tipos (<em>type checking</em>). Si bien esto le da mucha flexibilidad, a la hora de validar una llamada o documentar un API de módulo o clase puede ser un problema, por lo que desde hace unos años se introdujo el llamado <em>hinting</em> de tipos.</p>
 <p>Sin embargo cuando indicamos el tipo mediante <em>hinting</em> solo estamos haciendo una anotación y no tiene ningún efecto aparente. Si realmente queremos <em>typechecking</em> y forzar la correspondencia de tipos, tendremos que utilizar herramientas externas como <code class="docutils literal notranslate"><span class="pre">mypy</span></code>, que hace esa verificación estática del código.</p>
 <p>Esta sería una versión de la función <code class="docutils literal notranslate"><span class="pre">factorial()</span></code> con <em>type hinting</em> y una llamada incorrecta (que guardamos en el fichero <code class="docutils literal notranslate"><span class="pre">factorial.py</span></code>):</p>
@@ -1241,12 +1254,12 @@ Requirement already satisfied: typing-extensions&gt;=3.10 in /home/david/.local/
 esperado.</p>
 </section>
 <section id="depuracion">
-<h2>Depuración<a class="headerlink" href="#depuracion" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">3.12. </span>Depuración<a class="headerlink" href="#depuracion" title="Permalink to this headline">#</a></h2>
 <p>Como cualquier otro lenguaje, Python tiene soporte para depuración, incluso con llamadas nativas en el lenguaje.</p>
 <p>Existe la función <code class="docutils literal notranslate"><span class="pre">breakpoint()</span></code>, que al ser ejecutada detiene el hilo del programa en la que se encuentra y permite iniciar una sesión del depurador <code class="docutils literal notranslate"><span class="pre">pdb</span></code>, que nos permite ver los valores de las variables, inspeccionar el segmento de código cercano al punto de interrupción, ejecutar paso a paso, etc. Este soporte es bastante rudimentario y suele ser aconsejable utilizar un IDE que lo tenga integrado.</p>
 </section>
 <section id="y-no-se-queda-aqui">
-<h2>Y no se queda aquí…<a class="headerlink" href="#y-no-se-queda-aqui" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">3.13. </span>Y no se queda aquí…<a class="headerlink" href="#y-no-se-queda-aqui" title="Permalink to this headline">#</a></h2>
 <p>Python incluye una librería estándar muy amplia donde podemos encontrar librerías para una variedad inabarcable de usos para una introducción. Algunos destacados son:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">socket</span></code>: utilización de <em>sockets</em> de red, con soporte para TCP, UDP, IP, Ethernet…</p></li>
@@ -1304,13 +1317,13 @@ esperado.</p>
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Paquetes</p>
+            <p class="prev-next-title"><span class="section-number">2. </span>Paquetes</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="ssh.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">SSH</p>
+        <p class="prev-next-title"><span class="section-number">4. </span>SSH</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

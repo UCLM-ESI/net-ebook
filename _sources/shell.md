@@ -27,16 +27,17 @@ facilidad para combinar conjuntos de sentencias en forma de macros, lo que adem�
 automatizar tareas repetitivas. Especificar o documentar un procedimiento, incluso de
 complejidad media, usando comandos es mucho más sencillo que dar instrucciones para
 utilizar menús, botones y listas desplegables, algo que a menudo requiere grabar en vídeo
-la secuencia de acciones ---los llamados \emph{screencast}.
+la secuencia de acciones ---los llamados *screencast*.
 
-[//]: sidebar: FIXME: portada
+```{tip}
 «In the Beginning... Was the Command Line»[^2] de Neal STEPHESON, es un ensayo crítico (y a
 ratos humorístico) sobre la influencia que los computadoras, los sistemas operativos y sus
 distintas filosofías tienen sobre la sociedad actual, y especialmente sobre las personas
 con inquietudes técnicas. Uno de los temas trata precisamente sobre las diferencias entre
 interfaz gráfica e interfaz de comandos.
+```
 
-[^2] http://en.wikipedia.org/wiki/In_the_Beginning...\_Was_the_Command_Line
+[^2]: http://en.wikipedia.org/wiki/In_the_Beginning...\_Was_the_Command_Line
 
 En todo caso, es importante entender que es un error subestimar o considerar anticuada una
 aplicación simplemente por el hecho de usar una interfaz de comandos. A menudo, las
@@ -87,6 +88,7 @@ cero. Según eso, el «hola mundo» correcto en C es el siguiente:
 
 ```c
 #include <stdio.h>
+
 int main(int argc, char* argv[]) {
     puts("hello world\n");
     return 0;
@@ -96,7 +98,7 @@ int main(int argc, char* argv[]) {
 Por ejemplo, el siguiente listado muestra la ejecución del comando ``ls /``, que lista
 el contenido del directorio raíz:
 
-```shell
+```console
 david@amy:~$ ls /
 bin   etc         lib         mnt   root  selinux  tmp  vmlinuz
 boot  home        lost+found  opt   run   srv      usr
@@ -149,8 +151,8 @@ el usuario pulsa Control-C mientras un programa se ejecuta en una shell, esta le
 la señal SIGINT (-2) y ese será el valor de retorno del programa.
 
 
+(sec:process)=
 ## Procesos
-[//]: FIXME \label{sec:procesos}
 
 El «proceso» es una abstracción del SO para ejecutar un programa conforme a
 determinados parámetros de seguridad, prioridad y privilegios de acceso a recursos.
@@ -547,7 +549,7 @@ especializados ---como los que se han introducido aquí--- que pueden combinarse
 redirección para cubrir una gran variedad de necesidades puntuales de una forma rápida y
 eficiente [^8].
 
-[^8]: La web \url{https://www.commandlinefu.com/} es una buena prueba de la
+[^8]: La web https://www.commandlinefu.com/ es una buena prueba de la
 gran versatilidad de la redirección y las capacidades de la shell.
 
 
@@ -560,8 +562,8 @@ A continuación se introducen brevemente algunos de los programas más comunes y
 cuando se trabaja con la shell.
 
 
+(sec:ficheros)=
 ### Ficheros y directorios
-% \label{sec:ficheros}
 
 `cp` --- *copy*
 : Dados un nombre de fichero existente y un directorio o nombre de fichero, copia el
@@ -673,9 +675,9 @@ idénticas.
   rm: remove regular empty file `kk'? removed `kk'
   ```
 
+(sec:sistema)=
 ### Sistema
 %====================================================================
-% \label{sec:sistema}
 
 `dd`
 : Copia bloques de bytes en dispositivos (ficheros o discos).
@@ -704,9 +706,9 @@ idénticas.
 : Escribe a disco inmediatamente las operaciones pendientes sobre ficheros.
 
 
+(sec:procesos-more)=
 ### Procesos
 % ===================================================================
-% \label{sec:procesos-more}
 
 `nice`
 : Ejecuta un programa fijando un nivel de prioridad.
@@ -726,9 +728,9 @@ idénticas.
 : Muestra una lista actualizada de los procesos ordenada por el consumo de CPU.
 
 
+(sec:usuarios)=
 ### Usuarios y permisos
 %========================================================
-% \label{sec:usuarios}
 
 `chmod` --- *change mode*
 : Cambia los permisos de lectura, escritura y ejecución de un fichero o directorio.
@@ -757,9 +759,9 @@ administrador.
 : Muestra el nombre del usuario conectado.
 
 
+(sec:services)=
 ### Servicios
 % ==================================================================
-% \label{sec:services}
 
 Los servicios son programas en segundo plano (que arrancan normalmente el iniciar el
 sistema) que se encuentran bajo el control del SO que no se ejecutan directamente por

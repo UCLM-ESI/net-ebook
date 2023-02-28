@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>&lt;no title&gt; &#8212; Redes 2</title>
+    <title>README &#8212; Redes 2</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -114,32 +114,37 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="shell.html">
-   Shell
+   1. Shell
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="paquetes.html">
-   Paquetes
+   2. Paquetes
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="python.html">
-   Python
+   3. Python
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ssh.html">
-   SSH
+   4. SSH
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="udp_chat.html">
-   Chat UDP
+   5. Chat UDP
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="serializacion.html">
-   Serialización
+   6. Serialización
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="raw-sockets.html">
+   7. Sockets RAW
   </a>
  </li>
 </ul>
@@ -318,7 +323,22 @@ title="Print to PDF"
         <i class="fas fa-list"></i> Contents
     </div>
     <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="simple visible nav section-nav flex-column">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#guia-de-estilo">
+   Guía de estilo
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dudas-jupyter-book">
+   Dudas Jupyter-book
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#doc">
+   doc
+  </a>
+ </li>
 </ul>
 
     </nav>
@@ -328,7 +348,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1><no title></h1>
+                <h1>README</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -337,7 +357,22 @@ title="Print to PDF"
                             <h2> Contents </h2>
                         </div>
                         <nav aria-label="Page">
-                            <ul class="simple visible nav section-nav flex-column">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#guia-de-estilo">
+   Guía de estilo
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dudas-jupyter-book">
+   Dudas Jupyter-book
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#doc">
+   doc
+  </a>
+ </li>
 </ul>
 
                         </nav>
@@ -348,7 +383,39 @@ title="Print to PDF"
                 
               <div>
                 
-  
+  <section class="tex2jax_ignore mathjax_ignore" id="readme">
+<h1>README<a class="headerlink" href="#readme" title="Permalink to this headline">#</a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">orphan</dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+<section id="guia-de-estilo">
+<h2>Guía de estilo<a class="headerlink" href="#guia-de-estilo" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p><em>enfatizar</em></p></li>
+<li><p>referencias cruzadas</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>(section:label)=
+
+Ver {numref}`section:label` {ref}`section:label`
+</pre></div>
+</div>
+</section>
+<section id="dudas-jupyter-book">
+<h2>Dudas Jupyter-book<a class="headerlink" href="#dudas-jupyter-book" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>abreviaturas, glosario y acrónimos</p></li>
+<li><p>traducción de ‘note’, ‘important’, etc</p></li>
+<li><p>estilo CSS para bloques (ej: console)</p></li>
+<li><p>numerar líneas en los listados</p></li>
+</ul>
+</section>
+<section id="doc">
+<h2>doc<a class="headerlink" href="#doc" title="Permalink to this headline">#</a></h2>
+<p>https://docs.typo3.org/m/typo3/docs-how-to-document/main/en-us/WritingReST/Reference/Code/Codeblocks.html</p>
+</section>
+</section>
+
     <script type="text/x-thebe-config">
     {
         requestKernel: true,

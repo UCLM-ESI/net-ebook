@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Chat UDP &#8212; Redes 2</title>
+    <title>5. Chat UDP &#8212; Redes 2</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,8 +52,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Serialización" href="serializacion.html" />
-    <link rel="prev" title="SSH" href="ssh.html" />
+    <link rel="next" title="6. Serialización" href="serializacion.html" />
+    <link rel="prev" title="4. SSH" href="ssh.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -116,32 +116,37 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="shell.html">
-   Shell
+   1. Shell
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="paquetes.html">
-   Paquetes
+   2. Paquetes
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="python.html">
-   Python
+   3. Python
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ssh.html">
-   SSH
+   4. SSH
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Chat UDP
+   5. Chat UDP
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="serializacion.html">
-   Serialización
+   6. Serialización
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="raw-sockets.html">
+   7. Sockets RAW
   </a>
  </li>
 </ul>
@@ -323,63 +328,63 @@ title="Print to PDF"
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#por-que-udp">
-   ¿Por qué UDP?
+   5.1. ¿Por qué UDP?
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#hello-world">
-   Hello world
+   5.2. Hello world
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#el-cliente">
-     El cliente
+     5.2.1. El cliente
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#el-servidor">
-     El servidor
+     5.2.2. El servidor
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#hello-world-con-respuesta">
-   Hello world con respuesta
+   5.3. Hello world con respuesta
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#servidor">
-     Servidor
+     5.3.1. Servidor
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#cliente">
-     Cliente
+     5.3.2. Cliente
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#entrada-de-usuario">
-   Entrada de usuario
+   5.4. Entrada de usuario
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#pistas">
-     Pistas
+     5.4.1. Pistas
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#simultaneos">
-   Simultáneos
+   5.5. Simultáneos
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id1">
-     Pistas
+     5.5.1. Pistas
     </a>
    </li>
   </ul>
@@ -405,63 +410,63 @@ title="Print to PDF"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#por-que-udp">
-   ¿Por qué UDP?
+   5.1. ¿Por qué UDP?
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#hello-world">
-   Hello world
+   5.2. Hello world
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#el-cliente">
-     El cliente
+     5.2.1. El cliente
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#el-servidor">
-     El servidor
+     5.2.2. El servidor
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#hello-world-con-respuesta">
-   Hello world con respuesta
+   5.3. Hello world con respuesta
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#servidor">
-     Servidor
+     5.3.1. Servidor
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#cliente">
-     Cliente
+     5.3.2. Cliente
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#entrada-de-usuario">
-   Entrada de usuario
+   5.4. Entrada de usuario
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#pistas">
-     Pistas
+     5.4.1. Pistas
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#simultaneos">
-   Simultáneos
+   5.5. Simultáneos
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id1">
-     Pistas
+     5.5.1. Pistas
     </a>
    </li>
   </ul>
@@ -477,12 +482,12 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="chat-udp">
-<h1>Chat UDP<a class="headerlink" href="#chat-udp" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">5. </span>Chat UDP<a class="headerlink" href="#chat-udp" title="Permalink to this headline">#</a></h1>
 <p>En esta sesión de laboratorio vamos a realizar un ejemplo mínimo de programación con sockets en Python3.
 Todo (o casi todo) lo que vamos a realizar en esta sesión se podría realizar utilizando herramientas de terminal como <code class="docutils literal notranslate"><span class="pre">ncat</span></code>,
 pero el objetivo es dar unos primeros pasos con Python 3 y la utilización de la librería <code class="docutils literal notranslate"><span class="pre">socket</span></code> para realizar conexiones de red.</p>
 <section id="por-que-udp">
-<h2>¿Por qué UDP?<a class="headerlink" href="#por-que-udp" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">5.1. </span>¿Por qué UDP?<a class="headerlink" href="#por-que-udp" title="Permalink to this headline">#</a></h2>
 <p>Como ya os sonará de la asignatura Redes 1, en la <strong>capa de transporte</strong> de la pila TCP/IP existen 2 protocolos principales:
 <em>Transport Control Protocol</em>, o TCP, y <em>User Datagram Protocol</em>, o UDP.</p>
 <p>La principal similitud entre ambos protocolos es que ambos utilizan un número natural como direccionamiento: el puerto.
@@ -495,14 +500,14 @@ ni siquiera sabemos si el destinatario está o no escuchando en su puerto.</p>
 <p>En esta sesión vamos a utilizar UDP por su simplicidad para una primera aproximación al uso de sockets.</p>
 </section>
 <section id="hello-world">
-<h2>Hello world<a class="headerlink" href="#hello-world" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">5.2. </span>Hello world<a class="headerlink" href="#hello-world" title="Permalink to this headline">#</a></h2>
 <p>En éste primer ejemplo vamos a escribir dos programas que se comuniquen a través de UDP con las siguientes características:</p>
 <ul class="simple">
 <li><p>Un cliente que envíe un mensaje que contenga la palabra “hello”.</p></li>
 <li><p>Un servidor que imprima el mensaje recibido por la pantalla en el terminal.</p></li>
 </ul>
 <section id="el-cliente">
-<h3>El cliente<a class="headerlink" href="#el-cliente" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">5.2.1. </span>El cliente<a class="headerlink" href="#el-cliente" title="Permalink to this headline">#</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python3</span>
 
 <span class="kn">from</span> <span class="nn">socket</span> <span class="kn">import</span> <span class="n">socket</span><span class="p">,</span> <span class="n">AF_INET</span><span class="p">,</span> <span class="n">SOCK_DGRAM</span>  <span class="c1"># Importamos del módulo socket la clase socket y las constantes para sockets IP y datagramas</span>
@@ -523,7 +528,7 @@ ni siquiera sabemos si el destinatario está o no escuchando en su puerto.</p>
 </div>
 </section>
 <section id="el-servidor">
-<h3>El servidor<a class="headerlink" href="#el-servidor" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">5.2.2. </span>El servidor<a class="headerlink" href="#el-servidor" title="Permalink to this headline">#</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python3</span>
 
 <span class="kn">from</span> <span class="nn">socket</span> <span class="kn">import</span> <span class="n">socket</span><span class="p">,</span> <span class="n">AF_INET</span><span class="p">,</span> <span class="n">SOCK_DGRAM</span>
@@ -547,11 +552,11 @@ ni siquiera sabemos si el destinatario está o no escuchando en su puerto.</p>
 </section>
 </section>
 <section id="hello-world-con-respuesta">
-<h2>Hello world con respuesta<a class="headerlink" href="#hello-world-con-respuesta" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">5.3. </span>Hello world con respuesta<a class="headerlink" href="#hello-world-con-respuesta" title="Permalink to this headline">#</a></h2>
 <p>A continuación vamos a modificar el código anterior para que el servidor envíe una respuesta al cliente.
 Además, el cliente mostrará dicha respuesta por su salida estándar:</p>
 <section id="servidor">
-<h3>Servidor<a class="headerlink" href="#servidor" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">5.3.1. </span>Servidor<a class="headerlink" href="#servidor" title="Permalink to this headline">#</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python3</span>
 
 <span class="kn">from</span> <span class="nn">socket</span> <span class="kn">import</span> <span class="n">socket</span><span class="p">,</span> <span class="n">AF_INET</span><span class="p">,</span> <span class="n">SOCK_DGRAM</span>
@@ -570,7 +575,7 @@ Además, el cliente mostrará dicha respuesta por su salida estándar:</p>
 <p><a class="reference external" href="https://joselsegura.github.io/redes2-lab/src/server2.py">Descarga</a></p>
 </section>
 <section id="cliente">
-<h3>Cliente<a class="headerlink" href="#cliente" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">5.3.2. </span>Cliente<a class="headerlink" href="#cliente" title="Permalink to this headline">#</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python3</span>
 
 <span class="kn">from</span> <span class="nn">socket</span> <span class="kn">import</span> <span class="n">socket</span><span class="p">,</span> <span class="n">AF_INET</span><span class="p">,</span> <span class="n">SOCK_DGRAM</span>
@@ -589,14 +594,14 @@ Además, el cliente mostrará dicha respuesta por su salida estándar:</p>
 </section>
 </section>
 <section id="entrada-de-usuario">
-<h2>Entrada de usuario<a class="headerlink" href="#entrada-de-usuario" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">5.4. </span>Entrada de usuario<a class="headerlink" href="#entrada-de-usuario" title="Permalink to this headline">#</a></h2>
 <p>Ahora vamos a escribir una pequeña aplicación de chat cliente-servidor. Deberá cumplir con lo siguiente:</p>
 <ul class="simple">
 <li><p>Comunicación bidireccional, pero no simultánea (el cliente inicia la conversación).</p></li>
 <li><p>La aplicación termina si cualquiera de los dos envía la cadena “bye”.</p></li>
 </ul>
 <section id="pistas">
-<h3>Pistas<a class="headerlink" href="#pistas" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">5.4.1. </span>Pistas<a class="headerlink" href="#pistas" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Para leer una cadena desde la entrada estándar desde un programa python usaremos la función <code class="docutils literal notranslate"><span class="pre">input()</span></code>.</p></li>
 <li><p>Para terminar un bucle podemos utilizar <code class="docutils literal notranslate"><span class="pre">break</span></code>.</p></li>
@@ -604,11 +609,11 @@ Además, el cliente mostrará dicha respuesta por su salida estándar:</p>
 </section>
 </section>
 <section id="simultaneos">
-<h2>Simultáneos<a class="headerlink" href="#simultaneos" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">5.5. </span>Simultáneos<a class="headerlink" href="#simultaneos" title="Permalink to this headline">#</a></h2>
 <p>Modificaremos el ejercicio anterior de manera que cualquiera de los pares sea capaz de enviar y recibir en cualquier momento
 (no por turnos).</p>
 <section id="id1">
-<h3>Pistas<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">5.5.1. </span>Pistas<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Usaremos hilos</p></li>
 </ul>
@@ -647,13 +652,13 @@ Además, el cliente mostrará dicha respuesta por su salida estándar:</p>
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">SSH</p>
+            <p class="prev-next-title"><span class="section-number">4. </span>SSH</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="serializacion.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Serialización</p>
+        <p class="prev-next-title"><span class="section-number">6. </span>Serialización</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

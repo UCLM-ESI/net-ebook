@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>SSH &#8212; Redes 2</title>
+    <title>4. SSH &#8212; Redes 2</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,8 +52,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Chat UDP" href="udp_chat.html" />
-    <link rel="prev" title="Python" href="python.html" />
+    <link rel="next" title="5. Chat UDP" href="udp_chat.html" />
+    <link rel="prev" title="3. Python" href="python.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -116,32 +116,37 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="shell.html">
-   Shell
+   1. Shell
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="paquetes.html">
-   Paquetes
+   2. Paquetes
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="python.html">
-   Python
+   3. Python
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   SSH
+   4. SSH
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="udp_chat.html">
-   Chat UDP
+   5. Chat UDP
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="serializacion.html">
-   Serialización
+   6. Serialización
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="raw-sockets.html">
+   7. Sockets RAW
   </a>
  </li>
 </ul>
@@ -323,34 +328,34 @@ title="Print to PDF"
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#shell-segura">
-   Shell segura
+   4.1. Shell segura
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#configuracion">
-   Configuración
+   4.2. Configuración
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#acceso-con-clave-publica">
-   Acceso con clave pública
+  <a class="reference internal nav-link" href="#clave-publica">
+   4.3. Clave pública
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#autenticacion-mediante-certificado">
-   Autenticación mediante certificado
+  <a class="reference internal nav-link" href="#autenticacion-con-certificados">
+   4.4. Autenticación con certificados
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#un-certificado-para-el-usuario">
-     Un certificado para el usuario
+     4.4.1. Un certificado para el usuario
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#copia-remota-de-ficheros-con-scp">
-   Copia remota de ficheros con SCP
+   4.5. Copia remota de ficheros con SCP
   </a>
  </li>
 </ul>
@@ -374,34 +379,34 @@ title="Print to PDF"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#shell-segura">
-   Shell segura
+   4.1. Shell segura
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#configuracion">
-   Configuración
+   4.2. Configuración
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#acceso-con-clave-publica">
-   Acceso con clave pública
+  <a class="reference internal nav-link" href="#clave-publica">
+   4.3. Clave pública
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#autenticacion-mediante-certificado">
-   Autenticación mediante certificado
+  <a class="reference internal nav-link" href="#autenticacion-con-certificados">
+   4.4. Autenticación con certificados
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#un-certificado-para-el-usuario">
-     Un certificado para el usuario
+     4.4.1. Un certificado para el usuario
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#copia-remota-de-ficheros-con-scp">
-   Copia remota de ficheros con SCP
+   4.5. Copia remota de ficheros con SCP
   </a>
  </li>
 </ul>
@@ -415,7 +420,7 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="ssh">
-<h1>SSH<a class="headerlink" href="#ssh" title="Permalink to this headline">#</a></h1>
+<span id="chap-ssh"></span><h1><span class="section-number">4. </span>SSH<a class="headerlink" href="#ssh" title="Permalink to this headline">#</a></h1>
 <p>SSH es un protocolo de aplicación que permite establecer conexiones con máquinas remotas.
 Podríamos decir que es una versión mejorada del veterano <code class="docutils literal notranslate"><span class="pre">telnet</span></code> <a class="footnote-reference brackets" href="#id3" id="id1">1</a>, pero es
 mucho más que eso. SSH proporciona un canal seguro (cifrado) para ejecutar comandos,
@@ -423,7 +428,7 @@ transferir ficheros (con <code class="docutils literal notranslate"><span class=
 que pueden transportar datos de conexiones arbitrarias o simplemente como sistema de
 autenticación, y mucho más.</p>
 <section id="shell-segura">
-<h2>Shell segura<a class="headerlink" href="#shell-segura" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">4.1. </span>Shell segura<a class="headerlink" href="#shell-segura" title="Permalink to this headline">#</a></h2>
 <p>Como ya indica su nombre, el uso más común de la aplicación SSH es el de «shell remota»,
 es decir, un programa que permite abrir una sesión en un computador remoto y ejecutar
 comandos. En este capítulo vamos a usar concretamente la aplicación OpenSSH, que en el
@@ -458,7 +463,7 @@ del usuario  <code class="docutils literal notranslate"><span class="pre">user</
 ese usuario, que no se muestra al introducirla. Es nuestro caso es <code class="docutils literal notranslate"><span class="pre">secret</span></code>.</p>
 </section>
 <section id="configuracion">
-<h2>Configuración<a class="headerlink" href="#configuracion" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">4.2. </span>Configuración<a class="headerlink" href="#configuracion" title="Permalink to this headline">#</a></h2>
 <p>Para simplificar el comando de conexión se puede escribir un fichero de configuración
 llamado  <code class="docutils literal notranslate"><span class="pre">~/.ssh/config</span></code> en el <strong>computador cliente</strong>. Para el caso anterior, el fichero
 podría ser algo como:</p>
@@ -477,8 +482,8 @@ conectar simplemente con:</p>
 <p>Este modo de autenticación con usuario/clave se llama de «clave privada» porque se
 asume que solamente el usuario la conoce.</p>
 </section>
-<section id="acceso-con-clave-publica">
-<h2>Acceso con clave pública<a class="headerlink" href="#acceso-con-clave-publica" title="Permalink to this headline">#</a></h2>
+<section id="clave-publica">
+<span id="sec-clave-publica"></span><h2><span class="section-number">4.3. </span>Clave pública<a class="headerlink" href="#clave-publica" title="Permalink to this headline">#</a></h2>
 <p>Para evitar tener que escribir constantemente la clave cada vez que conectas a una misma
 máquina, SSH ofrece un sistema de autenticación de «clave pública». Este sistema utiliza
 un par de claves privada/pública. La clave pública se coloca en el nodo al que quieres
@@ -532,8 +537,8 @@ en el computador cliente. Simplemente hay que escribir el comando a continuació
 </pre></div>
 </div>
 </section>
-<section id="autenticacion-mediante-certificado">
-<h2>Autenticación mediante certificado<a class="headerlink" href="#autenticacion-mediante-certificado" title="Permalink to this headline">#</a></h2>
+<section id="autenticacion-con-certificados">
+<h2><span class="section-number">4.4. </span>Autenticación con certificados<a class="headerlink" href="#autenticacion-con-certificados" title="Permalink to this headline">#</a></h2>
 <p>Otra forma de autenticar usuarios es mediante certificados, una opción algo más
 avanzada que la autenticación con clave pública, que hemos visto en la sección anterior.
 Estos certificados son emitidos por una autoridad de certificación (CA), que firma
@@ -568,7 +573,7 @@ algunas de ellas:</p>
 la que se firma y emite los certificados. La clave pública (<code class="docutils literal notranslate"><span class="pre">ca_key.pub</span></code>) es la que se
 utiliza el servidor SSH en el proceso de autenticación de los clientes.</p>
 <section id="un-certificado-para-el-usuario">
-<h3>Un certificado para el usuario<a class="headerlink" href="#un-certificado-para-el-usuario" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">4.4.1. </span>Un certificado para el usuario<a class="headerlink" href="#un-certificado-para-el-usuario" title="Permalink to this headline">#</a></h3>
 <p>Los certificados SSH de usuario hacen posible autenticar usuarios en un servidor
 determinado. Para ilustrar cómo funcionan vamos a generar un certificado para el usuario
 <code class="docutils literal notranslate"><span class="pre">user</span></code> de la máquina <code class="docutils literal notranslate"><span class="pre">viper</span></code> como lo haría su administrador. Primero creamos un par de
@@ -640,16 +645,15 @@ certificado (<code class="docutils literal notranslate"><span class="pre">user_k
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">ana@laptop:~$ </span>ssh<span class="w"> </span>viper
 </pre></div>
 </div>
-<p>La diferencia respecto a lo explicado en la sección</p>
-<p>es que el
-usuario nunca necesitó una clave textual para acceder al servidor. De hecho, el servidor
-se puede configurar para que la única forma de autenticación permitida sea mediante clave
-pública <a class="footnote-reference brackets" href="#id4" id="id2">2</a>, de modo que no hay posibilidad de
+<p>La diferencia respecto a lo explicado en la sección <a class="reference internal" href="#sec-clave-publica"><span class="std std-numref">Section 4.3</span></a>:
+<a class="reference internal" href="#sec-clave-publica"><span class="std std-ref">Clave pública</span></a> es que el usuario nunca necesitó una clave textual para acceder
+al servidor. De hecho, el servidor se puede configurar para que la única forma de
+autenticación permitida sea mediante clave pública <a class="footnote-reference brackets" href="#id4" id="id2">2</a>, de modo que no hay posibilidad de
 usar <code class="docutils literal notranslate"><span class="pre">ssh-copy-id</span></code>. Esto se considera más seguro.</p>
 </section>
 </section>
 <section id="copia-remota-de-ficheros-con-scp">
-<h2>Copia remota de ficheros con SCP<a class="headerlink" href="#copia-remota-de-ficheros-con-scp" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">4.5. </span>Copia remota de ficheros con SCP<a class="headerlink" href="#copia-remota-de-ficheros-con-scp" title="Permalink to this headline">#</a></h2>
 <p>SCP es un protocolo de copia segura de ficheros entre computadores cualesquiera
 conectados a Internet. Resulta especialmente cómodo ya que el propio servidor de
 OpenSSH lo incorpora y está activado por defecto.</p>
@@ -705,13 +709,13 @@ nombre de un nodo seguido de ‘<code class="docutils literal notranslate"><span
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Python</p>
+            <p class="prev-next-title"><span class="section-number">3. </span>Python</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="udp_chat.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Chat UDP</p>
+        <p class="prev-next-title"><span class="section-number">5. </span>Chat UDP</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

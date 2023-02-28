@@ -28,7 +28,7 @@ software libre. Esto tiene dos implicaciones muy importantes:
 
 - GNU incorpora todas las ventajas prácticas y técnicas de la tradición de la
   familia de sistemas UNIX. La tecnología base de Internet fue desarrollada sobre
-  UNIX}, concretamente BSD. Se podría decir que Internet forma parte del
+  UNIX, concretamente BSD. Se podría decir que Internet forma parte del
   ADN de UNIX. GNU es heredero de todo ese legado.
 
 - GNU está disponible para cualquier persona, en cualquier parte, sin ninguna
@@ -41,7 +41,7 @@ software libre. Esto tiene dos implicaciones muy importantes:
 El entorno de trabajo y herramientas que se refieren en el presente texto corresponden al sistema operativo Debian GNU/Linux [^1]. Por simplicidad y para un máximo
 aprovechamiento te aconsejamos instalar esta distribución en tu computador porque este
 será el entorno que se asume cuando se habla de configuración o comandos de sistema. Por
-supuesto, es posible usar cualquiera de las abundantes distribuciones basadas en \ac{GNU} puede ser perfectamente válida para la realización de los ejemplos y ejercicios prácticos propuestos. También se asume que tu computador cuenta al menos con una interfaz de red Ethernet o WiFi convenientemente configurada y que proporciona acceso a Internet sin restricciones relevantes.
+supuesto, es posible usar cualquiera de las abundantes distribuciones basadas en GNU puede ser perfectamente válida para la realización de los ejemplos y ejercicios prácticos propuestos. También se asume que tu computador cuenta al menos con una interfaz de red Ethernet o WiFi convenientemente configurada y que proporciona acceso a Internet sin restricciones relevantes.
 
 [^1]: https://www.debian.org
 

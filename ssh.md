@@ -118,7 +118,7 @@ and check to make sure that only the key(s) you cantead were added.
 ```
 
 Este programa almacena la clave pública del usuario ---por defecto,
-`~/.ssh/id\_rsa.pub`--- en el fichero `~/.ssh/authorized_keys` del servidor (`viper` en
+`~/.ssh/id_rsa.pub`--- en el fichero `~/.ssh/authorized_keys` del servidor (`viper` en
 este ejemplo).
 
 Y tal como indica, ahora deberíamos poder entrar en la máquina `viper` simplemente
@@ -234,7 +234,7 @@ root@viper:/etc/ssh# ls -la ca_key.pub
 
 Para indicar que todas las claves de usuario firmadas por la CA se pueden autenticar
 en el servidor, se debe añadir lo siguiente en el archivo de configuración
-`/etc/ssh/sshd\_config`:
+`/etc/ssh/sshd_config`:
 
 ```
 TrustedUserCAKeys /etc/ssh/ca_key.pub

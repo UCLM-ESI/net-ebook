@@ -511,7 +511,7 @@ en el directorio <code class="docutils literal notranslate"><span class="pre">/h
 </pre></div>
 </div>
 <p>Este programa almacena la clave pública del usuario —por defecto,
-<code class="docutils literal notranslate"><span class="pre">~/.ssh/id\_rsa.pub</span></code>— en el fichero <code class="docutils literal notranslate"><span class="pre">~/.ssh/authorized_keys</span></code> del servidor (<code class="docutils literal notranslate"><span class="pre">viper</span></code> en
+<code class="docutils literal notranslate"><span class="pre">~/.ssh/id_rsa.pub</span></code>— en el fichero <code class="docutils literal notranslate"><span class="pre">~/.ssh/authorized_keys</span></code> del servidor (<code class="docutils literal notranslate"><span class="pre">viper</span></code> en
 este ejemplo).</p>
 <p>Y tal como indica, ahora deberíamos poder entrar en la máquina <code class="docutils literal notranslate"><span class="pre">viper</span></code> simplemente
 con:</p>
@@ -602,7 +602,7 @@ adecuados (644). En la máquina <code class="docutils literal notranslate"><span
 </div>
 <p>Para indicar que todas las claves de usuario firmadas por la CA se pueden autenticar
 en el servidor, se debe añadir lo siguiente en el archivo de configuración
-<code class="docutils literal notranslate"><span class="pre">/etc/ssh/sshd\_config</span></code>:</p>
+<code class="docutils literal notranslate"><span class="pre">/etc/ssh/sshd_config</span></code>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">TrustedUserCAKeys</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">ssh</span><span class="o">/</span><span class="n">ca_key</span><span class="o">.</span><span class="n">pub</span>
 </pre></div>
 </div>

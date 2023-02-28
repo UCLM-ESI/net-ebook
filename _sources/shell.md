@@ -8,7 +8,7 @@ grandes partidarios y detractores. Lo cierto es que la shell es una herramienta 
 oscura y de aspecto absolutamente espartano en un mundo en el que las pantallas
 multi-táctiles o el reconocimiento de voz son algo habitual.
 
-En general, una interfaz de comandos ---a menudo denominada CLI--- es mucho menos intuitiva[^1]
+En general, una interfaz de comandos ---a menudo denominada CLI--- es mucho menos intuitiva [^1]
 que una GUI. Sin embargo, cuando la capacidad y el nivel de detalle (y por tanto la
 complejidad) de la herramienta aumenta, la interfaz gráfica resulta mucho más difícil de
 desarrollar, requiere tanto o más entrenamiento y su uso suele ser menos productivo que

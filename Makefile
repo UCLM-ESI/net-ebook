@@ -3,7 +3,7 @@
 BOOK_SOURCES := *.md *.ipynb
 BOOK_PDF = _build/latex/book.pdf
 
-all: check _build
+all: code check _build
 
 _build: ${BOOK_SOURCES}
 	# jb build -W .
@@ -34,3 +34,6 @@ code-checks:
 
 view: _build
 	xdg-open _build/html/index.html
+
+code:
+	git clone https://github.com/UCLM-ARCO/net-book-code.git code

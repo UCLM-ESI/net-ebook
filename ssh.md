@@ -1,5 +1,5 @@
+(chap:ssh)=
 # SSH
-% \hyperlabel{chap:ssh}
 
 SSH es un protocolo de aplicación que permite establecer conexiones con máquinas remotas.
 Podríamos decir que es una versión mejorada del veterano `telnet` [^1], pero es
@@ -77,8 +77,8 @@ user@172.20.0.2's password:
 Este modo de autenticación con usuario/clave se llama de «clave privada» porque se
 asume que solamente el usuario la conoce.
 
-## Acceso con clave pública
-% \label{sec:clave-publica}
+(sec:clave-publica)=
+## Clave pública
 
 Para evitar tener que escribir constantemente la clave cada vez que conectas a una misma
 máquina, SSH ofrece un sistema de autenticación de «clave pública». Este sistema utiliza
@@ -144,7 +144,7 @@ ana@laptop:~$ ssh viper ls /home/
 user
 ```
 
-## Autenticación mediante certificado
+## Autenticación con certificados
 
 Otra forma de autenticar usuarios es mediante certificados, una opción algo más
 avanzada que la autenticación con clave pública, que hemos visto en la sección anterior.
@@ -285,12 +285,10 @@ Y con esto se podrá acceder simplemente con:
 ana@laptop:~$ ssh viper
 ```
 
-La diferencia respecto a lo explicado en la sección
-%  ~\ref{sec:clave-publica}
- es que el
-usuario nunca necesitó una clave textual para acceder al servidor. De hecho, el servidor
-se puede configurar para que la única forma de autenticación permitida sea mediante clave
-pública [^2], de modo que no hay posibilidad de
+La diferencia respecto a lo explicado en la sección {numref}`sec:clave-publica`:
+{ref}`sec:clave-publica` es que el usuario nunca necesitó una clave textual para acceder
+al servidor. De hecho, el servidor se puede configurar para que la única forma de
+autenticación permitida sea mediante clave pública [^2], de modo que no hay posibilidad de
 usar `ssh-copy-id`. Esto se considera más seguro.
 
 [^2]: `PasswordAuthentication no`

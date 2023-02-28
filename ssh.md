@@ -243,7 +243,7 @@ TrustedUserCAKeys /etc/ssh/ca_key.pub
 Para que los cambios tengan efecto reiniciamos el servidor SSH (`sshd`) con:
 
 ```console
-root@viper:/home/user# systemctl restart sshd
+root@viper:~# systemctl restart sshd
 ```
 
 Con esto termina la configuración el servidor (`viper` en este ejemplo). Este proceso

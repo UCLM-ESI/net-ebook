@@ -413,7 +413,7 @@ UDP:
 
 ```{literalinclude} ./code/raw/sniff-udp.py
 ---
-name: lst:raw:sniff-all
+name: lst:raw:sniff-udp
 language: python
 linenos:
 caption: |

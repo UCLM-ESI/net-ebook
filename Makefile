@@ -13,7 +13,7 @@ _build: ${BOOK_SOURCES}
 # 	jb build -W -n --builder pdflatex .
 
 # publish: _build ${BOOK_PDF}
-publish: _build
+publish: code _build
 	mv _build/html $@
 	cp -r src $@
 	# mv ${BOOK_PDF} $@/ssdd-lab.pdf

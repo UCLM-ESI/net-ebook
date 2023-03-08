@@ -34,4 +34,10 @@ only_build_toc_files: true
 
 launch_buttons:
   # notebook_interface: "jupyterlab"  # or "classic"
-  thebe: true
+  notebook_interface : "classic" # The interface interactive links will activate ["classic", "jupyterlab"]
+  binderhub_url      : "https://mybinder.org"
+  thebe              : true
+
+sphinx:
+  extra_extensions:
+    - sphinx_thebe

@@ -113,7 +113,7 @@ recogió su valor de retorno. Ese valor lo almacenó en una «variable de entorn
 
 [^4]: Sí, el signo de interrogación
 
-```shell
+```console
 david@amy:~$ echo $?
 0
 ```
@@ -127,7 +127,7 @@ david@amy:~$ echo $?
 Pero esto solo es aplicable al comando inmediatamente anterior. Una ejecución incorrecta
 retornaría un código de error, como se puede comprobar en el siguiente ejemplo:
 
-```shell
+```console
 david@amy:~$ ls noexiste
 ls: cannot access noexiste: No such file or directory
 david@amy:~$ echo $?
@@ -162,7 +162,7 @@ como privilegios y ficheros abiertos. Para listar procesos se utiliza
 puede ver los procesos asociados al terminal al que está conectado con el comando
 ``ps T``.
 
-```shell
+```console
 david@amy:~$ ps T
   PID TTY          TIME CMD
  4970 pts/2    00:00:00 bash
@@ -182,7 +182,7 @@ muestra las relaciones de «genealogía»:
 
 [^5]: Es lo habitual en el mundo POSIX.
 
-```shell
+```console
 david@amy:~$ ps f
   PID TTY      STAT   TIME COMMAND
  4970 pts/2    Ss     0:00 bash
@@ -205,7 +205,7 @@ proceso. La señal por defecto es SIGTERM, pero se puede enviar otra si se espec
 argumento. Puede ver la lista de todas las señales con ``kill -l``. Por ejemplo, el
 siguiente comando envía la señal SIGKILL (9) al proceso con PID 5200:
 
-```shell
+```console
 david@amy:~$ kill -9 5200
 [1]+  Terminado (killed)      gedit
 ```
@@ -235,7 +235,7 @@ para introducir una nueva orden. A eso se le llama ejecución en «segundo plano
 «background». Para conseguir que la shell ejecute un comando en segundo plano basta con
 añadir el símbolo «ampersand» ('``&``') al final de la línea de comandos:
 
-```shell
+```console
 david@amy:~$ gedit &
 [1] 19777
 david@amy:~$
@@ -272,7 +272,7 @@ plano, el usuario puede pararlo pulsando Control-Z (la shell lo representa con
 
 Partiendo de la situación anterior:
 
-```shell
+```console
 david@amy:~$ fg %1
 ^Z
 [1]+  Stopped                 gedit
@@ -285,7 +285,7 @@ david@amy:~$
 Un trabajo **parado** puede volver a estado de ejecución en primer plano si se introduce
 el comando ``fg`` o pasar a segundo plano si se introduce ``bg`` (por *background*).
 
-```shell
+```console
 david@amy:~$ jobs
 [1]+  Stopped                 gedit
 [2]-  Running                 firefox &
@@ -297,7 +297,7 @@ david@amy:~$
 Los identificadores de trabajo también se puede usar con el comando ``kill`` en lugar
 de su PID.
 
-```shell
+```console
 david@amy:~$ kill -SIGKILL %2
 [4]+  Killed                  firefox
 ```
@@ -308,7 +308,7 @@ A veces buscar en la lista de procesos (``ps``) no es la forma más cómoda de l
 un proceso. Puede ser más sencillo localizarlo por su nombre (con ``pidof`` o
 ``pgrep``):
 
-```shell
+```console
 david@amy:~$ pidof firefox
 105894
 ```
@@ -316,7 +316,7 @@ david@amy:~$ pidof firefox
 O bien lo podemos identificarlo por un fichero o dispositivo que el proceso tenga abierto, o
 un puerto al que esté vinculado (con ``fuser``):
 
-```shell
+```console
 david@amy:~$ fuser 17500/tcp
 17500/tcp:           10589
 ```
@@ -324,7 +324,7 @@ david@amy:~$ fuser 17500/tcp
 También se puede enviar una señal (por defecto con la intención de matarlo) con ambos
 criterios (nombre y puerto):
 
-```shell
+```console
 david@amy:~$ pkill firefox
 david@amy:~$ fuser --kill 17500/tcp
 17500/tcp:           10589
@@ -386,7 +386,7 @@ Es posible alterar la salida estándar de cualquier programa para que utilice un
 
 
 
-```shell
+```console
 david@amy:~$ ls -l / > /tmp/root-dir
 david@amy:~$
 ```
@@ -411,7 +411,7 @@ almacenada en el fichero ``/tmp/root-dir``.
 
 Puede ver el contenido de dicho fichero utilizando el programa ``cat``:
 
-```shell
+```console
 david@amy:~$ cat /tmp/root-files
 total 98
 drwxr-xr-x   2 root root  4096 Aug 15 00:34 bin
@@ -432,7 +432,7 @@ el mismo nombre, su contenido se pierde y es substituido por los nuevos datos. P
 otro tipo de redirección de salida que añade el contenido *al final* del fichero
 especificado. Se indica con doble mayor-que '``>>``':
 
-```shell
+```console
 david@amy:~$ date > /tmp/now
 david@amy:~$ date >> /tmp/now
 david@amy:~$ cat /tmp/now
@@ -450,7 +450,7 @@ modo que aparezcan únicamente las que contengan la cadena «Jun» (en principio
 modificados en junio). Para ello se puede utilizar el comando ``grep`` del siguiente
 modo:
 
-```shell
+```console
 david@amy:~$ grep Jun /tmp/root-files
 drwxr-xr-x   6 root root  4096 Jun  6 17:58 home
 lrwxrwxrwx   1 root root    32 Jun 27 13:09 initrd.img
@@ -467,7 +467,7 @@ lrwxrwxrwx   1 root root    28 Jun 27 13:09 vmlinuz
 datos si no se le dan argumentos. Por tanto, utilizando la «redirección de entrada» (con
 el carácter '`<`') se puede lograr lo mismo ejecutando:
 
-```shell
+```console
 david@amy:~$ grep Jun < /tmp/root-files
 drwxr-xr-x   6 root root  4096 Jun  6 17:58 home
 lrwxrwxrwx   1 root root    32 Jun 27 13:09 initrd.img
@@ -481,7 +481,7 @@ Si se desea almacenar el resultado obtenido en otro fichero basta con utilizar d
 redirección de salida. Es posible combinar redirecciones de entrada y salida en el mismo
 comando:
 
-```shell
+```console
 david@amy:~$ grep Jun < /tmp/root-files > /tmp/Jun-files
 ```
 
@@ -489,7 +489,7 @@ El contenido de ese fichero está ordenado por los nombres de los ficheros (la �
 columna). Veamos cómo reordenar esa lista en función del tamaño (quinta columna)
 utilizando el comando `sort`:
 
-```shell
+```console
 david@amy:~$ sort --numeric-sort --key=5 /tmp/Jun-files
 lrwxrwxrwx   1 root root    28 Jun 27 13:09 vmlinuz
 lrwxrwxrwx   1 root root    32 Jun 27 13:09 initrd.img
@@ -514,7 +514,7 @@ carácter '`|`' (AltGr-1 en el teclado español). El comando para obtener
 directamente los ficheros del directorio raíz modificados en junio ordenados por tamaño
 sería:
 
-```shell
+```console
 david@amy:~$ ls -l / | grep Jun | sort -n -k5
 lrwxrwxrwx   1 root root    28 Jun 27 13:09 vmlinuz
 lrwxrwxrwx   1 root root    32 Jun 27 13:09 initrd.img
@@ -539,7 +539,7 @@ Por supuesto es posible combinar la tubería y la redirección en el mismo coman
 caso el resultado del comando anterior se almacena en un fichero, del mismo modo que se
 hacía con los comandos simples:
 
-```shell
+```console
 david@amy:~$ ls -l / | grep Jun | sort -n -k5 > /tmp/root-jun-files-sorted-by-size
 ```
 
@@ -572,7 +572,7 @@ cuando se trabaja con la shell.
 `cut`
 : Escribe en su salida partes de las líneas de entrada según sus opciones:
 
-  ```shell
+  ```console
   david@amy:~$ date
   Sun Aug 26 12:47:35 CEST 2012
   david@amy:~$ date | cut --delimiter=" " --fields=2
@@ -589,7 +589,7 @@ cuando se trabaja con la shell.
 : Escribe a su salida los primeros bytes o líneas de su entrada o del fichero indicado
   como argumento.
 
-  ```shell
+  ```console
   david@amy:~$ head --lines=3 /etc/passwd
   root:x:0:0:root:/root:/bin/bash
   daemon:x:1:1:daemon:/usr/sbin:/bin/sh
@@ -669,7 +669,7 @@ idénticas.
 : Escribe «y» y un salto de línea continuamente a su salida. Se utiliza para contestar
   afirmativamente a cualquier pregunta que haga un programa por línea de comando:
 
-  ```shell
+  ```console
   david@amy:~$ touch kk
   david@amy:~$ yes | rm --interactive --verbose kk
   rm: remove regular empty file `kk'? removed `kk'
@@ -697,7 +697,7 @@ idénticas.
 `uname` --- *unix name*
 : Muestra información del sistema:
 
-  ```shell
+  ```console
   david@amy:~$ uname -a
   Linux amy 5.8.0-3-amd64 #1 SMP Debian 5.8.14-1 (2020-10-10) x86_64 GNU/Linux
   ```

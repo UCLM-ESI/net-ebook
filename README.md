@@ -21,7 +21,8 @@ Ver {numref}`section:label` {ref}`section:label`
 - abreviaturas, glosario y acrónimos
 - traducción de 'note', 'important', etc
 - estilo CSS para bloques (ej: console)
-- numerar líneas en los listados
+- numerar líneas en los listados -> con la opción "linenos"
+- cómo poner markdown en un notebook, ej: (chap:serialization)=
 
 
 ## doc

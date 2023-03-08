@@ -5,6 +5,7 @@ format: jb-book
 root: intro
 options:
   numbered: true
+  maxdepth: 2
 chapters:
 - file: shell
 - file: paquetes

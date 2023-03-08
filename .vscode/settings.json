@@ -6,6 +6,7 @@
     "triggerTaskOnSave.failureColour": "#E74C3C",
     "triggerTaskOnSave.tasks": {
         "jupyter-book-build": [
+            "*.ipymb",
             "*.md",
             "*.yml",
         ],

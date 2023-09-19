@@ -1,0 +1,24 @@
+- [v] Shell
+- [v] Paquetes
+- [ ] Redes y protocolos
+- [ ] Conectividad
+- [ ] Pila de protocolos TCP/IP
+- [ ] Captura y análisis de tráfico
+- [ ] Encapsulación de protocolos
+- [ ] Encaminamiento
+- [ ] Multicast
+- [ ] Redes Privadas
+- [v] Python
+- [v] Serialización
+- [ ] Sockets
+- [ ] Modelo cliente-servidor
+- [ ] Puertos y servicios
+- [v] Sockets RAW
+- [ ] Filtrado de paquetes
+- Seguridad
+- [ ] Escaneo de servidores
+- [ ] Herramientas de criptografía
+- [ ] Autenticación
+- Servicios básicos
+- [v] SSH
+- [ ] netcat

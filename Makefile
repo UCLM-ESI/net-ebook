@@ -7,7 +7,7 @@ all: code check _build
 
 _build: ${BOOK_SOURCES}
 	# jb build -W .
-	jb build .
+	poetry run jb build .
 
 # ${BOOK_PDF}: ${BOOK_SOURCES}
 # 	jb build -W -n --builder pdflatex .

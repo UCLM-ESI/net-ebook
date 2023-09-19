@@ -10,6 +10,7 @@ chapters:
 - file: shell
 - file: paquetes
 - file: python
+- file: redes
 - file: ssh
 - file: udp_chat
 - file: serializacion

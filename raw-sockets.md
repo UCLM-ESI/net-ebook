@@ -202,7 +202,7 @@ El mismo socket creado en los ejemplos anteriores se puede utilizar para enviar
 datos. Para sintetizar un paquete, es decir, construir cabeceras de acuerdo a las
 especificaciones, se utiliza normalmente el módulo `struct` [^6].
 
-[^6]: Consulte el capítulo {ref}`chap:codificacion` para más información sobre dicho
+[^6]: Consulte el capítulo {ref}`chap:serializing` para más información sobre dicho
     módulo.
 
 El siguiente listado envía una cabecera Ethernet cuyos campos son:
